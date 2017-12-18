@@ -16,6 +16,5 @@ class ChocolateMilk:
         return self.id
 
     def addIngredient(self):
-        #testtesttesrrdfdrtdrddrrdt
 
     def returnWorkload(self):
