@@ -2,7 +2,8 @@ class ChocolateMilk:
     def __init__(self, id):
         self.id = id
         self.price = 2
-        self.ingredients = None
+        self.ingredients ={}
+        self.workload= 5
 
     def __del__(self):
         self.id = None
@@ -15,7 +16,13 @@ class ChocolateMilk:
     def getId(self):
         return self.id
 
-    def addIngredient(self):
-
+    def addIngredient(self, ingredient, amount):
+        if self.ingredients[ingredient]==None:
+            self.ingredients[ingredient]=amount
+        elif self.ingredients[ingredient]!=None:
+            self.ingredients+=amount
+        self.price+=ingredient.price
+        self.workload+=amount
 
     def returnWorkload(self):
+        return self.workload
