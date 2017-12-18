@@ -22,6 +22,6 @@ class ChocolateMilk:
 
     #Adds ingredients to this chocolatemilk
     def addIngredient(self):
-
+    
     #Returns the amount of workload this chocolatemilk takes
     def returnWorkload(self):
