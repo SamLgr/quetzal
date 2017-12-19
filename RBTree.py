@@ -53,6 +53,15 @@ class rbNode(object):
         else:
             return self.leftTree
 
+    def inorderTraverse(self):
+        traverseList = []
+        if self.leftTree is not None:
+            traverseList = self.leftTree.inorderTraverse()
+        traverseList.append(self.value)
+        if self.rightTree is not None:
+            traverseList = traverseList + self.rightTree.inorderTraverse()
+        return traverseList
+
 
 class redBlackTree(object):
     def __init__(self, root=None):
@@ -251,3 +260,10 @@ class redBlackTree(object):
                     self.rightRotate(x.parent)
                     x = self.root
         x.red = False
+
+    def inorderTraverse(self):
+        return self.root.inorderTraverse()
+
+    def getLength(self):
+        list = self.root.inorderTraverse
+        return len(list)
