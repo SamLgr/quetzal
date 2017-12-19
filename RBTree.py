@@ -11,7 +11,10 @@ class rbNode(object):
         self.parent = parent
         self.leftTree = leftTree
         self.rightTree = rightTree
-    
+
+    def getKey(self):
+        return self.value.getTimestamp
+
     def isLeaf(self):  # checks if node is leaf
         return not self.leftTree and not self.rightTree
 
@@ -31,14 +34,14 @@ class rbNode(object):
             self.rightTree.dotDebug()
     
     def retrieveItem(self, value):  # returns node with key value
-        if value == self.value:
+        if value == self.getKey():
             return self
-        elif value < self.value:
+        elif value < self.getKey():
             if self.leftTree is None:
                 return None
             x = self.leftTree.retrieveItem(value)
             return x
-        elif value > self.value:
+        elif value > self.getKey():
             if self.rightTree is None:
                 return None
             x = self.rightTree.retrieveItem(value)
@@ -88,13 +91,13 @@ class redBlackTree(object):
         check_node = self.root
         while check_node:
             node.parent = check_node
-            if check_node.value > node.value:
+            if check_node.getKey() > node.getKey():
                 check_node = check_node.leftTree
-            elif check_node.value < node.value:
+            elif check_node.getKey() < node.getKey():
                 check_node = check_node.rightTree
             else:
                 return False  # TODO change to account for multiple things with same keyvalue
-        if node.value < node.parent.value:
+        if node.getKey() < node.parent.getKey():
             node.parent.leftTree = node
         else:
             node.parent.rightTree = node
