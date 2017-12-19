@@ -82,6 +82,8 @@ def execute_command(command):
         chocoid = makeChoco(command[3:])
         order = Order(userid, command[0], chocoid, False)
         orders.enqueue(order)
+    elif command[1] == "stock":
+        init_command(command[2:])
     pass
 
 
