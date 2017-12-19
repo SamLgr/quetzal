@@ -23,6 +23,3 @@ class TTFTTable:
 
     def traverseTable(self):
         return self.ttft.inorderTraverse()
-
-    def print(self):
-        return self.ttft.print()

@@ -13,8 +13,8 @@ class HMTable:
     def getLength(self):
         return None # not implemented
 
-    def tableInsert(self, newitem):
-        return self.hm.insert(newitem, newitem.getTimestamp())
+    def tableInsert(self, order):
+        return self.hm.insert(order, order.getTimestamp())
 
     def tableDelete(self, timestamp):
         return self.hm.erase(timestamp)

@@ -1,4 +1,5 @@
 from BinarySearchTree import BinarySearchTree
+from TreeItem import TreeItem
 
 class BSTTable:
     def __init__(self):
@@ -13,14 +14,12 @@ class BSTTable:
     def getLength(self):
         return self.bst.getTreeLength()
 
-    def tableInsert(self, newitem):
-        return self.bst.searchTreeInsert(newitem)
+    def tableInsert(self, order):
+        treeitem = TreeItem(order, order.getTimestamp())
+        return self.bst.searchTreeInsert(treeitem)
 
     def tableDelete(self, timestamp):
         return self.bst.searchTreeDelete(timestamp)
 
     def traverseTable(self):
         return self.bst.inorderTraverse()
-
-    def print(self):
-        return self.bst.print()
