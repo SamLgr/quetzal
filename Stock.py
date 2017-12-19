@@ -93,22 +93,25 @@ class Stock:
         #ChocolateStock
         length = self.chocolatestock.getLength()
         if length < 2:
-            self.stockOrder(5)
+            self.stockOrder("white chocolate", 5)
+            self.stockOrder("milk chocolate", 5)
+            self.stockOrder("brown chocolate", 5)
+            self.stockOrder("black chocolate", 5)
 
         #HoneyStock
         length = self.honeystock.getLength()
         if length < 2:
-            self.stockOrder(5)
+            self.stockOrder("honey", 5)
 
         #MarshmallowStock
         length = self.marshmallowstock.getLength()
         if length < 2:
-            self.stockOrder(5)
+            self.stockOrder("marshmallow", 5)
 
         #ChilipepperStock
         length = self.chilipepperstock.getLength()
         if length < 2:
-            self.stockOrder(5)
+            self.stockOrder("chilipepper", 5)
 
         return True
             
