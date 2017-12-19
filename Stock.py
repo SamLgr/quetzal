@@ -96,6 +96,7 @@ class Stock:
 
     #Function to check if the amount in a specific stock is to low
     #If it is to low, order more
+    #It also checks for expired products
     def stockCheck(self):
         #ChocolateStock
         traverselist = self.chocolatestock.traverseTable()
