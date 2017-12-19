@@ -12,10 +12,12 @@ class rbNode(object):
         self.leftTree = leftTree
         self.rightTree = rightTree
     
-    def isLeaf(self):
+    def isLeaf(self):  # checks if node is leaf
         return not self.leftTree and not self.rightTree
 
-    def dotDebug(self):
+    def dotDebug(self):  # debug code to represent tree in dot language
+        if not self.parent and self.isLeaf():  # tree only has one item (root)
+            return print(self.value)
         if self.parent and self.value:
             strprint = str(self.parent.value) + " -> " + str(self.value)
             if self.red:
@@ -28,7 +30,7 @@ class rbNode(object):
         if self.rightTree:
             self.rightTree.dotDebug()
     
-    def retrieveItem(self, value):
+    def retrieveItem(self, value):  # returns node with key value
         if value == self.value:
             return self
         elif value < self.value:
@@ -42,7 +44,7 @@ class rbNode(object):
             x = self.rightTree.retrieveItem(value)
             return x
 
-    def treeSuccessor(self):
+    def treeSuccessor(self):  # finds successor and returns that node
         if self.rightTree is not None:
             node = self.rightTree
             while node.leftTree is not None:
@@ -56,18 +58,9 @@ class redBlackTree(object):
     def __init__(self, root=None):
         self.root = root
     
-    def createRBTree(self, value):
+    def createRBTree(self, value):  # creates initial node
         root = rbNode(value)
         self.root = root
-
-    # def getLeftTree(self):
-    #     return self.leftTree
-
-    # def getRightTree(self):
-    #     return self.rightTree
-
-    # def getRoot(self):
-    #     return self.root
 
     def destroyRBTree(self):  # __del__
         # delete values
@@ -172,78 +165,46 @@ class redBlackTree(object):
         x.rightTree = y
         y.parent = x
     
-    # def traverse(self):
-    #     if self.leftTree is not None:
-    #         self.leftTree.inorderTraverse()
-    #     print(self.root)
-    #     if self.rightTree is not None:
-    #         self.rightTree.inorderTraverse()
-
-    # def deleteItem(self, value):
-    #     delete_Node = self.root.retrieveItem(value)
-    #     if delete_Node is None:
-    #         return False
-    #     if delete_Node.leftTree is None and delete_Node.rightTree is None:
-    #         delete_Node = None
-    #     elif delete_Node.leftTree is not None and delete_Node.rightTree is None:
-    #         parent = delete_Node.parent
-    #         delete_Node = delete_Node.leftTree
-    #         delete_Node.parent = parent
-    #     elif delete_Node.rightTree is not None and delete_Node.leftTree is None:
-    #         parent = delete_Node.parent
-    #         delete_Node = delete_Node.rightTree
-    #         delete_Node.parent = parent
-    #     else:
-    #         parent_Node = delete_Node
-    #         currentTree = delete_Node.rightTree
-    #         while currentTree.leftTree is not None:
-    #             currentTree = currentTree.leftTree
-    #         parent = currentTree.parent
-    #         delete_Node.value = currentTree.value
-    #         currentTree = currentTree.rightTree
-    #         currentTree.parent = parent
-    #     # self.delete_fix() #doesn't work yet
-    #     return  True
-
-        
-    # def getLength(self):
-    #     pass
-    
-    def dotDebug(self):
+    def dotDebug(self):  # function that calls on debug code
+        if self.isEmtpy():
+            return False
         self.root.dotDebug()
 
     def deleteItem(self, value):
+        # retrieving node
         z = self.root.retrieveItem(value)
+        # check if node is valid
         if z is None:
             return False
-
+        
         if z.leftTree is None or z.rightTree is None:
             y = z
-        else:
+        else:  # node has two children
             y = z.treeSuccessor()
 
         if y.leftTree is not None:
             x = y.leftTree
         else:
             x = y.rightTree
-
+        
+        # check if x node is not none
         if x is not None:
             x.parent = y.parent
 
-        if y.parent is None:
+        if y.parent is None:  # y is root
             self.root = x
-        elif y == y.parent.leftTree:
+        elif y == y.parent.leftTree:  # y is left child
             y.parent.leftTree = x
-        else:
+        else:  # y is right child
             y.parent.rightTree = x
 
-        if y != z:
+        if y != z:  # make sure the value in the node is overridden
             z.value = y.value
 
-        if not y.red and x is not None:
+        if not y.red and x is not None:  # call on fix is y was red, and x (y's sibling) is not none
             self.delete_fix(x)
 
-        return y
+        return True
 
     def delete_fix(self, x):
         while x != self.root and not x.red:
