@@ -86,3 +86,34 @@ class Stock:
             while amount != 0:
                 chilipepper = ChiliPepper()
                 self.chilipepperstock.tableInsert(chilipepper)
+
+    #Function to check if the amount in a specific stock is to low
+    #If it is to low, order more
+    def stockCheck(self):
+        #ChocolateStock
+        length = self.chocolatestock.getLength()
+        if length < 2:
+            self.stockOrder(5)
+
+        #HoneyStock
+        length = self.honeystock.getLength()
+        if length < 2:
+            self.stockOrder(5)
+
+        #MarshmallowStock
+        length = self.marshmallowstock.getLength()
+        if length < 2:
+            self.stockOrder(5)
+
+        #ChilipepperStock
+        length = self.chilipepperstock.getLength()
+        if length < 2:
+            self.stockOrder(5)
+
+        return True
+            
+"""
+>>>s = Stock()
+>>>s.stockCheck()
+True
+"""
