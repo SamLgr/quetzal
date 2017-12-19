@@ -61,12 +61,12 @@ class Stock:
         elif stockType == "honey":
             while amount != 0:
                 honey = Honey()
-                self.chocolatestock.tableInsert(honey)
+                self.honeystock.tableInsert(honey)
         elif stockType == "marshmallow":
             while amount != 0:
                 marshmallow = Marshmallow()
-                self.chocolatestock.tableInsert(marshmallow)
+                self.marshmallowstock.tableInsert(marshmallow)
         elif stockType == "chilipepper":
             while amount != 0:
                 chilipepper = ChiliPepper()
-                self.chocolatestock.tableInsert(chilipepper)
+                self.chilipepperstock.tableInsert(chilipepper)

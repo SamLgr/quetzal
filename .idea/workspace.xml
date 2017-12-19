@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b600a203-674c-4d23-a833-505a5c9b6640" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BSTTable.py" afterPath="$PROJECT_DIR$/BSTTable.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HMTable.py" afterPath="$PROJECT_DIR$/HMTable.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TTFTTable.py" afterPath="$PROJECT_DIR$/TTFTTable.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ChocolateMilk.py" afterPath="$PROJECT_DIR$/ChocolateMilk.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Stock.py" afterPath="$PROJECT_DIR$/Stock.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,8 +26,8 @@
       <file leaf-file-name="TTFTTable.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TTFTTable.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="42" lean-forward="false" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+            <state relative-caret-position="68">
+              <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -39,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/BSTTable.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
-              <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+              <caret line="24" column="41" lean-forward="true" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -47,12 +47,34 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Stock.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Stock.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="629">
+              <caret line="41" column="48" lean-forward="false" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="RBTreeTable.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RBTreeTable.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="41" lean-forward="true" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+            <state relative-caret-position="153">
+              <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StockTable.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/StockTable.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="592">
+              <caret line="58" column="27" lean-forward="true" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,16 +84,68 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-2128">
               <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+              <folding>
+                <marker date="1513702829831" expanded="true" signature="142:387" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="3347:3473" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="3503:5010" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="3531:4980" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="3584:4317" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="3744:3957" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="3979:4317" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="4057:4137" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="4163:4317" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="4335:4927" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="4436:4598" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="4620:4927" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="4667:4748" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="4774:4927" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="5040:5433" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="5464:5828" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="5857:5975" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="6009:7002" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="7032:8724" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="7076:8702" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="7115:7901" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="7180:7343" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="7406:7472" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="7514:7673" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="7695:7901" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="7919:8702" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="7983:8146" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="8209:8275" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="8316:8474" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="8496:8702" ph="..." />
+                <marker date="1513702829831" expanded="true" signature="8756:8799" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HMTable.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/HMTable.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HMTable.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HMTable.py">
+      <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+            <state relative-caret-position="289">
+              <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChocolateMilk.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChocolateMilk.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -82,46 +156,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
               <caret line="18" column="30" lean-forward="true" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Order.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Order.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="34" lean-forward="true" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DoubleNode.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DoubleNode.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Hashmap.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Hashmap.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="898">
-              <caret line="79" column="23" lean-forward="true" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChocolateMilk.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ChocolateMilk.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -151,9 +185,7 @@
         <option value="$PROJECT_DIR$/Marshmallow.py" />
         <option value="$PROJECT_DIR$/ChiliPepper.py" />
         <option value="$PROJECT_DIR$/ChocolateShot.py" />
-        <option value="$PROJECT_DIR$/ChocolateMilk.py" />
         <option value="$PROJECT_DIR$/TwoThreeFourTree.py" />
-        <option value="$PROJECT_DIR$/Stock.py" />
         <option value="$PROJECT_DIR$/RBTreeTableWrapper.py" />
         <option value="$PROJECT_DIR$/BSTTableWrapper.py" />
         <option value="$PROJECT_DIR$/TTFTTableWrapper.py" />
@@ -163,6 +195,8 @@
         <option value="$PROJECT_DIR$/HMTable.py" />
         <option value="$PROJECT_DIR$/TTFTTable.py" />
         <option value="$PROJECT_DIR$/BSTTable.py" />
+        <option value="$PROJECT_DIR$/ChocolateMilk.py" />
+        <option value="$PROJECT_DIR$/Stock.py" />
       </list>
     </option>
   </component>
@@ -451,14 +485,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Stack.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/StockTable.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -683,6 +709,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -729,14 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Stock.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="43" column="44" lean-forward="false" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ChocolateShot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -751,16 +770,6 @@
           <caret line="637" column="42" lean-forward="true" selection-start-line="637" selection-start-column="42" selection-end-line="637" selection-end-column="42" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StockTable.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="26" lean-forward="true" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -781,14 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DoubleNode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Hashmap.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="898">
@@ -797,18 +798,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Order.py">
+    <entry file="file://$PROJECT_DIR$/DoubleNode.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="34" lean-forward="true" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChocolateMilk.py">
+    <entry file="file://$PROJECT_DIR$/Order.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="272">
+          <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TTFTTable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RBTree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2128">
+          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+          <folding>
+            <marker date="1513702829831" expanded="true" signature="142:387" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="3347:3473" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="3503:5010" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="3531:4980" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="3584:4317" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="3744:3957" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="3979:4317" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="4057:4137" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="4163:4317" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="4335:4927" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="4436:4598" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="4620:4927" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="4667:4748" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="4774:4927" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="5040:5433" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="5464:5828" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="5857:5975" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="6009:7002" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="7032:8724" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="7076:8702" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="7115:7901" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="7180:7343" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="7406:7472" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="7514:7673" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="7695:7901" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="7919:8702" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="7983:8146" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="8209:8275" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="8316:8474" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="8496:8702" ph="..." />
+            <marker date="1513702829831" expanded="true" signature="8756:8799" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMTable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -821,10 +888,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RBTree.py">
+    <entry file="file://$PROJECT_DIR$/StockTable.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2128">
-          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
+        <state relative-caret-position="592">
+          <caret line="58" column="27" lean-forward="true" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RBTreeTable.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -832,35 +909,25 @@
     <entry file="file://$PROJECT_DIR$/BSTTable.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="24" column="41" lean-forward="false" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+          <caret line="24" column="41" lean-forward="true" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TTFTTable.py">
+    <entry file="file://$PROJECT_DIR$/ChocolateMilk.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="42" lean-forward="false" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RBTreeTable.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="41" lean-forward="true" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+        <state relative-caret-position="391">
+          <caret line="23" column="26" lean-forward="true" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HMTable.py">
+    <entry file="file://$PROJECT_DIR$/Stock.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        <state relative-caret-position="629">
+          <caret line="41" column="48" lean-forward="false" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
           <folding />
         </state>
       </provider>
