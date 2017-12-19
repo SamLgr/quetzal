@@ -3,19 +3,19 @@ from Honey import Honey
 
 class StockTable:
     def __init__(self): #Constructor
-        self.table = CircularLinkedList()
+        self.list = CircularLinkedList()
 
     def __del__(self):  #Destructor
-        self.table = None
+        self.list = None
 
     def isEmpty(self):  #Retrieves if table is empty
-        return self.table.isEmpty()
+        return self.list.isEmpty()
 
     def getLength(self):    #Retrieves length of table
-        return self.table.getLength()
+        return self.list.getLength()
 
     def tableInsert(self, newitem): #Inserts given item in table
-        self.table.insert(0, newitem)
+        self.list.insert(0, newitem)
         self.sortTable()
         return True
 
@@ -25,9 +25,9 @@ class StockTable:
         found = False
         while first <= last and not found:
             mid = (first + last)//2
-            current = self.table.retrieve(mid)[0]
+            current = self.list.retrieve(mid)[0]
             if current.getExpiredate() == expiredate:
-                self.table.delete(mid)
+                self.list.delete(mid)
                 found = True
             else:
                 if expiredate < current.getExpiredate():
@@ -42,7 +42,7 @@ class StockTable:
         found = False
         while first <= last and not found:
             mid = (first + last) // 2
-            current = self.table.retrieve(mid)[0]
+            current = self.list.retrieve(mid)[0]
             if current.getExpiredate() == expiredate:
                 return current, True
             else:
@@ -55,7 +55,7 @@ class StockTable:
     def traverseTable(self):    #Traverses table on ascending expiredate
         traverseList = []
         for i in range(0, self.getLength()):
-            traverseList.append(self.table.retrieve(i)[0])
+            traverseList.append(self.list.retrieve(i)[0])
         return traverseList
 
     def sortTable(self):    #Sort table on ascending expiredate
@@ -79,11 +79,11 @@ class StockTable:
         swap = True
         while swap:
             swap = False
-            for i in range(0, self.table.getLength()-1):
-                current = self.table.retrieve(i)[0]
-                if current.getExpiredate() > self.table.retrieve(i + 1)[0].getExpiredate():
-                    self.table.delete(i)
-                    self.table.insert(i + 1, current)
+            for i in range(0, self.list.getLength()-1):
+                current = self.list.retrieve(i)[0]
+                if current.getExpiredate() > self.list.retrieve(i + 1)[0].getExpiredate():
+                    self.list.delete(i)
+                    self.list.insert(i + 1, current)
                     swap = True
 
     def print(self):    #Function for testing purposes: prints traverseTable

@@ -18,6 +18,13 @@ class BinarySearchTree:
         """
         return self.root is None
 
+    def getTreeLength(self):
+        """
+        Returns length of BinarySearchTree.
+        :return: length
+        """
+        return len(self.inorderTraverse())
+
     def searchTreeInsert(self, TreeItem):
         """
         Inserts TreeItem in BinarySearchTree
