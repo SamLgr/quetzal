@@ -5,14 +5,14 @@
 from DoubleNode import Node
 
 class Queue(object):
-    def __init__(self): # creates queue with None values
+    def __init__(self):  # creates queue with None values
         self.frontPtr = None
         self.backPtr = None
 
     def createQueue(self, value):
         self.enqueue(value)
 
-    def destroyQueue(self): # calls dequeue to clear the entire queue, clearing all the memory / alternatively set frontPtr, backPtr to None, but this would not clear memory
+    def destroyQueue(self):
         self.frontPtr = None
         self.backPtr = None
 
@@ -21,17 +21,17 @@ class Queue(object):
 
     def enqueue(self, data):
         new_node = Node(data)
-        if self.isEmpty(): # no data present
+        if self.isEmpty():  # no data present
             self.frontPtr = new_node
             self.backPtr = self.frontPtr
-        else: # some nodes exists
+        else:  # some nodes exists
             self.backPtr.setNext(new_node)
             self.backPtr = new_node
 
     def dequeue(self):
         if self.isEmpty():
             return None, False
-        else: # something in the queue
+        else:  # something in the queue
             item = self.frontPtr.getItem()
             right = self.frontPtr.getNext()
             if right is None: # nothing else queued
