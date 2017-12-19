@@ -36,6 +36,19 @@ class StockTable:
                     first = mid + 1
         return found
 
+    def tableDeleteOldest(self):
+        self.list.delete(0)
+
+    def tableDeleteOldestShot(self, type):
+        found = False
+        count = 0
+        while not found:
+            if self.list.retrieve(count)[0].getType() == type:
+                self.list.delete(count)
+                found = True
+            else:
+                count += 1
+
     def tableRetrieve(self, expiredate): #Retrieves ingredient with given expiredate from table
         first = 0
         last = self.getLength() - 1

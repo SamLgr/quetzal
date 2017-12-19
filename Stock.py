@@ -41,6 +41,22 @@ class Stock:
     def setChilipepperstock(self, chilipepperstock):
         self.chilipepperstock = chilipepperstock
 
+    def stockDelete(self, stockType):
+        if stockType == "white chocolate":
+                self.chocolatestock.tableDeleteOldestShot("white")
+        elif stockType == "milk chocolate":
+                self.chocolatestock.tableDeleteOldestShot("milk")
+        elif stockType == "brown chocolate":
+                self.chocolatestock.tableDeleteOldestShot("brown")
+        elif stockType == "black chocolate":
+                self.chocolatestock.tableDeleteOldestShot("black")
+        elif stockType == "honey":
+                self.honeystock.tableDeleteOldest()
+        elif stockType == "marshmallow":
+                self.marshmallowstock.tableDeleteOldest()
+        elif stockType == "chilipepper":
+                self.chilipepperstock.tableDeleteOldest()
+
     def stockOrder(self, stockType, amount):
         if stockType == "white chocolate":
             while amount != 0:
