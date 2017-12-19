@@ -11,7 +11,7 @@ class RBTTable:
         return self.rbt.isEmtpy()
 
     def getLength(self):
-        return None # not implemented
+        return self.rbt.getLength()
 
     def tableInsert(self, newitem):
         return self.rbt.insertItem(newitem)
@@ -20,4 +20,4 @@ class RBTTable:
         return self.rbt.deleteItem(timestamp)
 
     def traverseTable(self):
-        return None # not implemented
+        return self.rbt.inorderTraverse()
