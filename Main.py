@@ -39,6 +39,15 @@ def findUser(email):
 def makeChoco(arguments):
     return None
 
+#Function to delete worker
+#param id: ID of the worker to delete
+def delWorker(id):
+    for worker in workers:
+        if worker.id == id:
+            del worker
+            return True
+    return False
+
 def init_command(command):
     if command[0] == "shot":
         if len(command) == 6:
@@ -104,3 +113,5 @@ def readfile(filename):  # returns array of arrays with input
 
 
 readfile('system.txt')
+print (delWorker(1))
+print (delWorker(5))
