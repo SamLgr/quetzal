@@ -2,24 +2,24 @@ from CircularLinkedList import CircularLinkedList
 from Honey import Honey
 
 class StockTable:
-    def __init__(self):
+    def __init__(self): #Constructor
         self.table = CircularLinkedList()
 
-    def __del__(self):
+    def __del__(self):  #Destructor
         self.table = None
 
-    def isEmpty(self):
+    def isEmpty(self):  #Retrieves if table is empty
         return self.table.isEmpty()
 
-    def getLength(self):
+    def getLength(self):    #Retrieves length of table
         return self.table.getLength()
 
-    def tableInsert(self, newitem):
+    def tableInsert(self, newitem): #Inserts given item in table
         self.table.insert(0, newitem)
         self.sortTable()
         return True
 
-    def tableDelete(self, expiredate):  #Deletes ingredient with given expiredate
+    def tableDelete(self, expiredate):  #Deletes ingredient with given expiredate from table
         first = 0
         last = self.getLength() - 1
         found = False
@@ -36,7 +36,7 @@ class StockTable:
                     first = mid + 1
         return found
 
-    def tableRetrieve(self, expiredate): #Retrieves ingredient with given expiredate
+    def tableRetrieve(self, expiredate): #Retrieves ingredient with given expiredate from table
         first = 0
         last = self.getLength() - 1
         found = False
@@ -52,7 +52,7 @@ class StockTable:
                     first = mid + 1
         return None, False
 
-    def traverseTable(self):
+    def traverseTable(self):    #Traverses table on ascending expiredate
         traverseList = []
         for i in range(0, self.getLength()):
             traverseList.append(self.table.retrieve(i)[0])
@@ -75,8 +75,6 @@ class StockTable:
         >>> t.traverseTable()
         >>> t.sortTable()
         >>> t.print()
-
-        :return:
         """
         swap = True
         while swap:
@@ -88,7 +86,7 @@ class StockTable:
                     self.table.insert(i + 1, current)
                     swap = True
 
-    def print(self):
+    def print(self):    #Function for testing purposes: prints traverseTable
         t = self.traverseTable()
         for i in t:
             print(i.getExpiredate())
