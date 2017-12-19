@@ -7,6 +7,7 @@ import csv
 from Stock import Stock
 from StockTable import StockTable
 from ChocolateShot import ChocolateShot
+from ChocolateMilk import ChocolateMilk
 from Honey import Honey
 from Marshmallow import Marshmallow
 from ChiliPepper import ChiliPepper
@@ -29,6 +30,12 @@ workers = []
 users = []
 # init orders
 orders = Queue()
+# init idcounter
+chocolateid = 0
+
+
+def createLogFile(timestamp):
+    pass
 
 def findUser(email):
     for i in users:
@@ -37,7 +44,32 @@ def findUser(email):
     return None
 
 def makeChoco(arguments):
-    return None
+    global chocolateid
+    chocolateid += 1
+    choco = ChocolateMilk(chocolateid)
+    for ingredient in arguments:
+        if ingredient == "melk":
+            choco.addIngredient(ChocolateShot("milk", "unimportant"))
+            ingredients_stock.stockDelete("milk chocolate")
+        elif ingredient == "wit":
+            choco.addIngredient(ChocolateShot("white", "unimportant"))
+            ingredients_stock.stockDelete("white chocolate")
+        elif ingredient == "bruin":
+            choco.addIngredient(ChocolateShot("brown", "unimportant"))
+            ingredients_stock.stockDelete("brown chocolate")
+        elif ingredient == "zwart":
+            choco.addIngredient(ChocolateShot("black", "unimportant"))
+            ingredients_stock.stockDelete("black chocolate")
+        elif ingredient == "chili":
+            choco.addIngredient(ChiliPepper("unimportant"))
+            ingredients_stock.stockDelete("chilipepper")
+        elif ingredient == "marshmallow":
+            choco.addIngredient(Marshmallow("unimportant"))
+            ingredients_stock.stockDelete("marshmallow")
+        elif ingredient == "honing":
+            choco.addIngredient(Honey("unimportant"))
+            ingredients_stock.stockDelete("honey")
+    return chocolateid
 
 #Function to delete worker
 #param id: ID of the worker to delete
@@ -93,7 +125,8 @@ def execute_command(command):
         orders.enqueue(order)
     elif command[1] == "stock":
         init_command(command[2:])
-    pass
+    elif command[1] == "log":
+        createLogFile(command[0])
 
 
 def readfile(filename):  # returns array of arrays with input
