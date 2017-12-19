@@ -4,6 +4,7 @@ class Order:
         self.timestamp = timestamp
         self.chocolateid = chocolateid
         self.collected = collected
+        self.currworker= None
 
     def __del__(self):
         self.userid = None

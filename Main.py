@@ -37,11 +37,39 @@ chocolateid = 0
 def createLogFile(timestamp):
     pass
 
+
 def findUser(email):
     for i in users:
         if i.getMailadress() == email:
             return i.getId()
     return None
+
+
+def availableWorker(workers):
+    for w in workers:  # deze range wil ik graag bij volgende versie veranderen naar werker zoeken met hoogste werkload eerst.
+        if w.occupied == True:
+            continue
+        elif w.occupied == False:
+            return w
+    return False
+
+
+def executeOrder(order):  # 66
+    if availableWorker(workers) != False:
+        currentWorker = availableWorker(workers)
+        availableWorker(workers).setOccupied()
+        initiateChocoId = order.chocoid
+        if order.chocoid.workload > currentWorker.workload and order.currworker == None:
+            order.chocoid.workload -= currentWorker.workload
+            order.currworker = currentWorker
+        elif order.chocoid.workload <= currentWorker.workload and order.currworker == None:
+            order.chocoid.workload = 0
+            orders.dequeue(order)
+            oldOrderTable.OrderInsert(Order(order.userid, order.command[0], initiateChocoId, False))
+            workers[workers.find(currentWorker)].occupied = False
+        elif order.currworker != None:
+            order.chocoid.workload -= currentWorker.workload
+
 
 def makeChoco(arguments):
     global chocolateid
@@ -71,14 +99,16 @@ def makeChoco(arguments):
             ingredients_stock.stockDelete("honey")
     return chocolateid
 
-#Function to delete worker
-#param id: ID of the worker to delete
+
+# Function to delete worker
+# param id: ID of the worker to delete
 def delWorker(id):
     for worker in workers:
         if worker.id == id:
             del worker
             return True
     return False
+
 
 def init_command(command):
     if command[0] == "shot":
@@ -146,5 +176,5 @@ def readfile(filename):  # returns array of arrays with input
 
 
 readfile('system.txt')
-print (delWorker(1))
-print (delWorker(5))
+print(delWorker(1))
+print(delWorker(5))
