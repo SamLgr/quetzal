@@ -1,5 +1,11 @@
+from StockTable import StockTable
+from ChocolateShot import ChocolateShot
+from Honey import Honey
+from Marshmallow import Marshmallow
+from ChiliPepper import ChiliPepper
+
 class Stock:
-    def __init__(self, chocolatestock, honeystock, marshmallowstock, chilipepperstock):
+    def __init__(self, chocolatestock=StockTable(), honeystock=StockTable(), marshmallowstock=StockTable(), chilipepperstock=StockTable()):
         self.chocolatestock = chocolatestock
         self.honeystock = honeystock
         self.marshmallowstock = marshmallowstock
@@ -35,7 +41,32 @@ class Stock:
     def setChilipepperstock(self, chilipepperstock):
         self.chilipepperstock = chilipepperstock
 
-    def stockOrder(self):
-        deliveryTime = 0
-        succes = True
-        return deliveryTime, succes
+    def stockOrder(self, stockType, amount):
+        if stockType == "white chocolate":
+            while amount != 0:
+                chocolate = ChocolateShot("white")
+                self.chocolatestock.tableInsert(chocolate)
+        elif stockType == "milk chocolate":
+            while amount != 0:
+                chocolate = ChocolateShot("milk")
+                self.chocolatestock.tableInsert(chocolate)
+        elif stockType == "brown chocolate":
+            while amount != 0:
+                chocolate = ChocolateShot("brown")
+                self.chocolatestock.tableInsert(chocolate)
+        elif stockType == "black chocolate":
+            while amount != 0:
+                chocolate = ChocolateShot("black")
+                self.chocolatestock.tableInsert(chocolate)
+        elif stockType == "honey":
+            while amount != 0:
+                honey = Honey()
+                self.chocolatestock.tableInsert(honey)
+        elif stockType == "marshmallow":
+            while amount != 0:
+                marshmallow = Marshmallow()
+                self.chocolatestock.tableInsert(marshmallow)
+        elif stockType == "chilipepper":
+            while amount != 0:
+                chilipepper = ChiliPepper()
+                self.chocolatestock.tableInsert(chilipepper)
