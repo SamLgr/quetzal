@@ -13,16 +13,31 @@ from ChiliPepper import ChiliPepper
 from Worker import Worker
 from User import User
 
+from Order import Order
+from Queue import Queue
+
 # init empty stocks for ingredients
 chocolatestock = StockTable()
 honeystock = StockTable()
 marshmallowstock = StockTable()
 chilipepperstock = StockTable()
+# add stocks to stock
+ingredients_stock = Stock(chocolatestock, honeystock, marshmallowstock, chilipepperstock)
 # init workers
 workers = []
 # init users
 users = []
+# init orders
+orders = Queue()
 
+def findUser(email):
+    for i in users:
+        if i.getMailadress() == email:
+            return i.getId()
+    return None
+
+def makeChoco(arguments):
+    return None
 
 def init_command(command):
     if command[0] == "shot":
@@ -62,10 +77,11 @@ def init_command(command):
 
 
 def execute_command(command):
-    # add stocks to stock
-    ingredients_stock = Stock(chocolatestock, honeystock, marshmallowstock, chilipepperstock)
-
-
+    if command[1] == "bestel":
+        userid = findUser(command[2])
+        chocoid = makeChoco(command[3:])
+        order = Order(userid, command[0], chocoid, False)
+        orders.enqueue(order)
     pass
 
 
