@@ -10,6 +10,7 @@ class Worker:
         self.lastname = lastname
         self.workload = workload
         self.occupied = False
+        self.order = None
     
     #Constructor
     def __del__(self):
@@ -18,6 +19,7 @@ class Worker:
         self.lastname = None
         self.workload = None
         self.occupied = None
+        self.order = None
 
     #Returns the id of this worker
     def getId(self):

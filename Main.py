@@ -36,10 +36,15 @@ chocolateid = 0
 loginfo = []
 
 
-def creatLogInfo():
+def jumpTime():
+    # TODO: implement workload
+    createLogInfo()
+
+def createLogInfo():
     loginfo.append([])
     loginfo[len(loginfo) - 1].append(orders)                # Logs current queue
     loginfo[len(loginfo) - 1].append(ingredients_stock)     # Logs current stock
+
 
 def createLogFile(timestamp):
     htmlstr = """
@@ -255,7 +260,7 @@ def readfile(filename):  # returns array of arrays with input
             else:
                 # Backs up relevant info for log file
                 if command[0] != "start" and int(command[0]) > tijdstip:
-                    createLogInfo(tijdstip)
+                    jumpTime()
                     tijdstip = int(command[0])
                 execute_command(command)
 
