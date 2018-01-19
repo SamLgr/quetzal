@@ -92,7 +92,7 @@ class Stock:
             while amount != 0:
                 chilipepper = ChiliPepper(5)
                 self.chilipepperstock.tableInsert(chilipepper)
-                amount-=1
+                amount-=1 
 
     #Function to check if the amount in a specific stock is to low
     #If it is to low, order more
@@ -137,6 +137,32 @@ class Stock:
         length = self.chilipepperstock.getLength()
         if length < 2:
             self.stockOrder("chilipepper", 5)
+
+        #Check for expired products
+        currentDate = 20180119; #Replace with date in system.txt
+        #Chocolate 
+        traverseList = self.chocolatestock.traverseTable()
+        for choco in traverseList:
+            if choco.getExpiredate() < currentDate:
+                self.chocolatestock.tableDelete(choco.getExpiredate())
+
+        #Honey 
+        traverseList = self.honeystock.traverseTable()
+        for honey in traverseList:
+            if honey.getExpiredate() < currentDate:
+                self.honeystock.tableDelete(honey.getExpiredate())
+
+        #Marshmallow
+        traverseList = self.marshmallowstock.traverseTable()
+        for marshmallow in traverseList:
+            if marshmallow.getExpiredate() < currentDate:
+                self.marshmallowstock.tableDelete(marshmallow.getExpiredate())
+
+        #Chilipepper
+        traverseList = self.chilipepperstock.traverseTable()
+        for chilipepper in traverseList:
+            if chilipepper.getExpiredate() < currentDate:
+                self.chilipepperstock.tableDelete(chilipepper.getExpiredate())
 
         return True
             
