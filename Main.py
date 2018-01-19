@@ -34,7 +34,12 @@ orders = Queue()
 chocolateid = 0
 
 
+def creatLogInfo(timestamp):
+    # Backs up relevant info
+    pass
+
 def createLogFile(timestamp):
+    # Creates log file in HTML standard
     pass
 
 def findUser(email):
@@ -114,7 +119,7 @@ def init_command(command):
         if len(command) == 4:
             workerid = len(workers)
             worker = Worker(workerid, command[1], command[2], command[3])
-            users.append(worker)
+            workers.append(worker)
 
 
 def execute_command(command):
@@ -134,6 +139,7 @@ def readfile(filename):  # returns array of arrays with input
         file_input = [rij for rij in csv.reader(FileIn, delimiter=' ')]
 
     init_enabled = True
+    tijdstip = 0
 
     for command in file_input:
         if len(command) != 0 and command[0] != "#":
@@ -142,9 +148,13 @@ def readfile(filename):  # returns array of arrays with input
             if init_enabled:
                 init_command(command)
             else:
+                # Backs up relevant info for log file
+                if command[0] != "start" and int(command[0]) > tijdstip:
+                    creatLogInfo(tijdstip)
+                    tijdstip = int(command[0])
                 execute_command(command)
 
 
 readfile('system.txt')
-print (delWorker(1))
-print (delWorker(5))
+print(delWorker(1))
+print(delWorker(5))
