@@ -72,12 +72,9 @@ def executeOrder(order):  # 66
         elif order.chocoid.workload <= currentWorker.workload and order.currworker is None:
             #Chocolade workload is helemaal weg gedaan door de workload van de werknemer
             order.chocoid.workload = 0
-            #orders.dequeue(order)
-            #oldOrderTable.OrderInsert(Order(order.userid, order.command[0], initiateChocoId, False))
-            #workers[workers.find(currentWorker)].occupied = False
+            #Sla worked op in order
+            order.currworker = currentWorker
 
-            #huidige werknemer is weer vrij
-            currentWorker.occupied = False
         elif order.currworker != None:
             #order.chocoid.workload -= currentWorker.workload
             return False
