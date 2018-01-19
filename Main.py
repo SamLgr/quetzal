@@ -61,17 +61,28 @@ def executeOrder(order):  # 66
     if availableWorker():
         currentWorker = availableWorker()
         currentWorker.setOccupied()
-        initiateChocoId = order.chocoid
+        currentWorker.order = order;
+
+        #Als chocobestelling meer workload in neemt dan werknemer aankan
         if order.chocoid.workload > currentWorker.workload and order.currworker is None:
-            order.chocoid.workload -= currentWorker.workload
+            #Sla worker op in order
             order.currworker = currentWorker
+  
+        #Als chocobestelling minder of evenveel workload in neemt dan werknemer aankan
         elif order.chocoid.workload <= currentWorker.workload and order.currworker is None:
+            #Chocolade workload is helemaal weg gedaan door de workload van de werknemer
             order.chocoid.workload = 0
-            orders.dequeue(order)
-            oldOrderTable.OrderInsert(Order(order.userid, order.command[0], initiateChocoId, False))
-            workers[workers.find(currentWorker)].occupied = False
+            #orders.dequeue(order)
+            #oldOrderTable.OrderInsert(Order(order.userid, order.command[0], initiateChocoId, False))
+            #workers[workers.find(currentWorker)].occupied = False
+
+            #huidige werknemer is weer vrij
+            currentWorker.occupied = False
         elif order.currworker != None:
-            order.chocoid.workload -= currentWorker.workload
+            #order.chocoid.workload -= currentWorker.workload
+            return False
+
+        return True
 
 
 def makeChoco(arguments):
