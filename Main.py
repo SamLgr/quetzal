@@ -59,28 +59,12 @@ def availableWorker():
 
 def executeOrder(order):  # 66
     if availableWorker():
-        currentWorker = availableWorker()
+       currentWorker = availableWorker()
         currentWorker.setOccupied()
-        currentWorker.order = order;
-
-        #Als chocobestelling meer workload in neemt dan werknemer aankan
-        if order.chocoid.workload > currentWorker.workload and order.currworker is None:
-            #Sla worker op in order
-            order.currworker = currentWorker
-  
-        #Als chocobestelling minder of evenveel workload in neemt dan werknemer aankan
-        elif order.chocoid.workload <= currentWorker.workload and order.currworker is None:
-            #Chocolade workload is helemaal weg gedaan door de workload van de werknemer
-            order.chocoid.workload = 0
-            #Sla worked op in order
-            order.currworker = currentWorker
-
-        elif order.currworker != None:
-            #order.chocoid.workload -= currentWorker.workload
-            return False
-
-        return True
-
+        currentWorker.order = order
+        order.currworker = currentWorker
+    return True
+return False
 
 def makeChoco(arguments):
     global chocolateid
