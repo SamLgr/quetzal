@@ -69,7 +69,7 @@ def createLogFile(timestamp):
     					<td>Stack</td>
     	"""
 
-    htmlfile = open('log.html', 'w+')
+    htmlfile = open('log' + timestamp + '.html', 'w+')
     htmlfile.write(htmlstr)
     for user in users:
         htmlfile.write("<td>")
