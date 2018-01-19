@@ -50,24 +50,22 @@ def findUser(email):
     return None
 
 
-def availableWorker(workers):
+def availableWorker():
     for w in workers:  # deze range wil ik graag bij volgende versie veranderen naar werker zoeken met hoogste werkload eerst.
-        if w.occupied == True:
-            continue
-        elif w.occupied == False:
+        if w.occupied == False:
             return w
     return False
 
 
 def executeOrder(order):  # 66
-    if availableWorker(workers) != False:
-        currentWorker = availableWorker(workers)
-        availableWorker(workers).setOccupied()
+    if availableWorker():
+        currentWorker = availableWorker()
+        currentWorker.setOccupied()
         initiateChocoId = order.chocoid
-        if order.chocoid.workload > currentWorker.workload and order.currworker == None:
+        if order.chocoid.workload > currentWorker.workload and order.currworker is None:
             order.chocoid.workload -= currentWorker.workload
             order.currworker = currentWorker
-        elif order.chocoid.workload <= currentWorker.workload and order.currworker == None:
+        elif order.chocoid.workload <= currentWorker.workload and order.currworker is None:
             order.chocoid.workload = 0
             orders.dequeue(order)
             oldOrderTable.OrderInsert(Order(order.userid, order.command[0], initiateChocoId, False))
