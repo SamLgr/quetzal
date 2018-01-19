@@ -40,6 +40,7 @@ def jumpTime():
     # TODO: implement workload
     createLogInfo()
 
+
 def createLogInfo():
     loginfo.append([])
     loginfo[len(loginfo) - 1].append(orders)                # Logs current queue
@@ -143,17 +144,10 @@ def executeOrder(order):  # 66
     if availableWorker():
         currentWorker = availableWorker()
         currentWorker.setOccupied()
-        initiateChocoId = order.chocoid
-        if order.chocoid.workload > currentWorker.workload and order.currworker is None:
-            order.chocoid.workload -= currentWorker.workload
-            order.currworker = currentWorker
-        elif order.chocoid.workload <= currentWorker.workload and order.currworker is None:
-            order.chocoid.workload = 0
-            orders.dequeue(order)
-            oldOrderTable.OrderInsert(Order(order.userid, order.command[0], initiateChocoId, False))
-            workers[workers.find(currentWorker)].occupied = False
-        elif order.currworker != None:
-            order.chocoid.workload -= currentWorker.workload
+        currentWorker.order = order
+        order.currworker = currentWorker
+        return True
+    return False
 
 
 def makeChoco(arguments):
