@@ -34,7 +34,7 @@ orders = Queue()
 chocolateid = 0
 
 
-def creatLogInfo(timestamp):
+def createLogInfo(timestamp):
     # Backs up relevant info
     pass
 
@@ -180,7 +180,7 @@ def readfile(filename):  # returns array of arrays with input
             else:
                 # Backs up relevant info for log file
                 if command[0] != "start" and int(command[0]) > tijdstip:
-                    creatLogInfo(tijdstip)
+                    createLogInfo(tijdstip)
                     tijdstip = int(command[0])
                 execute_command(command)
 
