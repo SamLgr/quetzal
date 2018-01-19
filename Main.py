@@ -32,15 +32,92 @@ users = []
 orders = Queue()
 # init idcounter
 chocolateid = 0
+# init loginfo
+loginfo = []
 
 
-def createLogInfo(timestamp):
-    # Backs up relevant info
-    pass
+def createLogInfo():
+    loginfo.append([])
+    loginfo[len(loginfo) - 1].append(orders)                # Logs current queue
+    loginfo[len(loginfo) - 1].append(ingredients_stock)     # Logs current stock
 
 def createLogFile(timestamp):
-    # Creates log file in HTML standard
-    pass
+    htmlstr = """
+    	<html>
+    		<head>
+    		<style>
+    			table {
+    			    border-collapse: collapse;
+    			}
+
+    			table, td, th {
+    			    border: 1px solid black;
+    			}
+    		</style>
+    	</head>
+    		<body>
+    			<h1>Log</h1>
+    			<table>
+    				<thead>
+    					<td>tijdstip</td>
+    					<td>Stack</td>
+    	"""
+
+    htmlfile = open('log.html', 'w+')
+    htmlfile.write(htmlstr)
+    for user in users:
+        htmlfile.write("<td>")
+        htmlfile.write(user.getName[0] + " " + user.getName[2])
+        htmlfile.write("</td>")
+
+    htmlstr = """
+    			        <td>Nieuwe bestellingen</td>
+				        <td>Wachtende bestellingen</td>
+				        <td>wit</td>
+				        <td>melk</td>
+				        <td>bruin</td>
+				        <td>zwart</td>
+				        <td>honing</td>
+				        <td>marshmallow</td>
+				        <td>chili</td>
+			        </thead>
+			        <tbody>
+    """
+    htmlfile.write(htmlstr)
+    for timestamp in loginfo:
+        htmlfile.write("<tr>")
+        htmlfile.write("<td>")
+        htmlfile.write(loginfo.index(timestamp))
+        htmlfile.write("</td>")
+        #TODO: write stack info (need stack)
+        #TODO: write workload of order being handled for each user
+        #TODO: write new orders (need ordertable)
+        #TODO: write orders not being handled
+        chocstock = loginfo[timestamp][1].getChocolatestock()
+        hstock = loginfo[timestamp][1].getHoneystock()
+        mstock = loginfo[timestamp][1].getMarshmallowstock()
+        chilistock = loginfo[timestamp][1].getChilipepperstock()
+        htmlfile.write("<td>")
+        htmlfile.write(chocstock.getLength())  #TODO: get length for every chocolate type
+        htmlfile.write("</td>")
+        htmlfile.write("<td>")
+        htmlfile.write(hstock.getLength())
+        htmlfile.write("</td>")
+        htmlfile.write("<td>")
+        htmlfile.write(mstock.getLength())
+        htmlfile.write("</td>")
+        htmlfile.write("<td>")
+        htmlfile.write(chilistock.getLength())
+        htmlfile.write("</td>")
+        htmlfile.write("</tr>")
+
+        htmlstr = """
+                    </tbody>
+		            </table>
+	            </body>
+            </html>
+        """
+        htmlfile.write(htmlstr)
 
 
 def findUser(email):
@@ -170,7 +247,7 @@ def readfile(filename):  # returns array of arrays with input
             else:
                 # Backs up relevant info for log file
                 if command[0] != "start" and int(command[0]) > tijdstip:
-                    createLogInfo(tijdstip)
+                    createLogInfo()
                     tijdstip = int(command[0])
                 execute_command(command)
 
