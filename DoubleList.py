@@ -110,3 +110,23 @@ class DoubleList(object):
 
         self.head = sortedList.head
         self.tail = sortedList.tail
+
+    def first(self):
+        """
+        >>> list = DoubleList()
+        >>> list.append("A")
+        >>> list.append("B")
+        >>> list.first().item
+        'A'
+        """
+        return self.head
+
+    def last(self):
+        """
+        >>> list = DoubleList()
+        >>> list.append("A")
+        >>> list.append("B")
+        >>> list.last().item
+        'B'
+        """
+        return self.tail

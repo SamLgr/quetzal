@@ -169,3 +169,41 @@ class CircularLinkedList:
             for i in range(0, index+2):
                 current = current.getNext()
             return current.item, True
+    
+    def append(self, data):
+        """
+        Testing
+        >>> list = CircularLinkedList()
+        >>> list.append("A")
+        True
+       
+        """
+        new_node = Node(data)
+        if self.head is None: # no data present
+            self.head = new_node
+            self.head.setNext(new_node)
+        else: # data present
+            new_node.setNext(self.head.next)
+            self.head.setNext(new_node)
+            self.head.next = new_node
+
+        return True
+ 
+    def getItems(self):
+        """
+        Testing
+        >>> list = CircularLinkedList()
+        >>> list.append("A")
+        True
+        >>> list.append("B")
+        True
+        >>> list.getItems()
+        ['A', 'B']
+        """
+        nodeList = []
+        current_node = self.head.getNext()
+        while current_node is not self.head:
+            nodeList.append(current_node.item)
+            current_node = current_node.next
+           
+        return nodeList[::-1]
