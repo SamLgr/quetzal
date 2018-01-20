@@ -57,8 +57,12 @@ class Queue(object):
         ['A', 'B', 'C', 'D']
         """
 
+
         buffer = []
         current = self.frontPtr
+
+        if current == None: return []
+
         if current != None:
             buffer.append(current.item)
         while (current.getNext() != None):
