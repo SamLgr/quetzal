@@ -3,6 +3,7 @@
 #
 
 import csv
+from copy import deepcopy
 
 from Stock import Stock
 from StockTable import StockTable
@@ -55,8 +56,8 @@ def jumpTime():
 
 def createLogInfo():
     loginfo.append([])
-    currentorders = orders
-    currentingredients = ingredients_stock
+    currentorders = deepcopy(orders)
+    currentingredients = deepcopy(ingredients_stock)
     loginfo[len(loginfo) - 1].append(currentorders)  # Logs current queue
     loginfo[len(loginfo) - 1].append(currentingredients)  # Logs current stock
 
@@ -107,16 +108,20 @@ def createLogFile(timestamp):
     for timestamp in range(0, len(loginfo)):
         htmlfile.write("<tr>")
         htmlfile.write("<td>")
-        htmlfile.write("#TODO") #TODO: write stack info (need stack)
+        htmlfile.write(str(timestamp))
         htmlfile.write("</td>")
         htmlfile.write("<td>")
-        htmlfile.write("#TODO") #TODO: write workload of order being handled for each user
+        htmlfile.write(str("#TODO"))    #TODO: write stack info (need stack)
+        htmlfile.write("</td>")
+        for user in users:
+            htmlfile.write("<td>")
+            htmlfile.write(str("#TODO"))    #TODO: write workload of order being handled for each user
+            htmlfile.write("</td>")
+        htmlfile.write("<td>")
+        htmlfile.write(str("#TODO"))    #TODO: write new orders (need ordertable)
         htmlfile.write("</td>")
         htmlfile.write("<td>")
-        htmlfile.write("#TODO") #TODO: write new orders (need ordertable)
-        htmlfile.write("</td>")
-        htmlfile.write("<td>")
-        htmlfile.write("#TODO") #TODO: write orders not being handled
+        htmlfile.write(str("#TODO"))    #TODO: write orders not being handled
         htmlfile.write("</td>")
         chocstock = loginfo[timestamp][1].getChocolatestock()
         hstock = loginfo[timestamp][1].getHoneystock()
