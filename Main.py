@@ -170,8 +170,22 @@ def findUser(email):
     return None
 
 
+#Used in:
+# - avaiableWorker()
+def selection_sort(l):
+    for i in range(0, len(l) -1):
+        indexOfSmallest = i
+        for j in range(i + 1, len(l)):
+            if l[j].getWorkload() > l[indexOfSmallest].getWorkload():
+                indexOfSmallest = j
+        if indexOfSmallest != i:
+            l[i], l[indexOfSmallest] = l[indexOfSmallest], l[i]
+    
+    return l
+
 def availableWorker():
-    for w in workers:  # deze range wil ik graag bij volgende versie veranderen naar werker zoeken met hoogste werkload eerst.
+    sortedWorkers = selection_sort(workers) 
+    for w in sortedWorkers:
         if w.occupied == False:
             return w
     return False
