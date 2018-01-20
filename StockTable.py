@@ -14,6 +14,14 @@ class StockTable:
     def getLength(self):    #Retrieves length of table
         return self.list.getLength()
 
+    def getShotLength(self, type):
+        count = 0
+        for i in range(0, self.getLength()):
+            if self.list.retrieve(i)[0].getType() == type:
+                count += 1
+        return count
+
+
     def tableInsert(self, newitem): #Inserts given item in table
         self.list.insert(0, newitem)
         self.sortTable()
