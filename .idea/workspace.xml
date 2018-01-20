@@ -25,8 +25,13 @@
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="483">
+              <caret line="59" column="52" lean-forward="true" selection-start-line="59" selection-start-column="52" selection-end-line="59" selection-end-column="52" />
+=======
             <state relative-caret-position="1998">
               <caret line="264" column="38" lean-forward="true" selection-start-line="264" selection-start-column="38" selection-end-line="264" selection-end-column="38" />
+>>>>>>> 139f97432371c1ee7f982b8ddfcf5845637d5dfb
               <folding>
                 <element signature="e#46#56#0" expanded="true" />
               </folding>
@@ -199,6 +204,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+      <pane id="Scratches" />
+=======
+>>>>>>> 139f97432371c1ee7f982b8ddfcf5845637d5dfb
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -211,7 +220,10 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+<<<<<<< HEAD
+=======
       <pane id="Scratches" />
+>>>>>>> 139f97432371c1ee7f982b8ddfcf5845637d5dfb
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1024,6 +1036,16 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/system.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="33" column="5" lean-forward="false" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 139f97432371c1ee7f982b8ddfcf5845637d5dfb
     <entry file="file://$PROJECT_DIR$/StockTable.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
@@ -1056,7 +1078,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1134,8 +1155,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="483">
+          <caret line="59" column="52" lean-forward="true" selection-start-line="59" selection-start-column="52" selection-end-line="59" selection-end-column="52" />
+=======
         <state relative-caret-position="1998">
           <caret line="264" column="38" lean-forward="true" selection-start-line="264" selection-start-column="38" selection-end-line="264" selection-end-column="38" />
+>>>>>>> 139f97432371c1ee7f982b8ddfcf5845637d5dfb
           <folding>
             <element signature="e#46#56#0" expanded="true" />
           </folding>

@@ -58,8 +58,10 @@ def createLogInfo():
     loginfo.append([])
     currentorders = deepcopy(orders)
     currentingredients = deepcopy(ingredients_stock)
+    currenthandledorders = deepcopy(current_orders)
     loginfo[len(loginfo) - 1].append(currentorders)  # Logs current queue
     loginfo[len(loginfo) - 1].append(currentingredients)  # Logs current stock
+    loginfo[len(loginfo) - 1].append(currenthandledorders)  # Logs current orders that are being worked on
 
 
 def createLogFile(timestamp):
@@ -115,7 +117,9 @@ def createLogFile(timestamp):
         htmlfile.write("</td>")
         for user in users:
             htmlfile.write("<td>")
-            htmlfile.write(str("#TODO"))    #TODO: write workload of order being handled for each user
+            for order in loginfo[timestamp][2]:
+                if order.getUserid() == user.getId():
+                    htmlfile.write(str(chocolates.retrieve(order.getChocolateid()).returnWorkload()))
             htmlfile.write("</td>")
         htmlfile.write("<td>")
         htmlfile.write(str("#TODO"))    #TODO: write new orders (need ordertable)
