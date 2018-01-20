@@ -29,7 +29,15 @@ class DoubleList(object):
             current_node = current_node.next
         return count
 
-    def retrieve(self, value):
+    def retrieve(self, index):
+        if index < 0 or index >= self.getLength():
+            return None
+        node = self.head
+        for _ in range(index):
+            node = node.next
+        return node
+
+    def retrieveByValue(self, value):
         current_node = self.head
         while current_node is not None:
             if current_node.has_value(value):
@@ -69,8 +77,30 @@ class DoubleList(object):
     def isEmpty(self):
         return not self.head
 
-    def delete(self, value):
-        deleted_node = self.retrieve(value)
+    def delete(self, index):
+        deleted_node = self.retrieve(index)
+        if deleted_node is None:
+            return False
+        if deleted_node.prev is None and deleted_node.next is None: # only one node present
+            self.head = None
+            self.tail = None
+        elif deleted_node.prev is None: # node is first, but there are following nodes
+            next_node = deleted_node.next
+            self.head = next_node
+            next_node.prev = None
+        elif deleted_node.next is None: # node is last, but there are predecessors
+            prev_node = deleted_node.prev
+            self.tail = prev_node
+            prev_node.next = None
+        else: # node is element in middle of list
+            next_node = deleted_node.next
+            prev_node = deleted_node.prev
+            prev_node.next = next_node
+            next_node.prev = prev_node
+        return True
+
+    def deleteByValue(self, value):
+        deleted_node = self.retrieveByValue(value)
         if deleted_node is None:
             return False
         if deleted_node.prev is None and deleted_node.next is None: # only one node present
