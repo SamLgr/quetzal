@@ -88,13 +88,11 @@ class Queue(object):
         """
         buffer = []
         current = self.frontPtr
-        if current is None:
-            return buffer
-
-        buffer.append(current.item)
-        while current.getNext():
-            current = current.getNext()
+        if current:
             buffer.append(current.item)
+            while current.getNext():
+                current = current.getNext()
+                buffer.append(current.item)
         return buffer
 
     def getLength(self):
