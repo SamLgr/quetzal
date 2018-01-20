@@ -54,14 +54,22 @@ def jumpTime():
     createLogInfo()
 
 
-def createLogInfo():
-    loginfo.append([])
-    currentorders = deepcopy(orders)
-    currentingredients = deepcopy(ingredients_stock)
-    currenthandledorders = deepcopy(current_orders)
-    loginfo[len(loginfo) - 1].append(currentorders)  # Logs current queue
-    loginfo[len(loginfo) - 1].append(currentingredients)  # Logs current stock
-    loginfo[len(loginfo) - 1].append(currenthandledorders)  # Logs current orders that are being worked on
+def createLogInfo(timestamp):
+    if (timestamp >= 0 and timestamp < len(loginfo)):
+        currentorders = deepcopy(orders)
+        currentingredients = deepcopy(ingredients_stock)
+        currenthandledorders = deepcopy(current_orders)
+        loginfo[timestamp][0] = currentorders  # Logs current queue
+        loginfo[timestamp][1] = currentingredients  # Logs current stock
+        loginfo[timestamp][2] = currenthandledorders  # Logs current orders that are being worked on
+    else:
+        loginfo.append([])
+        currentorders = deepcopy(orders)
+        currentingredients = deepcopy(ingredients_stock)
+        currenthandledorders = deepcopy(current_orders)
+        loginfo[len(loginfo) - 1].append(currentorders)  # Logs current queue
+        loginfo[len(loginfo) - 1].append(currentingredients)  # Logs current stock
+        loginfo[len(loginfo) - 1].append(currenthandledorders)  # Logs current orders that are being worked on
 
 
 def createLogFile(timestamp):
