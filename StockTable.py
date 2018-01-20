@@ -21,7 +21,6 @@ class StockTable:
                 count += 1
         return count
 
-
     def tableInsert(self, newitem): #Inserts given item in table
         self.list.insert(0, newitem)
         self.sortTable()
@@ -74,10 +73,7 @@ class StockTable:
         return None, False
 
     def traverseTable(self):    #Traverses table on ascending expiredate
-        traverseList = []
-        for i in range(0, self.getLength()):
-            traverseList.append(self.list.retrieve(i)[0])
-        return traverseList
+        return self.list.getItems()
 
     def sortTable(self):    #Sort table on ascending expiredate
         """
