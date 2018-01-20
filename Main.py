@@ -104,10 +104,10 @@ def createLogFile(timestamp):
 			        <tbody>
     """
     htmlfile.write(htmlstr)
-    for timestamp in loginfo:
+    for timestamp in range(0, len(loginfo)):
         htmlfile.write("<tr>")
         htmlfile.write("<td>")
-        htmlfile.write(loginfo.index(timestamp))
+        htmlfile.write(str(timestamp))
         htmlfile.write("</td>")
         #TODO: write stack info (need stack)
         #TODO: write workload of order being handled for each user
@@ -118,16 +118,16 @@ def createLogFile(timestamp):
         mstock = loginfo[timestamp][1].getMarshmallowstock()
         chilistock = loginfo[timestamp][1].getChilipepperstock()
         htmlfile.write("<td>")
-        htmlfile.write(chocstock.getShotLength("white"))
+        htmlfile.write(str(chocstock.getShotLength("white")))
         htmlfile.write("</td>")
         htmlfile.write("<td>")
-        htmlfile.write(chocstock.getShotLength("milk"))
+        htmlfile.write(str(chocstock.getShotLength("milk")))
         htmlfile.write("</td>")
         htmlfile.write("<td>")
-        htmlfile.write(chocstock.getShotLength("brown"))
+        htmlfile.write(str(chocstock.getShotLength("brown")))
         htmlfile.write("</td>")
         htmlfile.write("<td>")
-        htmlfile.write(chocstock.getShotLength("black"))
+        htmlfile.write(str(chocstock.getShotLength("black")))
         htmlfile.write("</td>")
         htmlfile.write("<td>")
         htmlfile.write(hstock.getLength())
