@@ -175,6 +175,20 @@ def availableWorker():
 
 def executeOrder(order):  # 66
     current_orders.append(order)
+    choco = chocolates.retrieve(order.chocolateid)
+    for i in range(choco.ingredients.getLength()):
+        ingredient = choco.ingredients.retrieve(i)[0]
+        if type(ingredient) is ChocolateShot:
+            chocolatetype = ingredient.type + " chocolate"
+            ingredients_stock.stockDelete(chocolatetype)
+        elif type(ingredient) is Honey:
+            ingredients_stock.stockDelete("honey")
+        elif type(ingredient) is ChiliPepper:
+            ingredients_stock.stockDelete("chilipepper")
+        elif type(ingredient) is Marshmallow:
+            ingredients_stock.stockDelete("marshmallow")
+        else:
+            print(type(ingredient))
     currentWorker = availableWorker()
     currentWorker.setOccupied(True)
     currentWorker.order = order
@@ -189,25 +203,25 @@ def makeChoco(arguments):
     for ingredient in arguments:
         if ingredient == "milk":
             choco.addIngredient(ChocolateShot("milk", 10**9))
-            ingredients_stock.stockDelete("milk chocolate")
+            # ingredients_stock.stockDelete("milk chocolate")
         elif ingredient == "white":
             choco.addIngredient(ChocolateShot("white", 10**9))
-            ingredients_stock.stockDelete("white chocolate")
+            # ingredients_stock.stockDelete("white chocolate")
         elif ingredient == "brown":
             choco.addIngredient(ChocolateShot("brown", 10**9))
-            ingredients_stock.stockDelete("brown chocolate")
+            # ingredients_stock.stockDelete("brown chocolate")
         elif ingredient == "black":
             choco.addIngredient(ChocolateShot("black", 10**9))
-            ingredients_stock.stockDelete("black chocolate")
+            # ingredients_stock.stockDelete("black chocolate")
         elif ingredient == "chili":
             choco.addIngredient(ChiliPepper(10**9))
-            ingredients_stock.stockDelete("chilipepper")
+            # ingredients_stock.stockDelete("chilipepper")
         elif ingredient == "marshmallow":
             choco.addIngredient(Marshmallow(10**9))
-            ingredients_stock.stockDelete("marshmallow")
+            # ingredients_stock.stockDelete("marshmallow")
         elif ingredient == "honing":
             choco.addIngredient(Honey(10**9))
-            ingredients_stock.stockDelete("honey")
+            # ingredients_stock.stockDelete("honey")
     chocolates.insert(MapObject(chocolateid, choco))
     return chocolateid
 
