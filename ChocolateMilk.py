@@ -19,7 +19,7 @@ class ChocolateMilk:
         return self.id
 
     def addIngredient(self, ingredient):
-        self.ingredients.insert(0)
+        self.ingredients.insert(0, ingredient)
         self.price += ingredient.getPrice()
         self.workload += 1
 
