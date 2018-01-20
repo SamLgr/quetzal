@@ -38,7 +38,7 @@ chocolateid = 0
 # init loginfo
 loginfo = []
 # chocolates
-chocolates = Hashmap()
+chocolates = Hashmap(1, 200)
 
 
 def jumpTime():
@@ -49,7 +49,7 @@ def jumpTime():
             order.currworker.setOccupied(False)
             current_orders.remove(order)
     while availableWorker() and not orders.isEmpty():
-        executeOrder(orders.dequeue())
+        executeOrder(orders.dequeue()[0])
     createLogInfo()
 
 
@@ -168,16 +168,16 @@ def makeChoco(arguments):
     chocolateid += 1
     choco = ChocolateMilk(chocolateid)
     for ingredient in arguments:
-        if ingredient == "melk":
+        if ingredient == "milk":
             choco.addIngredient(ChocolateShot("milk", "unimportant"))
             ingredients_stock.stockDelete("milk chocolate")
-        elif ingredient == "wit":
+        elif ingredient == "white":
             choco.addIngredient(ChocolateShot("white", "unimportant"))
             ingredients_stock.stockDelete("white chocolate")
-        elif ingredient == "bruin":
+        elif ingredient == "brown":
             choco.addIngredient(ChocolateShot("brown", "unimportant"))
             ingredients_stock.stockDelete("brown chocolate")
-        elif ingredient == "zwart":
+        elif ingredient == "black":
             choco.addIngredient(ChocolateShot("black", "unimportant"))
             ingredients_stock.stockDelete("black chocolate")
         elif ingredient == "chili":

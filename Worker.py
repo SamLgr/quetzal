@@ -5,10 +5,10 @@ class Worker:
     #param lastname: The lastname of this worker
     #param workload: The workload of this worker
     def __init__(self, id, firstname, lastname, workload):
-        self.id = id
+        self.id = int(id)
         self.firstname = firstname
         self.lastname = lastname
-        self.workload = workload
+        self.workload = int(workload)
         self.occupied = False
         self.order = None
     
