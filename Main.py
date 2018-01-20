@@ -15,7 +15,8 @@ from Worker import Worker
 from User import User
 
 from Order import Order
-from Queue import Queue
+from Queue import Queue as selfQueue
+from Hashmap import Hashmap, MapObject
 
 # init empty stocks for ingredients
 chocolatestock = StockTable()
@@ -29,15 +30,26 @@ workers = []
 # init users
 users = []
 # init orders
-orders = Queue()
+orders = selfQueue()
+# list for orders that are currently being worked on
+current_orders = []
 # init idcounter
 chocolateid = 0
-#init loginfo
+# init loginfo
 loginfo = []
+# chocolates
+chocolates = Hashmap()
 
 
 def jumpTime():
-    # TODO: implement workload
+    for order in current_orders:
+        choco = chocolates.retrieve(order.chocolateid)
+        if choco.workload <= order.currworker.workload:
+            choco.workload = 0
+            order.currworker.setOccupied(False)
+            current_orders.remove(order)
+    while availableWorker() and not orders.isEmpty():
+        executeOrder(orders.dequeue())
     createLogInfo()
 
 
@@ -141,13 +153,12 @@ def availableWorker():
 
 
 def executeOrder(order):  # 66
-    if availableWorker():
-        currentWorker = availableWorker()
-        currentWorker.setOccupied()
-        currentWorker.order = order
-        order.currworker = currentWorker
-        return True
-    return False
+    current_orders.append(order)
+    currentWorker = availableWorker()
+    currentWorker.setOccupied(True)
+    currentWorker.order = order
+    order.currworker = currentWorker
+
 
 
 def makeChoco(arguments):
@@ -176,14 +187,15 @@ def makeChoco(arguments):
         elif ingredient == "honing":
             choco.addIngredient(Honey("unimportant"))
             ingredients_stock.stockDelete("honey")
+    chocolates.insert(MapObject(chocolateid, choco))
     return chocolateid
 
 
 # Function to delete worker
 # param id: ID of the worker to delete
-def delWorker(id):
+def delWorker(workerid):
     for worker in workers:
-        if worker.id == id:
+        if worker.id == workerid:
             del worker
             return True
     return False
@@ -249,9 +261,10 @@ def readfile(filename):  # returns array of arrays with input
         if len(command) != 0 and command[0] != "#":
             if command[0] == "start":
                 init_enabled = False
-            if init_enabled:
+            elif init_enabled:
                 init_command(command)
             else:
+                print(command)
                 # Backs up relevant info for log file
                 if command[0] != "start" and int(command[0]) > tijdstip:
                     jumpTime()
