@@ -62,6 +62,6 @@ class Queue(object):
         buffer.append(current.item)
         while (current.getNext() != None):
             current = current.getNext()
-            buffer.append(current.item)
+            buffer.append(current)
 
         return buffer
