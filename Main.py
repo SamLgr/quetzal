@@ -107,12 +107,17 @@ def createLogFile(timestamp):
     for timestamp in range(0, len(loginfo)):
         htmlfile.write("<tr>")
         htmlfile.write("<td>")
-        htmlfile.write(str(timestamp))
+        htmlfile.write("#TODO") #TODO: write stack info (need stack)
         htmlfile.write("</td>")
-        #TODO: write stack info (need stack)
-        #TODO: write workload of order being handled for each user
-        #TODO: write new orders (need ordertable)
-        #TODO: write orders not being handled
+        htmlfile.write("<td>")
+        htmlfile.write("#TODO") #TODO: write workload of order being handled for each user
+        htmlfile.write("</td>")
+        htmlfile.write("<td>")
+        htmlfile.write("#TODO") #TODO: write new orders (need ordertable)
+        htmlfile.write("</td>")
+        htmlfile.write("<td>")
+        htmlfile.write("#TODO") #TODO: write orders not being handled
+        htmlfile.write("</td>")
         chocstock = loginfo[timestamp][1].getChocolatestock()
         hstock = loginfo[timestamp][1].getHoneystock()
         mstock = loginfo[timestamp][1].getMarshmallowstock()
