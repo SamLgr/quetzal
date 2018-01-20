@@ -3,7 +3,7 @@ class ChiliPepper:
     #expiredate: Date the chilipepers will expire
     def __init__(self, expiredate):
         self.price = 0.25
-        self.expiredate = expiredate
+        self.expiredate = int(expiredate)
 
     #Destructor
     def __del__(self):

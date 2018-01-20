@@ -29,7 +29,7 @@ ingredients_stock = Stock(chocolatestock, honeystock, marshmallowstock, chilipep
 workers = []
 # init users
 users = []
-# init orders
+# init orders (renamed queue to avoid overriding from internal defined queue)
 orders = ourQueue()
 # list for orders that are currently being worked on
 current_orders = []
@@ -178,25 +178,25 @@ def makeChoco(arguments):
     choco = ChocolateMilk(chocolateid)
     for ingredient in arguments:
         if ingredient == "milk":
-            choco.addIngredient(ChocolateShot("milk", "unimportant"))
+            choco.addIngredient(ChocolateShot("milk", 10**9))
             ingredients_stock.stockDelete("milk chocolate")
         elif ingredient == "white":
-            choco.addIngredient(ChocolateShot("white", "unimportant"))
+            choco.addIngredient(ChocolateShot("white", 10**9))
             ingredients_stock.stockDelete("white chocolate")
         elif ingredient == "brown":
-            choco.addIngredient(ChocolateShot("brown", "unimportant"))
+            choco.addIngredient(ChocolateShot("brown", 10**9))
             ingredients_stock.stockDelete("brown chocolate")
         elif ingredient == "black":
-            choco.addIngredient(ChocolateShot("black", "unimportant"))
+            choco.addIngredient(ChocolateShot("black", 10**9))
             ingredients_stock.stockDelete("black chocolate")
         elif ingredient == "chili":
-            choco.addIngredient(ChiliPepper("unimportant"))
+            choco.addIngredient(ChiliPepper(10**9))
             ingredients_stock.stockDelete("chilipepper")
         elif ingredient == "marshmallow":
-            choco.addIngredient(Marshmallow("unimportant"))
+            choco.addIngredient(Marshmallow(10**9))
             ingredients_stock.stockDelete("marshmallow")
         elif ingredient == "honing":
-            choco.addIngredient(Honey("unimportant"))
+            choco.addIngredient(Honey(10**9))
             ingredients_stock.stockDelete("honey")
     chocolates.insert(MapObject(chocolateid, choco))
     return chocolateid

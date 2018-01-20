@@ -3,7 +3,7 @@ class Honey:
     #param expiredate: Expiration date of the honey
     def __init__(self, expiredate):
         self.price = 0.5
-        self.expiredate = expiredate
+        self.expiredate = int(expiredate)
 
     #Destructor
     def __del__(self):
