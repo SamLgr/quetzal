@@ -3,23 +3,26 @@ Testing Hashmap + documentation
 
 #Calling constructor with type 3 (Separate chaining)
 #and max size 50
->>> hmap = Hashmap(3, 50)
+>>> hmap = Hashmap(1, 50)
 
 #We want to add the string "A" in the Hashmap, so use
 #an MapObject to do so
 >>> toAdd = MapObject(1, "A")
 >>> hmap.insert(toAdd)
 True
->>> toAdd = MapObject(1, "B")
+>>> toAdd = MapObject(2, "B")
 >>> hmap.insert(toAdd)
 True
->>> toAdd = MapObject(2, "C")
+>>> toAdd = MapObject(2, "X")
 >>> hmap.insert(toAdd)
 True
->>> toAdd = MapObject(2, "D")
+>>> toAdd = MapObject(4, "C")
 >>> hmap.insert(toAdd)
 True
->>> toAdd = MapObject(2, "E")
+>>> toAdd = MapObject(5, "D")
+>>> hmap.insert(toAdd)
+True
+>>> toAdd = MapObject(5, "E")
 >>> hmap.insert(toAdd)
 True
 
@@ -33,13 +36,27 @@ True
 
 #Erase an element
 #Making MapObject with data we want to delete
->>> toDelete = MapObject(2, "E")
->>> hmap.erase(toDelete)
+#>>> toDelete = MapObject(2, "B")
+#>>> hmap.erase(toDelete)
 True
 
 #Now last element should be 'D'
->>> hmap.end()
-'D'
+#>>> hmap.end()
+#'D'
+
+#Find by hash function:
+#Hashing a key
+>>> key = 2
+>>> hash = hmap.hash(key)
+>>> x = hmap.findByHash(hash)
+>>> print(x)
+B
+
+>>> key = 4
+>>> hmap.retrieve(key)
+'C'
+
+>>> hmap.print()
 """
 
 from DoubleList import DoubleList as List
@@ -157,17 +174,22 @@ class Hashmap:
         del self.v[self.hash(key)]
         return True
 
-    def findByHash(self, h):        
+    def findByHash(self, h):
+        if self.myType == 3:
+            l = []
+
+            for i in self.v[h].getItems():
+                l.append(i.getItem())
+            return l
         return self.v[h]
 
     def hash(self, key):
-        return (key - 1)
+        return (key)
 
-    def findByValue(self, value):
-        if self.myType == 3:
-            return self.v[self.hash(value)].findByValue(value)
+    def retrieve(self, key):
+        hash = self.hash(key)
+        return self.findByHash(hash)
 
-        return self.v[self.hash(value)]
 
     def print(self):
         if self.myType == 3:
@@ -175,16 +197,16 @@ class Hashmap:
             for i in self.v:
                 if i == None:
                     sum += 1
-                    print(str(sum) + ". \t" + str(None))
+                    print(str(sum) + ".\t" + str(None))
                 else:
                     l = i.getItems()
                     sum += 1
-                    print(str(sum) + ". \t")
+                    print(str(sum) + ".\t")
                     for j in l:
-                        print("   -> \t" + str(j.item))
+                        print("\t-> " + str(j.item))
         else:
             sum = 0
             for i in self.v:
                 sum+=1
-                print(str(sum) + ". \t" + str(i))
+                print(str(sum) + ".\t" + str(i))
 
