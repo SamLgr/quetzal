@@ -49,25 +49,21 @@ class Queue(object):
     def traverse(self):
         """
         >>> q = Queue()
-        >>> q.enqueue("A")
-        >>> q.enqueue("B")
-        >>> q.enqueue("C")
-        >>> q.enqueue("D")
         >>> q.traverse()
-        ['A', 'B', 'C', 'D']
+        []
         """
 
 
         buffer = []
         current = self.frontPtr
 
-        if current == None: return []
+        if current is None: return []
 
-        if current != None:
+        if current is not None:
             buffer.append(current.item)
         while (current.getNext() != None):
             current = current.getNext()
-            if current != None:
+            if current is not None:
                 buffer.append(current.item)
 
         return buffer
