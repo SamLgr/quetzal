@@ -36,6 +36,8 @@ orders = ourQueue()
 current_orders = []
 # init idcounter
 chocolateid = 0
+# init tijdstip
+tijdstip = 0
 # init loginfo
 loginfo = []
 # chocolates
@@ -49,12 +51,14 @@ def jumpTime():
             choco.workload = 0
             order.currworker.setOccupied(False)
             current_orders.remove(order)
+        else:
+            choco.workload -= order.currworker.workload
     while availableWorker() and not orders.isEmpty():
         executeOrder(orders.dequeue()[0])
     createLogInfo()
 
 
-def createLogInfo(timestamp):
+def createLogInfo(timestamp=-1):
     if (timestamp >= 0 and timestamp < len(loginfo)):
         currentorders = deepcopy(orders)
         currentingredients = deepcopy(ingredients_stock)
@@ -300,6 +304,7 @@ def init_command(command):
 
 
 def execute_command(command):
+    global tijdstip
     if command[1] == "bestel":
         userid = findUser(command[2])
         chocoid = makeChoco(command[3:])
@@ -308,6 +313,8 @@ def execute_command(command):
     elif command[1] == "stock":
         init_command(command[2:])
     elif command[1] == "log":
+        tijdstip += 1
+        jumpTime()
         createLogFile(command[0])
 
 
@@ -316,7 +323,7 @@ def readfile(filename):  # returns array of arrays with input
         file_input = [rij for rij in csv.reader(FileIn, delimiter=' ')]
 
     init_enabled = True
-    tijdstip = 0
+    global tijdstip
 
     for command in file_input:
         if len(command) != 0 and command[0] != "#":
