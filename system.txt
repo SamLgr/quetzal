@@ -22,7 +22,7 @@ start
 1 bestel tom.hofkens@uantwerpen.be milk chili marshmallow 2018 05 01 11 30
 
 # bestel op tijdstip 2 een chocolademelk gemaakt van een twee zwarte chocolade shots, chilipeper en een marshmallow
-2 bestel john@doe.com zwart chili black marshmallow 2018 05 01 12 00
+2 bestel john@doe.com black chili black marshmallow 2018 05 01 12 00
 
 # bestel eveneens op tijdstip 2 een chocolademelk gemaakt van een melkchocolade shot en een marshmallow
 2 bestel tom.hofkens@uantwerpen.be milk marshmallow 2018 05 01 12 00
