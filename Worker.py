@@ -1,4 +1,29 @@
+
+"""
+>>> worker = Worker(0, "", "", 4)
+>>> worker.setId(1)
+>>> worker.getId()
+1
+>>> worker.setFirstname("Foo")
+>>> worker.setLastname("Bar")
+>>> worker.getName()
+('Foo', 'Bar')
+>>> worker.setWorkload(8)
+>>> worker.getWorkload()
+8
+>>> worker.setOccupied(True)
+>>> worker.getOccupied()
+True
+>>> worker.setOrder(2)
+>>> worker.getOrder()
+2
+"""
 class Worker:
+    id = 0
+    firstname = ""
+    lastname = ""
+    workload = 0
+
     #Constructor
     #param id: The id of this worker
     #param firstname: The firstname of this worker
@@ -36,8 +61,38 @@ class Worker:
     #Returns if this worker is occupied
     def getOccupied(self):
         return self.occupied
+   
+    #Returns the order of this worker
+    def getOrder(self):
+        return self.order
+
     
-    #Sets the status of this worker
-    #param status: Status determines if occupied (True/False)
-    def setOccupied(self, status):
-        self.occupied = status
+    #Sets id of worker
+    #:param id: Id to set
+    def setId(self, id):
+        self.id = id
+
+    #Sets firstname of worker
+    #:param firstname: Firstname to set
+    def setFirstname(self, firstname):
+        self.firstname = firstname
+
+    #Sets lastname of worker
+    #:param lastname: Lastname to set
+    def setLastname(self, lastname):
+        self.lastname = lastname
+
+    #Sets workload of worker
+    #:param workload: Workload to set
+    def setWorkload(self, workload):
+        self.workload = workload
+
+    #Sets if worker is occupied
+    #:param occupied: Occupied or not
+    def setOccupied(self, occupied):
+        self.occupied = occupied
+
+    #Sets order worker is working on
+    #:param order: order worker is working on
+    def setOrder(self, order):
+        self.order = order
