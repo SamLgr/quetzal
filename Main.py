@@ -58,8 +58,10 @@ def createLogInfo():
     loginfo.append([])
     currentorders = deepcopy(orders)
     currentingredients = deepcopy(ingredients_stock)
+    currenthandledorders = deepcopy(current_orders)
     loginfo[len(loginfo) - 1].append(currentorders)  # Logs current queue
     loginfo[len(loginfo) - 1].append(currentingredients)  # Logs current stock
+    loginfo[len(loginfo) - 1].append(currenthandledorders)  # Logs current orders that are being worked on
 
 
 def createLogFile(timestamp):
