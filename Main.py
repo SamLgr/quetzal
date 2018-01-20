@@ -104,9 +104,9 @@ def createLogFile(timestamp):
 
     htmlfile = open('log' + timestamp + '.html', 'w+')
     htmlfile.write(htmlstr)
-    for user in users:
+    for worker in workers:
         htmlfile.write("<td>")
-        htmlfile.write(user.getName()[0] + " " + user.getName()[1])
+        htmlfile.write(worker.getName()[0] + " " + worker.getName()[1])
         htmlfile.write("</td>")
 
     htmlstr = """
@@ -131,10 +131,10 @@ def createLogFile(timestamp):
         htmlfile.write("<td>")
         htmlfile.write(str("#TODO"))    #TODO: write stack info (need stack)
         htmlfile.write("</td>")
-        for user in users:
+        for worker in workers:
             htmlfile.write("<td>")
             for order in loginfo[timestamp][2]:
-                if order.getUserid() == user.getId():
+                if order.currworker == worker:
                     htmlfile.write(str(loginfo[timestamp][3].retrieve(order.getChocolateid()).returnWorkload()))
             htmlfile.write("</td>")
         htmlfile.write("<td>")
