@@ -134,7 +134,7 @@ def createLogFile(timestamp):
         for worker in workers:
             htmlfile.write("<td>")
             for order in loginfo[timestamp][2]:
-                if order.currworker == worker:
+                if order.currworker.getId() == worker.getId():
                     htmlfile.write(str(loginfo[timestamp][3].retrieve(order.getChocolateid()).returnWorkload()))
             htmlfile.write("</td>")
         htmlfile.write("<td>")
