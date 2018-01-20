@@ -15,7 +15,7 @@ from Worker import Worker
 from User import User
 
 from Order import Order
-from Queue import Queue
+from Queue import Queue as selfQueue
 from Hashmap import Hashmap, MapObject
 
 # init empty stocks for ingredients
@@ -30,7 +30,7 @@ workers = []
 # init users
 users = []
 # init orders
-orders = Queue()
+orders = selfQueue()
 # list for orders that are currently being worked on
 current_orders = []
 # init idcounter
@@ -46,10 +46,10 @@ def jumpTime():
         choco = chocolates.retrieve(order.chocolateid)
         if choco.workload <= order.currworker.workload:
             choco.workload = 0
-            order.currworker.setOccupied()
+            order.currworker.setOccupied(False)
             current_orders.remove(order)
-    while availableWorker():
-        executeOrder(orders.dequeue()[0])
+    while availableWorker() and not orders.isEmpty():
+        executeOrder(orders.dequeue())
     createLogInfo()
 
 
@@ -155,7 +155,7 @@ def availableWorker():
 def executeOrder(order):  # 66
     current_orders.append(order)
     currentWorker = availableWorker()
-    currentWorker.setOccupied()
+    currentWorker.setOccupied(True)
     currentWorker.order = order
     order.currworker = currentWorker
 
@@ -261,9 +261,10 @@ def readfile(filename):  # returns array of arrays with input
         if len(command) != 0 and command[0] != "#":
             if command[0] == "start":
                 init_enabled = False
-            if init_enabled:
+            elif init_enabled:
                 init_command(command)
             else:
+                print(command)
                 # Backs up relevant info for log file
                 if command[0] != "start" and int(command[0]) > tijdstip:
                     jumpTime()
