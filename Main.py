@@ -55,8 +55,10 @@ def jumpTime():
 
 def createLogInfo():
     loginfo.append([])
-    loginfo[len(loginfo) - 1].append(orders)                # Logs current queue
-    loginfo[len(loginfo) - 1].append(ingredients_stock)     # Logs current stock
+    currentorders = orders
+    currentingredients = ingredients_stock
+    loginfo[len(loginfo) - 1].append(currentorders)  # Logs current queue
+    loginfo[len(loginfo) - 1].append(currentingredients)  # Logs current stock
 
 
 def createLogFile(timestamp):
