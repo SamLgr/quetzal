@@ -87,7 +87,7 @@ def createLogFile(timestamp):
     htmlfile.write(htmlstr)
     for user in users:
         htmlfile.write("<td>")
-        htmlfile.write(user.getName[0] + " " + user.getName[2])
+        htmlfile.write(user.getName()[0] + " " + user.getName()[1])
         htmlfile.write("</td>")
 
     htmlstr = """
@@ -104,10 +104,10 @@ def createLogFile(timestamp):
 			        <tbody>
     """
     htmlfile.write(htmlstr)
-    for timestamp in loginfo:
+    for timestamp in range(0, len(loginfo)):
         htmlfile.write("<tr>")
         htmlfile.write("<td>")
-        htmlfile.write(loginfo.index(timestamp))
+        htmlfile.write(str(timestamp))
         htmlfile.write("</td>")
         #TODO: write stack info (need stack)
         #TODO: write workload of order being handled for each user
@@ -118,7 +118,16 @@ def createLogFile(timestamp):
         mstock = loginfo[timestamp][1].getMarshmallowstock()
         chilistock = loginfo[timestamp][1].getChilipepperstock()
         htmlfile.write("<td>")
-        htmlfile.write(chocstock.getLength())  #TODO: get length for every chocolate type
+        htmlfile.write(str(chocstock.getShotLength("white")))
+        htmlfile.write("</td>")
+        htmlfile.write("<td>")
+        htmlfile.write(str(chocstock.getShotLength("milk")))
+        htmlfile.write("</td>")
+        htmlfile.write("<td>")
+        htmlfile.write(str(chocstock.getShotLength("brown")))
+        htmlfile.write("</td>")
+        htmlfile.write("<td>")
+        htmlfile.write(str(chocstock.getShotLength("black")))
         htmlfile.write("</td>")
         htmlfile.write("<td>")
         htmlfile.write(hstock.getLength())
