@@ -16,6 +16,7 @@ from User import User
 
 from Order import Order
 from Queue import Queue
+from Hashmap import Hashmap, MapObject
 
 # init empty stocks for ingredients
 chocolatestock = StockTable()
@@ -30,14 +31,25 @@ workers = []
 users = []
 # init orders
 orders = Queue()
+# list for orders that are currently being worked on
+current_orders = []
 # init idcounter
 chocolateid = 0
-#init loginfo
+# init loginfo
 loginfo = []
+# chocolates
+chocolates = Hashmap()
 
 
 def jumpTime():
-    # TODO: implement workload
+    for order in current_orders:
+        choco = chocolates.retrieve(order.chocolateid)
+        if choco.workload <= order.currworker.workload:
+            choco.workload = 0
+            order.currworker.setOccupied()
+            current_orders.remove(order)
+    while availableWorker():
+        executeOrder(orders.dequeue()[0])
     createLogInfo()
 
 
@@ -141,13 +153,12 @@ def availableWorker():
 
 
 def executeOrder(order):  # 66
-    if availableWorker():
-        currentWorker = availableWorker()
-        currentWorker.setOccupied()
-        currentWorker.order = order
-        order.currworker = currentWorker
-        return True
-    return False
+    current_orders.append(order)
+    currentWorker = availableWorker()
+    currentWorker.setOccupied()
+    currentWorker.order = order
+    order.currworker = currentWorker
+
 
 
 def makeChoco(arguments):
@@ -176,14 +187,15 @@ def makeChoco(arguments):
         elif ingredient == "honing":
             choco.addIngredient(Honey("unimportant"))
             ingredients_stock.stockDelete("honey")
+    chocolates.insert(MapObject(chocolateid, choco))
     return chocolateid
 
 
 # Function to delete worker
 # param id: ID of the worker to delete
-def delWorker(id):
+def delWorker(workerid):
     for worker in workers:
-        if worker.id == id:
+        if worker.id == workerid:
             del worker
             return True
     return False
