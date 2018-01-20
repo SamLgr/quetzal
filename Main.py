@@ -18,6 +18,7 @@ from User import User
 from Order import Order
 from ourQueue import Queue as ourQueue
 from Hashmap import Hashmap, MapObject
+from Stack import Stack
 
 # init empty stocks for ingredients
 chocolatestock = StockTable()
@@ -28,6 +29,8 @@ chilipepperstock = StockTable()
 ingredients_stock = Stock(chocolatestock, honeystock, marshmallowstock, chilipepperstock)
 # init workers
 workers = []
+#
+workerstack = Stack()
 # init users
 users = []
 # init orders (renamed queue to avoid overriding from internal defined queue)
@@ -201,7 +204,7 @@ def selection_sort(l):
     return l
 
 def availableWorker():
-    sortedWorkers = selection_sort(workers) 
+    sortedWorkers = selection_sort(workers)
     for w in sortedWorkers:
         if w.occupied == False:
             return w
@@ -306,6 +309,7 @@ def init_command(command):
             workerid = len(workers)
             worker = Worker(workerid, command[1], command[2], command[3])
             workers.append(worker)
+            workerstack.push(worker)
 
 
 def execute_command(command):
