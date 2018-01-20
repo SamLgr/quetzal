@@ -59,9 +59,9 @@ class Queue(object):
 
         buffer = []
         current = self.frontPtr
-        buffer.append(current.item)
+        if current != None: buffer.append(current.item)
         while (current.getNext() != None):
             current = current.getNext()
-            buffer.append(current)
+            buffer.append(current.item)
 
         return buffer
