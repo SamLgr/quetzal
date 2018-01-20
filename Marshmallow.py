@@ -3,7 +3,7 @@ class Marshmallow:
     #param expiredate: The expirationdate of the marshmallows
     def __init__(self, expiredate):
         self.price = 0.75
-        self.expiredate = expiredate
+        self.expiredate = int(expiredate)
 
     #Destructor
     def __del__(self):

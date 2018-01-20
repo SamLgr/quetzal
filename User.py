@@ -5,7 +5,7 @@ class User:
     #param lastname: The lastname of this user
     #param mailadress: The mailaddress of this user
     def __init__(self, id, firstname, lastname, mailadress):
-        self.id = id
+        self.id = int(id)
         self.firstname = firstname
         self.lastname = lastname
         self.mailadress = mailadress
