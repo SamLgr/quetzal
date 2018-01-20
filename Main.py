@@ -63,17 +63,21 @@ def createLogInfo(timestamp=-1):
         currentorders = deepcopy(orders)
         currentingredients = deepcopy(ingredients_stock)
         currenthandledorders = deepcopy(current_orders)
+        currentchocolates = deepcopy(chocolates)
         loginfo[timestamp][0] = currentorders  # Logs current queue
         loginfo[timestamp][1] = currentingredients  # Logs current stock
         loginfo[timestamp][2] = currenthandledorders  # Logs current orders that are being worked on
+        loginfo[timestamp][3] = currentchocolates  # Logs current chocolates
     else:
         loginfo.append([])
         currentorders = deepcopy(orders)
         currentingredients = deepcopy(ingredients_stock)
         currenthandledorders = deepcopy(current_orders)
+        currentchocolates = deepcopy(chocolates)
         loginfo[len(loginfo) - 1].append(currentorders)  # Logs current queue
         loginfo[len(loginfo) - 1].append(currentingredients)  # Logs current stock
         loginfo[len(loginfo) - 1].append(currenthandledorders)  # Logs current orders that are being worked on
+        loginfo[len(loginfo) - 1].append(currentchocolates)  # Logs current chocolates
 
 
 def createLogFile(timestamp):
@@ -131,13 +135,13 @@ def createLogFile(timestamp):
             htmlfile.write("<td>")
             for order in loginfo[timestamp][2]:
                 if order.getUserid() == user.getId():
-                    htmlfile.write(str(chocolates.retrieve(order.getChocolateid()).returnWorkload()))
+                    htmlfile.write(str(loginfo[timestamp][3].retrieve(order.getChocolateid()).returnWorkload()))
             htmlfile.write("</td>")
         htmlfile.write("<td>")
         htmlfile.write(str("#TODO"))    #TODO: write new orders (need ordertable)
         htmlfile.write("</td>")
         htmlfile.write("<td>")
-        htmlfile.write(str("#TODO"))    #TODO: write orders not being handled
+        htmlfile.write(str(loginfo[timestamp][0].traverse()))
         htmlfile.write("</td>")
         chocstock = loginfo[timestamp][1].getChocolatestock()
         hstock = loginfo[timestamp][1].getHoneystock()

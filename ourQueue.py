@@ -86,20 +86,15 @@ class Queue(object):
         >>> q.traverse()
         ['A', 'B', 'C']
         """
-
-
         buffer = []
         current = self.frontPtr
+        if current is None:
+            return buffer
 
-        if current is None: return []
-
-        if current is not None:
-            buffer.append(current.item)
-        while (current.getNext() != None):
+        buffer.append(current.item)
+        while current.getNext():
             current = current.getNext()
-            if current is not None:
-                buffer.append(current.item)
-
+            buffer.append(current.item)
         return buffer
 
     def getLength(self):
