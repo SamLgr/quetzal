@@ -149,7 +149,7 @@ class DoubleList(object):
         >>> list.first().item
         'A'
         """
-        return self.head
+        return self.head.item
 
     def last(self):
         """
@@ -159,4 +159,4 @@ class DoubleList(object):
         >>> list.last().item
         'B'
         """
-        return self.tail
+        return self.tail.item

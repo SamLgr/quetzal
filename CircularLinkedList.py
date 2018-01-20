@@ -195,3 +195,33 @@ class CircularLinkedList:
         for i in range(0, self.getLength()):
             nodeList.append(self.retrieve(i)[0])
         return nodeList
+
+    #Returns first element
+    def first(self):
+        """
+        >>> l = CircularLinkedList()
+        >>> l.append("A")
+        True
+        >>> l.append("B")
+        True
+        >>> l.append("C")
+        True
+        >>> l.first()
+        'A'
+        """
+        return self.getItems()[0]
+
+    #Returns last element
+    def last(self):
+        """
+        >>> l = CircularLinkedList()
+        >>> l.append("A")
+        True
+        >>> l.append("B")
+        True
+        >>> l.append("C")
+        True
+        >>> l.last()
+        'C'
+        """
+        return self.getItems()[len(self.getItems()) -1]
