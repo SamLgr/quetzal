@@ -140,13 +140,13 @@ def createLogFile(timestamp):
         htmlfile.write("</td>")
         htmlfile.write("</tr>")
 
-        htmlstr = """
-                    </tbody>
-		            </table>
-	            </body>
-            </html>
-        """
-        htmlfile.write(htmlstr)
+    htmlstr = """
+                </tbody>
+                </table>
+            </body>
+        </html>
+    """
+    htmlfile.write(htmlstr)
 
 
 def findUser(email):
