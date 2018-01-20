@@ -15,7 +15,7 @@ from Worker import Worker
 from User import User
 
 from Order import Order
-from Queue import Queue as selfQueue
+from ourQueue import Queue as ourQueue
 from Hashmap import Hashmap, MapObject
 
 # init empty stocks for ingredients
@@ -30,7 +30,7 @@ workers = []
 # init users
 users = []
 # init orders
-orders = selfQueue()
+orders = ourQueue()
 # list for orders that are currently being worked on
 current_orders = []
 # init idcounter
