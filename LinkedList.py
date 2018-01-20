@@ -169,31 +169,20 @@ class LinkedList:
         True
 
         """
-        node = Node(newItem, None)
-        current = self.head
-        if self.getLength() == 0:
-            current.setNext(node)
-        else:
-            for i in range(0, self.getLength()):
-                previous = current
-                current = current.getNext()
-            previous.setNext(node)
-        return True
+        return self.insert(self.getLength(), newItem)
 
     def getItems(self):
         """
         Testing
         >>> list = LinkedList()
-        >>> list.append("A")
+        >>> list.insert(0, "A")
         True
-        >>> list.append("B")
+        >>> list.insert(1, "B")
         True
         >>> list.getItems()
         ['A', 'B']
         """
         nodeList = []
-        current_node = self.head.getNext()
-        while current_node is not self.head:
-            nodeList.append(current_node.item)
-            current_node = current_node.next
-        return nodeList[::-1]
+        for i in range(0, self.getLength()):
+            nodeList.append(self.retrieve(i)[0])
+        return nodeList
