@@ -19,6 +19,7 @@ from Order import Order
 from ourQueue import Queue as ourQueue
 from Hashmap import Hashmap, MapObject
 from Stack import Stack
+from BSTTable import BSTTable
 
 # init empty stocks for ingredients
 chocolatestock = StockTable()
@@ -39,6 +40,8 @@ orders = ourQueue()
 current_orders = []
 # new orders_workload
 neworder = []
+# processed orders
+processed_orders = BSTTable()
 # init idcounter
 chocolateid = 0
 # init tijdstip
@@ -58,6 +61,8 @@ def jumpTime():
             choco.workload = 0
             order.currworker.setOccupied(False)
             workerstack.push(order.currworker)
+            order.setCollected(True)
+            processed_orders.tableInsert(order)
         else:
             choco.workload -= order.currworker.workload
             passthrough.append(order)
