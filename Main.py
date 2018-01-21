@@ -284,24 +284,24 @@ def delWorker(workerid):
 
 def init_command(command):
     if command[0] == "shot":
-        if len(command) == 6:
+        if len(command) == 6 and chocolatestock.getShotLength(command[1]) < 20:
             for _ in range(int(command[2])):
                 expiredate = ''.join(command[3:])
                 chocolate = ChocolateShot(command[1], expiredate)
                 chocolatestock.tableInsert(chocolate)
     elif command[0] == "honing":
-        if len(command) == 5:
+        if len(command) == 5 and honeystock.getLength() < 20:
             for _ in range(int(command[1])):
                 expiredate = ''.join(command[2:])
                 honing = Honey(expiredate)
                 honeystock.tableInsert(honing)
     elif command[0] == "marshmallow":
-        if len(command) == 5:
+        if len(command) == 5 and marshmallowstock.getLength() < 20:
             for _ in range(int(command[1])):
                 expiredate = ''.join(command[2:])
                 marshmallow = Marshmallow(expiredate)
                 marshmallowstock.tableInsert(marshmallow)
-    elif command[0] == "chili":
+    elif command[0] == "chili" and chilipepperstock.getLength() < 20:
         if len(command) == 5:
             for _ in range(int(command[1])):
                 expiredate = ''.join(command[2:])
@@ -349,7 +349,7 @@ def readfile(filename):  # returns array of arrays with input
             elif init_enabled:
                 init_command(command)
             else:
-                print(command)
+                # print(command)
                 # Backs up relevant info for log file
                 if command[0] != "start" and int(command[0]) > tijdstip:
                     jumpTime()
