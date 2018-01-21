@@ -3,6 +3,8 @@ import graphviz as gv
 from BinarySearchTree import BinarySearchTree
 from TreeItem import TreeItem
 from TwoThreeFourTree import TwoThreeFourTree
+from CircularLinkedList import CircularLinkedList
+from Stack import Stack
 
 def readFile():
     file = open("input.txt", "r")       # opens file
@@ -42,6 +44,40 @@ def readFile():
                     command = file.readline()
                 elif "print" in command:        # gives DOT-language of 234-Tree
                     createDotFileTTFT(t)
+                    command = file.readline()
+        elif "ll" in command:
+            l = CircularLinkedList()
+            command = file.readline()
+            while command is not None:
+                if len(command.strip()) == 0:
+                    break
+                elif "insert" in command:
+                    index = int(command.split()[1])
+                    number = int(command.split()[2])
+                    l.insert(index, number)
+                    command = file.readline()
+                elif "delete" in command:
+                    index = int(command.split()[1])
+                    l.delete(index)
+                    command = file.readline()
+                elif "print" in command:
+                    createDotFileLL(l)
+                    command = file.readline()
+        elif "stack" in command:
+            s = Stack()
+            command = file.readline()
+            while command is not None:
+                if len(command.strip()) == 0:
+                    break
+                elif "push" in command:
+                    number = int(command.split()[1])
+                    s.push(number)
+                    command = file.readline()
+                elif "pop" in command:
+                    s.pop()
+                    command = file.readline()
+                elif "print" in command:
+                    createDotFileS(s)
                     command = file.readline()
 
 def createDotFileBST(b):
@@ -126,6 +162,26 @@ def addNodesTTFT(t, tg):        # add nodes and edges for every node in 234-Tree
         tg.node(str(t.right.root.retrieve(0)[0].getKey()), label=word)
         tg.edge(str(t.root.retrieve(0)[0].getKey()), str(t.right.root.retrieve(0)[0].getKey()))
         addNodesTTFT(t.right, tg)
+
+def createDotFileLL(l):
+    lg = gv.Digraph(format='svg', node_attr={'shape': 'record'}, graph_attr={'rankdir': 'LR'})
+    current = l.head.getNext().getNext()
+    for i in range(l.getLength()-1):
+        lg.node(str(current.getItem()), label="{ <data> " + str(current.getItem()) + " | <ref>  }")
+        lg.edge(str(current.getItem()) + ":ref:c", str(current.getNext().getItem()))
+        current = current.getNext()
+    lg.node(str(current.getItem()), label="{ <data> " + str(current.getItem()) + " | <ref>  }")
+    lg.edge(str(current.getItem()) + ":ref:c", str(l.head.getNext().getNext().getItem()))
+    lg.edge_attr.update(arrowhead='vee', arrowtail='dot', dir='both', tailclip='false')
+    print(lg.source)
+
+def createDotFileS(s):
+    sg = gv.Digraph(format='svg', node_attr={'shape': 'record'}, graph_attr={'rankdir': 'LR'})
+    sg.node(name="stack", label="", height="0.001", fixedsize="true")
+    for item in s.getItems():
+        sg.node(str(item), label=str(item))
+        sg.node(name=str(item))
+    print(sg.source)
 
 if __name__ == '__main__':
     readFile()

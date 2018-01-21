@@ -1,23 +1,10 @@
-type=234
-insert 8
-insert 7
-insert 2
-insert 5
-insert 11
-insert 18
-insert 13
-insert 6
-insert 4
-insert 15
-insert 12
-insert 16
-insert 17
-insert 19
-insert 20
-delete 15
-delete 2
-delete 4
-delete 19
-delete 5
-delete 8
+type=stack
+push 5
+push 6
+push 20
+pop
+push 198
+push 5
+pop
+push 7
 print
