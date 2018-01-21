@@ -1,0 +1,32 @@
+ADT Binary Search Tree:
+//Creates binary search tree.
++createSearchTree()
+
+//Deletes binary search tree.
++destroySearchTree()
+
+//Checks if tree is empty.
++isEmpty(out status:bool)
+
+//Adds 'newItem' in the binary searchtree.
+//'success' returns the success value.
++searchTreeInsert(in newItem:int, out success:bool)
+
+//Deletes element with value 'searchKey' from binary tree.
+//'success' returns the success value.
++searchTreeDelete(in searchKey:KeyType, out success:bool)
+
+//Searches tree for 'searchKey'.
+//Returns 'treeItem' which contains 'searchKey' as root.
+//'success' returns the success value.
++searchTreeRetrieve(in searchKey:KeyType, out treeItem:TreeItemType, out success:bool)
+
+//Returns values in sorted search key order (small > big).
++inorderTraverse(in visit:FunctionType)
+
+//Returns the amount of items currently in the tree.
++getTreeLength(out length:int)
+
+//Prints out the whole Binary Search Tree
++print()
++

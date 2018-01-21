@@ -1,0 +1,27 @@
+ADT Stack:
+//Creates empty stack
++createStack()
+
+//Deletes stack.
+//Returns True if successful.
++destroyStack(): Boolean {query}
+
+//Checks if stack is empty.
+//Returns True if successful.
++isEmpty(): Boolean {query}
+
+//Add 'newItem' at top from stack.
+//Returns True if successful.
++push(in newItem:StackItemType): Boolean {query}
+
+//Places top in 'stackTop' and removes top.
+//Returns True if successful.
++pop(out stackTop:StackItemType): Boolean {query}
+
+//Places top in 'stackTop' and returns 'stackTop'.
+//Returns True if successful.
++getTop(out stackTop:StackItemType): Boolean {query}
+
+//Returns the amount of elements currently in the stack.
++getLength(out length:int)
+

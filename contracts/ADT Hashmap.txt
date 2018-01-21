@@ -1,0 +1,46 @@
+//ADT Hashmap
+
+//Constructor of the Hashmap
+//:in type = Type of probing/chaining in the hashmap
+//:in max_size = (Maximum allowed) size of the hashmap
++Hashmap(in type:int, in max_size:int)
+
+//Returns first element in the hashmap
++begin(out value:hashmapType)
+
+//Returns last element in the hashmap
++end(out value:hashmapType)
+
+//Inserts element in the hashmap
+//Returns True if succesfull
++insert(in toAdd:MapObject, out status:bool)
+
+//Deletes an element from the hashmap
++erase(in toErase:MapObject, out status:bool)
+
+//Finds and returns an element by it's hash
++findByHash(in hash:hash(key), out value:hashmapType)
+
+//Hashes the key
++hash(in key:int, out hash:int)
+
+//Returns an element by key
++retrieve(in key:int, out value:MapOject)
+
+//Prints out every element in the hashmap
++print() : {query}
+
+//Returns the length of the hashmap
++getLength(out length:int)
+
+//Returns True if hashmap is empty
++isEmpty(out status:bool)
+
+//Returns all the elements of the hashmap in a list
++traverse(out traverseList:list)
+
+//Destroys the hashmap completely
+//Returns True if succesful
++destroyHashmap(out status:bool)
+
+

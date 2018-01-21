@@ -143,8 +143,7 @@ def createLogFile(timestamp):
         htmlfile.truncate()
         htmlfile.write("</td>")
         htmlfile.write("<td>")
-        for i in range(0, len(loginfo[timestamp][0].traverse())):
-            htmlfile.write(str(loginfo[timestamp][3].retrieve(loginfo[timestamp][0].traverse()[i].getChocolateid()).returnWorkload()))
+        htmlfile.write(", ".join(str(loginfo[timestamp][3].retrieve(order.getChocolateid()).returnWorkload()) for order in loginfo[timestamp][0].traverse()))
         htmlfile.write("</td>")
         chocstock = loginfo[timestamp][1].getChocolatestock()
         hstock = loginfo[timestamp][1].getHoneystock()

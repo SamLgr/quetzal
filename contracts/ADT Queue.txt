@@ -1,0 +1,29 @@
+//ADT Queue
+
+//Creates the queue and
+//enqueues value
++createQueue(in value:queueItemType) : {query}
+
+//Destroys the queue
++destroyQueue() : {query}
+
+//Returns true if the queue is empty
++isEmpty(out status:bool)
+
+//Adds an element to the back of the queue
++enqueue(in value:queueItemType) : {query}
+
+//Deletes an element from front of the queue
+//and returns that element
+//also returns True if succesful
++dequeue(out item:queueItemType, out status:bool) : {query}
+
+//Returns the front element of the queue
+//and True if succesful
++getFront(out value:queueItemType, out status:bool)
+
+//Returns all elements of queue in a list
++traverse(out elements:list)
+
+//Returns the length of the queue
++getLength(out length:int)
