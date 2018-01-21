@@ -37,6 +37,8 @@ users = []
 orders = ourQueue()
 # list for orders that are currently being worked on
 current_orders = []
+# new orders_workload
+neworder = []
 # init idcounter
 chocolateid = 0
 # init tijdstip
@@ -260,6 +262,7 @@ def makeChoco(arguments):
         elif ingredient == "honing":
             choco.addIngredient(Honey(10**9))
             # ingredients_stock.stockDelete("honey")
+    neworder.append(choco.returnWorkload())
     chocolates.insert(MapObject(chocolateid, choco))
     return chocolateid
 
