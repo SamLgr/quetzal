@@ -57,11 +57,12 @@ def jumpTime():
         if choco.workload <= order.currworker.workload:
             choco.workload = 0
             order.currworker.setOccupied(False)
+            workerstack.push(order.currworker)
         else:
             choco.workload -= order.currworker.workload
             passthrough.append(order)
     current_orders = passthrough
-    while availableWorker() and not orders.isEmpty():
+    while not workerstack.isEmpty() and not orders.isEmpty():
         executeOrder(orders.dequeue()[0])
     createLogInfo()
 
@@ -225,7 +226,7 @@ def executeOrder(order):  # 66
             ingredients_stock.stockDelete("marshmallow")
         else:
             print(type(ingredient))
-    currentWorker = availableWorker()
+    currentWorker = workerstack.pop()[0]
     currentWorker.setOccupied(True)
     currentWorker.order = order
     order.currworker = currentWorker
