@@ -74,12 +74,14 @@ def createLogInfo():
     currenthandledorders = deepcopy(current_orders)
     currentchocolates = deepcopy(chocolates)
     currentneworders = deepcopy(neworder)
+    currentstack = deepcopy(workerstack)
     neworder.clear()
     loginfo[len(loginfo) - 1].append(currentorders)  # Logs current queue
     loginfo[len(loginfo) - 1].append(currentingredients)  # Logs current stock
     loginfo[len(loginfo) - 1].append(currenthandledorders)  # Logs current orders that are being worked on
     loginfo[len(loginfo) - 1].append(currentchocolates)  # Logs current chocolates
     loginfo[len(loginfo) - 1].append(currentneworders)  # Logs current new orders
+    loginfo[len(loginfo) - 1].append(currentstack)  # Logs current worker stack
 
 
 def createLogFile(timestamp):
@@ -131,12 +133,13 @@ def createLogFile(timestamp):
         currenthandledorders = loginfo[timestamp][2]
         currentchocolates = loginfo[timestamp][3]
         currentneworders = loginfo[timestamp][4]
+        currentstack = loginfo[timestamp][5]
         htmlfile.write("<tr>")
         htmlfile.write("<td>")
         htmlfile.write(str(timestamp))
         htmlfile.write("</td>")
-        htmlfile.write("<td>")
-        htmlfile.write(str("#TODO"))    #TODO: write stack info (need stack)
+        htmlfile.write("<td>| ")
+        htmlfile.write(" ".join(str(worker.getWorkload()) for worker in currentstack.getItems()))
         htmlfile.write("</td>")
         for worker in workers:
             htmlfile.write("<td>")

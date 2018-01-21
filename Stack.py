@@ -83,3 +83,11 @@ class Stack:
         if self.isEmpty():
             return None, False
         return self.top.getItem(), True
+
+    def getItems(self):
+        buffer = []
+        current = self.top
+        while current is not None:
+            buffer.append(current.getItem())
+            current = current.getNext()
+        return buffer[::-1]
