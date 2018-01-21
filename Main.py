@@ -50,14 +50,17 @@ chocolates = Hashmap(1, 200)
 
 
 def jumpTime():
+    global current_orders
+    passthrough = []
     for order in current_orders:
         choco = chocolates.retrieve(order.chocolateid)
         if choco.workload <= order.currworker.workload:
             choco.workload = 0
             order.currworker.setOccupied(False)
-            current_orders.remove(order)
         else:
             choco.workload -= order.currworker.workload
+            passthrough.append(order)
+    current_orders = passthrough
     while availableWorker() and not orders.isEmpty():
         executeOrder(orders.dequeue()[0])
     createLogInfo()
@@ -275,25 +278,25 @@ def init_command(command):
     if command[0] == "shot":
         if len(command) == 6:
             for _ in range(int(command[2])):
-                expiredate = ''.join(command[4:])
+                expiredate = ''.join(command[3:])
                 chocolate = ChocolateShot(command[1], expiredate)
                 chocolatestock.tableInsert(chocolate)
     elif command[0] == "honing":
         if len(command) == 5:
             for _ in range(int(command[1])):
-                expiredate = ''.join(command[3:])
+                expiredate = ''.join(command[2:])
                 honing = Honey(expiredate)
                 honeystock.tableInsert(honing)
     elif command[0] == "marshmallow":
         if len(command) == 5:
             for _ in range(int(command[1])):
-                expiredate = ''.join(command[3:])
+                expiredate = ''.join(command[2:])
                 marshmallow = Marshmallow(expiredate)
                 marshmallowstock.tableInsert(marshmallow)
     elif command[0] == "chili":
         if len(command) == 5:
             for _ in range(int(command[1])):
-                expiredate = ''.join(command[3:])
+                expiredate = ''.join(command[2:])
                 chili = ChiliPepper(expiredate)
                 chilipepperstock.tableInsert(chili)
     elif command[0] == "gebruiker":
@@ -347,5 +350,5 @@ def readfile(filename):  # returns array of arrays with input
 
 
 readfile('system.txt')
-print(delWorker(1))
-print(delWorker(5))
+# print(delWorker(1))
+# print(delWorker(5))
