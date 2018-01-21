@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b600a203-674c-4d23-a833-505a5c9b6640" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/RBTree.py" afterPath="$PROJECT_DIR$/RBTree.py" />
-      <change beforePath="$PROJECT_DIR$/RBTreeTable.py" afterPath="$PROJECT_DIR$/RBTreeTable.py" />
+      <change beforePath="$PROJECT_DIR$/DoubleList.py" afterPath="$PROJECT_DIR$/DoubleList.py" />
+      <change beforePath="$PROJECT_DIR$/ourQueue.py" afterPath="$PROJECT_DIR$/ourQueue.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,16 +17,22 @@
     <SUITE FILE_PATH="coverage/quetzal$Doctests_in_CircularLinkedList.coverage" NAME="Doctests in CircularLinkedList Coverage Results" MODIFIED="1513603020883" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/quetzal$Doctest_StockTable_sortTable.coverage" NAME="Doctest StockTable.sortTable Coverage Results" MODIFIED="1513607877219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/quetzal$CreateGraph.coverage" NAME="CreateGraph Coverage Results" MODIFIED="1513624557469" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/quetzal$Doctests_in_Queue__1_.coverage" NAME="Doctests in Queue (1) Coverage Results" MODIFIED="1516545874592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/quetzal$Doctest_testStack.coverage" NAME="Doctest testStack Coverage Results" MODIFIED="1513505919093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/quetzal$Main.coverage" NAME="Main Coverage Results" MODIFIED="1516539440370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/quetzal$Doctests_in_Queue.coverage" NAME="Doctests in Queue Coverage Results" MODIFIED="1516545805513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/quetzal$Doctests_in_DoubleList__1_.coverage" NAME="Doctests in DoubleList (1) Coverage Results" MODIFIED="1516545988815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/quetzal$RBTree.coverage" NAME="RBTree Coverage Results" MODIFIED="1516541602600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/quetzal$Doctests_in_ourQueue.coverage" NAME="Doctests in ourQueue Coverage Results" MODIFIED="1516545748425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/quetzal$Doctests_in_DoubleList.coverage" NAME="Doctests in DoubleList Coverage Results" MODIFIED="1516545926352" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-648">
-              <caret line="69" column="61" lean-forward="true" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
+            <state relative-caret-position="393">
+              <caret line="154" column="30" lean-forward="true" selection-start-line="154" selection-start-column="30" selection-end-line="154" selection-end-column="30" />
               <folding>
                 <element signature="e#46#56#0" expanded="true" />
               </folding>
@@ -34,7 +40,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RBTreeTable.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RBTreeTable.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RBTreeTable.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
@@ -47,8 +53,8 @@
       <file leaf-file-name="RBTree.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RBTree.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2556">
-              <caret line="103" column="0" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="23" />
+            <state relative-caret-position="432">
+              <caret line="24" column="23" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -87,8 +93,18 @@
       <file leaf-file-name="ourQueue.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ourQueue.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state relative-caret-position="523">
+              <caret line="116" column="2" lean-forward="false" selection-start-line="116" selection-start-column="2" selection-end-line="119" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DoubleList.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DoubleList.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="487">
+              <caret line="176" column="0" lean-forward="true" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,6 +139,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>join</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
@@ -148,7 +169,6 @@
         <option value="$PROJECT_DIR$/StockTable.py" />
         <option value="$PROJECT_DIR$/Stock.py" />
         <option value="$PROJECT_DIR$/Worker.py" />
-        <option value="$PROJECT_DIR$/DoubleList.py" />
         <option value="$PROJECT_DIR$/ChocolateShot.py" />
         <option value="$PROJECT_DIR$/ChiliPepper.py" />
         <option value="$PROJECT_DIR$/Honey.py" />
@@ -156,10 +176,11 @@
         <option value="$PROJECT_DIR$/User.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/system.txt" />
-        <option value="$PROJECT_DIR$/ourQueue.py" />
         <option value="$PROJECT_DIR$/Main.py" />
-        <option value="$PROJECT_DIR$/RBTree.py" />
         <option value="$PROJECT_DIR$/RBTreeTable.py" />
+        <option value="$PROJECT_DIR$/RBTree.py" />
+        <option value="$PROJECT_DIR$/ourQueue.py" />
+        <option value="$PROJECT_DIR$/DoubleList.py" />
       </list>
     </option>
   </component>
@@ -341,7 +362,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.Doctests in DoubleList (1)">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -480,6 +501,118 @@
       <option name="_new_target" value="&quot;&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
+    <configuration name="Doctests in DoubleList (1)" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="quetzal" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DoubleList.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+    </configuration>
+    <configuration name="Doctests in DoubleList" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="quetzal" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DoubleList.py" />
+      <option name="CLASS_NAME" value="DoubleList" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+    </configuration>
+    <configuration name="Doctests in Queue (1)" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="quetzal" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ourQueue.py" />
+      <option name="CLASS_NAME" value="Queue" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+    </configuration>
+    <configuration name="Doctests in Queue" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="quetzal" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ourQueue.py" />
+      <option name="CLASS_NAME" value="Queue" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+    </configuration>
+    <configuration name="Doctests in ourQueue" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="quetzal" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ourQueue.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+    </configuration>
+    <list size="6">
+      <item index="0" class="java.lang.String" itemvalue="Python.Main" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Doctests in ourQueue" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Doctests in Queue" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Doctests in Queue (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in DoubleList" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Doctests in DoubleList (1)" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Doctests in DoubleList (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Doctests in DoubleList" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Doctests in Queue (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Doctests in Queue" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in ourQueue" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -740,28 +873,24 @@
       <option name="project" value="LOCAL" />
       <updated>1516539608243</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Updated to use TreeItem class">
+      <created>1516541154535</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1516541154535</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Updated to use TreeItem class">
+      <created>1516541628550</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1516541628550</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Doctest_StockTable_sortTable - 2017.12.18 at 15h 22m 58s.xml">
-      <configuration name="Doctest StockTable.sortTable" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Doctest_StockTable_sortTable - 2017.12.18 at 15h 23m 25s.xml">
-      <configuration name="Doctest StockTable.sortTable" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Doctest_StockTable_sortTable - 2017.12.18 at 15h 23m 32s.xml">
-      <configuration name="Doctest StockTable.sortTable" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Doctest_StockTable_sortTable - 2017.12.18 at 15h 29m 18s.xml">
-      <configuration name="Doctest StockTable.sortTable" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Doctest_StockTable_sortTable - 2017.12.18 at 15h 30m 01s.xml">
-      <configuration name="Doctest StockTable.sortTable" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Doctest_StockTable_sortTable - 2017.12.18 at 15h 35m 00s.xml">
-      <configuration name="Doctest StockTable.sortTable" configurationId="tests" />
-    </history-entry>
     <history-entry file="Doctest_StockTable_sortTable - 2017.12.18 at 15h 35m 23s.xml">
       <configuration name="Doctest StockTable.sortTable" configurationId="tests" />
     </history-entry>
@@ -774,6 +903,24 @@
     <history-entry file="Doctest_StockTable_sortTable - 2017.12.18 at 15h 37m 57s.xml">
       <configuration name="Doctest StockTable.sortTable" configurationId="tests" />
     </history-entry>
+    <history-entry file="Doctests_in_DoubleList - 2018.01.21 at 15h 45m 26s.xml">
+      <configuration name="Doctests in DoubleList" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Doctests_in_DoubleList_(1) - 2018.01.21 at 15h 46m 28s.xml">
+      <configuration name="Doctests in DoubleList (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Doctests_in_Queue - 2018.01.21 at 15h 42m 57s.xml">
+      <configuration name="Doctests in Queue" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Doctests_in_Queue - 2018.01.21 at 15h 43m 25s.xml">
+      <configuration name="Doctests in Queue" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Doctests_in_Queue_(1) - 2018.01.21 at 15h 44m 34s.xml">
+      <configuration name="Doctests in Queue (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Doctests_in_ourQueue - 2018.01.21 at 15h 42m 28s.xml">
+      <configuration name="Doctests in ourQueue" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="45" y="24" width="1871" height="1055" extended-state="6" />
@@ -783,7 +930,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24181627" sideWeight="0.5232496" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18162619" sideWeight="0.4810262" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2217529" sideWeight="0.68198824" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2217529" sideWeight="0.68198824" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15660074" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -792,7 +939,7 @@
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24181627" sideWeight="0.4767504" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24181627" sideWeight="0.4767504" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -835,7 +982,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adding main file" />
     <MESSAGE value="adding getLength + inorderTraverse" />
     <MESSAGE value="adding support for orderitem" />
     <MESSAGE value="update main" />
@@ -860,7 +1006,8 @@
     <MESSAGE value="Used workerstack instead of workers list" />
     <MESSAGE value="Updated max ammount of stock" />
     <MESSAGE value="Added BSTTable store for processed orders" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added BSTTable store for processed orders" />
+    <MESSAGE value="Updated to use TreeItem class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated to use TreeItem class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1064,13 +1211,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DoubleList.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="99" column="19" lean-forward="false" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log4.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1181,14 +1321,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ourQueue.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="443">
@@ -1205,28 +1337,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-648">
-          <caret line="69" column="61" lean-forward="true" selection-start-line="69" selection-start-column="61" selection-end-line="69" selection-end-column="61" />
-          <folding>
-            <element signature="e#46#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/system/python_stubs/1450386472/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="262" column="4" lean-forward="false" selection-start-line="262" selection-start-column="4" selection-end-line="262" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RBTree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2556">
-          <caret line="103" column="0" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -1243,6 +1357,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RBTree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="23" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="154" column="30" lean-forward="true" selection-start-line="154" selection-start-column="30" selection-end-line="154" selection-end-column="30" />
+          <folding>
+            <element signature="e#46#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ourQueue.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="116" column="2" lean-forward="false" selection-start-line="116" selection-start-column="2" selection-end-line="119" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubleList.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="176" column="0" lean-forward="true" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -106,3 +106,15 @@ class Queue(object):
 
         return sum
 
+    def dotDebug(self):
+        graph = self.traverse()
+        for i in range(len(graph)):
+            graph[i] = str(graph[i])
+        print(' -- '.join(graph))
+
+
+
+# test = Queue()
+# test.enqueue(5)
+# test.enqueue(6)
+# test.dotDebug()

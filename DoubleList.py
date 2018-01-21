@@ -146,7 +146,7 @@ class DoubleList(object):
         >>> list = DoubleList()
         >>> list.append("A")
         >>> list.append("B")
-        >>> list.first().item
+        >>> list.first()
         'A'
         """
         return self.head.item
@@ -156,7 +156,26 @@ class DoubleList(object):
         >>> list = DoubleList()
         >>> list.append("A")
         >>> list.append("B")
-        >>> list.last().item
+        >>> list.last()
         'B'
         """
         return self.tail.item
+
+    def traverse(self):
+        buffer = []
+        current = self.head
+        for i in range(self.getLength()):
+            buffer.append(current.item)
+            current = current.getNext()
+        return buffer
+
+    def dotDebug(self):
+        graph = self.traverse()
+        for i in range(len(graph)):
+            graph[i] = str(graph[i])
+        print(' -- '.join(graph))
+
+# test = DoubleList()
+# test.append(5)
+# test.append(6)
+# test.dotDebug()
