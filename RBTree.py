@@ -74,8 +74,8 @@ class redBlackTree(object):
     def __init__(self, root=None):
         self.root = root
     
-    def createRBTree(self, value):  # creates initial node
-        root = rbNode(value)
+    def createRBTree(self, item):  # creates initial node
+        root = rbNode(item)
         self.root = root
 
     def destroyRBTree(self):  # __del__
@@ -85,12 +85,12 @@ class redBlackTree(object):
     def isEmtpy(self):
         return self.root is None
 
-    def insertItem(self, value):
+    def insertItem(self, item):
         if self.isEmtpy():  # if tree is empty, insert root
-            self.createRBTree(value)
+            self.createRBTree(item)
             return True
         # create leaf node with value as root
-        node = rbNode(value, True)
+        node = rbNode(item, True)
         # create check value
         check_node = self.root
         while check_node:
@@ -100,7 +100,7 @@ class redBlackTree(object):
             elif check_node.getKey() < node.getKey():
                 check_node = check_node.rightTree
             else:
-                return False  # TODO change to account for multiple things with same keyvalue
+                return False
         if node.getKey() < node.parent.getKey():
             node.parent.leftTree = node
         else:
@@ -274,3 +274,14 @@ class redBlackTree(object):
     def getLength(self):
         list = self.root.inorderTraverse
         return len(list)
+
+
+
+# test = redBlackTree()
+# test.insertItem(TreeItem("a", 1))
+# test.insertItem(TreeItem("b", 5))
+# test.insertItem(TreeItem("c", 50))
+# test.insertItem(TreeItem("d", 10))
+# test.insertItem(TreeItem("woop", 15))
+# test.deleteItem(50)
+# test.dotDebug()
