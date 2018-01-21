@@ -81,6 +81,7 @@ True
 #from CircularLinkedList import CircularLinkedList as List
 from DoubleList import DoubleList as List
 from DoubleNode import Node
+import math
 
 #MapObject
 #Used to add and delete objects
@@ -254,7 +255,7 @@ class Hashmap:
     #:param key: Int -> Key to hash
     #:return int: hash(key) -> Hashed key
     def hash(self, key):
-        return (key)
+        return int(key + (key/2) + math.sqrt(key) % (key/2))
 
     #Return object by key
     #:param key: Int -> Return object mapped to this key
@@ -341,3 +342,41 @@ class Hashmap:
 
         else:
             return obj
+
+
+    def dotDebug(self):
+        myStr = """
+            digraph  { 
+             mindist=0;
+             ranksep=0;
+             nodesep=0;
+
+             node[shape=box,margin="0,0",width=1, height=0.5];
+             edge [style=invis];
+
+             Hashmap[width=2];
+             Hashmap -> Hash;
+             Hashmap -> Value;
+        """
+
+        firstDone = False
+        for i in range(0, len(self.v)):
+            if hmap.retrieve(i) == None: continue
+
+            key = i
+            value = hmap.retrieve(key)            
+
+            if not firstDone:
+                prevKey = "Hash"
+                prevValue = "Value"
+                firstDone = True
+            else:
+                prevKey = i - 1
+                prevValue = hmap.retrieve(prevKey)
+
+            myStr += str(prevKey) + " -> " + str(key) + ';\n'
+            myStr += str(prevValue) + " -> " + str(value) + ';\n'
+
+        myStr += "}"
+        print(myStr)
+
