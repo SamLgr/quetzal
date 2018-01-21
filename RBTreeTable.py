@@ -1,4 +1,4 @@
-from RBTree import redBlackTree
+from RBTree import redBlackTree, TreeItem
 
 class RBTTable:
     def __init__(self):
@@ -13,11 +13,11 @@ class RBTTable:
     def getLength(self):
         return self.rbt.getLength()
 
-    def tableInsert(self, newitem):
-        return self.rbt.insertItem(newitem)
+    def tableInsert(self, order):
+        return self.rbt.insertItem(TreeItem(order, order.getTimestamp()))
 
-    def tableDelete(self, timestamp):
-        return self.rbt.deleteItem(timestamp)
+    def tableDelete(self, key):
+        return self.rbt.deleteItem(key)
 
     def traverseTable(self):
         return self.rbt.inorderTraverse()

@@ -3,26 +3,30 @@
 # Inspiration: https://www.cs.auckland.ac.nz/software/AlgAnim/red_black.html
 #
 
+class TreeItem(object):
+    def __init__(self, value, key):
+        self.value = value
+        self.key = key
 
 class rbNode(object):
-    def __init__(self, value=None, colour=False, parent=None, leftTree=None, rightTree=None):
-        self.value = value
+    def __init__(self, item=None, colour=False, parent=None, leftTree=None, rightTree=None):
+        self.item = item
         self.red = colour
         self.parent = parent
         self.leftTree = leftTree
         self.rightTree = rightTree
 
     def getKey(self):
-        return self.value.getTimestamp
+        return self.item.key
 
     def isLeaf(self):  # checks if node is leaf
         return not self.leftTree and not self.rightTree
 
     def dotDebug(self):  # debug code to represent tree in dot language
         if not self.parent and self.isLeaf():  # tree only has one item (root)
-            return print(self.value)
-        if self.parent and self.value:
-            strprint = str(self.parent.value) + " -> " + str(self.value)
+            return print(self.item.value)
+        if self.parent and self.item:
+            strprint = str(self.parent.item.value) + " -> " + str(self.item.value)
             if self.red:
                 strprint = strprint + " [style=dashed];"
             else:
@@ -33,18 +37,18 @@ class rbNode(object):
         if self.rightTree:
             self.rightTree.dotDebug()
     
-    def retrieveItem(self, value):  # returns node with key value
-        if value == self.getKey():
+    def retrieveItem(self, key):  # returns node with key value
+        if key == self.getKey():
             return self
-        elif value < self.getKey():
+        elif key < self.getKey():
             if self.leftTree is None:
                 return None
-            x = self.leftTree.retrieveItem(value)
+            x = self.leftTree.retrieveItem(key)
             return x
-        elif value > self.getKey():
+        elif key > self.getKey():
             if self.rightTree is None:
                 return None
-            x = self.rightTree.retrieveItem(value)
+            x = self.rightTree.retrieveItem(key)
             return x
 
     def treeSuccessor(self):  # finds successor and returns that node
@@ -60,7 +64,7 @@ class rbNode(object):
         traverseList = []
         if self.leftTree is not None:
             traverseList = self.leftTree.inorderTraverse()
-        traverseList.append(self.value)
+        traverseList.append(self.item.value)
         if self.rightTree is not None:
             traverseList = traverseList + self.rightTree.inorderTraverse()
         return traverseList
@@ -182,9 +186,9 @@ class redBlackTree(object):
             return False
         self.root.dotDebug()
 
-    def deleteItem(self, value):
+    def deleteItem(self, key):
         # retrieving node
-        z = self.root.retrieveItem(value)
+        z = self.root.retrieveItem(key)
         # check if node is valid
         if z is None:
             return False
