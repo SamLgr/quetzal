@@ -126,6 +126,11 @@ def createLogFile(timestamp):
     """
     htmlfile.write(htmlstr)
     for timestamp in range(0, len(loginfo)):
+        currentorders = loginfo[timestamp][0]
+        currentingredients = loginfo[timestamp][1]
+        currenthandledorders = loginfo[timestamp][2]
+        currentchocolates = loginfo[timestamp][3]
+        currentneworders = loginfo[timestamp][4]
         htmlfile.write("<tr>")
         htmlfile.write("<td>")
         htmlfile.write(str(timestamp))
@@ -135,21 +140,21 @@ def createLogFile(timestamp):
         htmlfile.write("</td>")
         for worker in workers:
             htmlfile.write("<td>")
-            for order in loginfo[timestamp][2]:
+            for order in currenthandledorders:
                 if order.currworker.getId() == worker.getId():
-                    htmlfile.write(str(loginfo[timestamp][3].retrieve(order.getChocolateid()).returnWorkload()))
+                    htmlfile.write(str(currentchocolates.retrieve(order.getChocolateid()).returnWorkload()))
             htmlfile.write("</td>")
         htmlfile.write("<td>")
-        htmlfile.write(", ".join(str(order) for order in loginfo[timestamp][4]))
+        htmlfile.write(", ".join(str(order) for order in currentneworders))
         htmlfile.truncate()
         htmlfile.write("</td>")
         htmlfile.write("<td>")
-        htmlfile.write(", ".join(str(loginfo[timestamp][3].retrieve(order.getChocolateid()).returnWorkload()) for order in loginfo[timestamp][0].traverse()))
+        htmlfile.write(", ".join(str(currentchocolates.retrieve(order.getChocolateid()).returnWorkload()) for order in currentorders.traverse()))
         htmlfile.write("</td>")
-        chocstock = loginfo[timestamp][1].getChocolatestock()
-        hstock = loginfo[timestamp][1].getHoneystock()
-        mstock = loginfo[timestamp][1].getMarshmallowstock()
-        chilistock = loginfo[timestamp][1].getChilipepperstock()
+        chocstock = currentingredients.getChocolatestock()
+        hstock = currentingredients.getHoneystock()
+        mstock = currentingredients.getMarshmallowstock()
+        chilistock = currentingredients.getChilipepperstock()
         htmlfile.write("<td>")
         htmlfile.write(str(chocstock.getShotLength("white")))
         htmlfile.write("</td>")
