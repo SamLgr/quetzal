@@ -1,0 +1,26 @@
+//ADT for Red-Black Tree
+
+//Creates a RBTree with 'value' as root
++createRBTree(in value:RBTreeItem)
+
+//Destroys the RBTree
++destroyRBTree()
+
+//Returns True if the RBTree is empty
++isEmpty(out status:bool)
+
+//Inserts an item in the RBTree
+//Returns True if successful
++insertItem(in value:RBTreeItem, out status:bool)
+
+//Deletes an item from the RBTree
+//Returns True if successful
++deleteItem(in value:RBTreeItem)
+
+//Returns a list of all the elements in order
++inorderTraverse(out traverseList:list)
+
+//Returns amount of elements in the RBTree
++getLength(out length:int)
+
+

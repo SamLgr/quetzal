@@ -1,0 +1,52 @@
+ADT Double Linked List:
+//Creates empty list.
++createList()
+
+//Deletes list.
++destroyList()
+
+//Checks if list is empty.
++isEmpty(out status:bool)
+
+//Returns amount of elements in list.
++getLength(out length:int)
+
+//Adds 'newItem' at 'index'.
+//'success' returns the success value.
++insert(in index:int, in newItem:listItemType, out success:bool)
+
+//Deletes item on 'index'.
+//'success' returns the success value.
++delete(in index:int, out success:bool)
+
+//Deletes item by 'value'.
+//'success' returns the success value.
++deleteByValue(in value:listItemType, out success:bool)
+
+//Returns node at index 'index'
+//'success' returns the success value.
++retrieve(in index:int, out dataItem:listItemType, out success:bool)
+
+//Returns the node mapped to value 'value'
++retrieveByValue(in value:listItemType, out retrievedNode:Node)
+
+//Sorts list on value.
++sortList()
+
+//Adds value to end of LinkedList
++append(in value:listItemType) 
+
+//Returns all the items in the LinkedList in a list
++getItems(out nodeList:list)
+
+//Sorts all the items in the LinkedList
++sort() : {query}
+
+//Returns head (first element) of the LinkedList
++first(out value:listItemType)
+
+//Returns tail (last element) of the LinkedList
++last(out value:listItemType)
+
+//Returns the length of the linked chain
++getLength(out length:int)
