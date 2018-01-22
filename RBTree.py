@@ -6,8 +6,10 @@
 class TreeItem(object):
     # added to support different values, not only ints
     def __init__(self, value, key):
-        self.value = value
+        self.value = [value]
         self.key = key
+    def insert(self, value):
+        self.value.append(value)
 
 class rbNode(object):
     def __init__(self, item=None, colour=False, parent=None, leftTree=None, rightTree=None):
@@ -27,7 +29,7 @@ class rbNode(object):
         if not self.parent and self.isLeaf():  # tree only has one item (root)
             return print(self.item.value)
         if self.parent and self.item:
-            strprint = str(self.parent.item.value) + " -> " + str(self.item.value)
+            strprint = "\"" + ", ".join(self.parent.item.value) + "\" -> \"" + ", ".join(self.item.value) + "\""
             if self.red:
                 strprint = strprint + " [style=dashed];"
             else:
@@ -101,12 +103,14 @@ class redBlackTree(object):
             elif check_node.getKey() < node.getKey():
                 check_node = check_node.rightTree
             else:
-                return False
+                check_node.item.insert(node.item.value[0])
+                return True
         if node.getKey() < node.parent.getKey():
             node.parent.leftTree = node
         else:
             node.parent.rightTree = node
         self.insert_fix(node)
+        return True
 
     def insert_fix(self, x):
         while x.parent.red:
@@ -281,6 +285,7 @@ class redBlackTree(object):
 # test = redBlackTree()
 # test.insertItem(TreeItem("a", 1))
 # test.insertItem(TreeItem("b", 5))
+# test.insertItem(TreeItem("ff", 5))
 # test.insertItem(TreeItem("c", 50))
 # test.insertItem(TreeItem("d", 10))
 # test.insertItem(TreeItem("woop", 15))
