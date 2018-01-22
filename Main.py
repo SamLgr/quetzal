@@ -20,6 +20,7 @@ from ourQueue import Queue as ourQueue
 from Hashmap import Hashmap, MapObject
 from Stack import Stack
 from BSTTable import BSTTable
+from DoubleList import DoubleList
 
 # init empty stocks for ingredients
 chocolatestock = StockTable()
@@ -33,7 +34,7 @@ workers = []
 #
 workerstack = Stack()
 # init users
-users = []
+users = DoubleList()
 # init orders (renamed queue to avoid overriding from internal defined queue)
 orders = ourQueue()
 # list for orders that are currently being worked on
@@ -190,7 +191,8 @@ def createLogFile(timestamp):   # Creates a log file based on loginfo
 
 
 def findUser(email):
-    for i in users:
+    list_users = users.traverse()
+    for i in list_users:
         if i.getMailadress() == email:
             return i.getId()
     return None
@@ -312,7 +314,7 @@ def init_command(command):
                 chilipepperstock.tableInsert(chili)
     elif command[0] == "gebruiker":
         if len(command) == 4:
-            userid = len(users)
+            userid = users.getLength()
             user = User(userid, command[1], command[2], command[3])
             users.append(user)
     elif command[0] == "werknemer":
