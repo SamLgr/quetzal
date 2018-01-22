@@ -1,12 +1,10 @@
 ADT ChocolateShot:
 //Creates a new chocolateshot object, containing the properties price, shottype (white, brown, milk or black) and expire date (format = YYYYMMDD)
 //(format YYYYMMDD) of  the chocolateshot.
-//Returns True when successful.
-+createChocolateShot(in type:string, in price:floating point=0.25, in expiredate: int, out success:bool)
++createChocolateShot(in type:string, in price:floating point=0.25, in expiredate: int)
 
 //Deletes a chocolateshot object.
-//Returns True if successfully deleted.
-+destroyChocolateShot(out success:bool)
++destroyChocolateShot()
 
 //Returns price.
 +getPrice(out price:int)

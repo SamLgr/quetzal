@@ -1,12 +1,10 @@
 ADT Chilipepper:
 //Creates a new chilipepper object, containing the properties price and expire date
 //(format YYYYMMDD) of  the chilipepper.
-//Returns True when successful.
-+createChilipepper(in price:floating point=0.25, in expiredate: int, out success:bool)
++createChilipepper(in price:floating point=0.25, in expiredate: int)
 
 //Deletes a chilipepper object.
-//Returns True if successfully deleted.
-+destroyChilipepper(out success:bool)
++destroyChilipepper()
 
 //Returns chilipepper price.
 +getPrice(out price:int)

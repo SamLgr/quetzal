@@ -120,7 +120,7 @@ def createLogFile(timestamp):   # Creates a log file based on loginfo
         htmlfile.write("</td>")
 
     htmlstr = """
-    			        <td>Nieuwe bestellingen</td>
+    			        <td>Nieuwe bestellingen</td> 
 				        <td>Wachtende bestellingen</td>
 				        <td>wit</td>
 				        <td>melk</td>

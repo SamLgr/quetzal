@@ -29,7 +29,10 @@ ADT Stock:
 //Overrides current chilipepperStock with new provided chilipepper stock table.
 +setChiliPepperStock(in chilipepperStock:Table)
 
-//Orders certain amount for each stock depending on whether or not there is enough remaining in this stock.
-//Calculates and returns expected delivery time.
+//Add given amount of ingredients to stock with given stock type.
++stockOrder(out stockType:string, in amount:int)
+
+//Checks for each stock if there are enough remaining ingredients in the stock.
+//Orders certain amount accordingly.
 //Returns True when successful.
-+stockOrder(out deliveryTime:int, out bool:success)
++stockCheck(out bool:success)

@@ -1,24 +1,23 @@
-//ADT for TwoThreeFour Tree
-
+//ADT TwoThreeFourTree:
 //Constructor, initializes TTFTree
 +TwoThreeFourTree()
 
-//Returns True if TTFTree is empty
-+isEmpty(out status:bool)
+//Returns True if TTFTree is empty.
++isEmpty(out success:bool)
 
-//Inserts 'value' in the TTFTree
-//Returns True if successful
-+twoThreeFourTreeInsert(in value:TreeItem, out status:bool)
+//Inserts 'value' in the TTFTree.
+//Returns True if successful.
++twoThreeFourTreeInsert(in value:TreeItem, out success:bool)
 
-//Deletes an element by key from the TTFTree
-//Returns True if successful
-+twoThreeFourDelete(in key:int, out status:bool)
+//Deletes an element by key from the TTFTree.
+//Returns True if successful.
++twoThreeFourDelete(in key:int, out success:bool)
 
-//Returns an element of the TTFTree by key
+//Returns an element of the TTFTree by key.
 +twoThreeFourTreeRetrieve(in key: int, out item:TreeItem)
 
-//Returns a list of all the elements in the tree, in order
-+inorderTraverse(out traverseList:list)
+//Returns a list of all the elements in the tree, in sorted search key order.
++inorderTraverse(out traverselist:list)
 
-//Returns the length of the TTFTree
+//Returns the length of the TTFTree.
 +getTreeLength(out length:int)

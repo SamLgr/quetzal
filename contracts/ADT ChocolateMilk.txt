@@ -1,10 +1,8 @@
 //Creates chocolatemilk object, containing properties id and price.
-//Returns True when successful.
-+createChocolatemilk(in id: integer, in price: integer=2, out success:bool)
++createChocolatemilk(in id: integer, in price: integer=2)
 
 //Deletes chocolatemilk object.
-//Returns True if successfully deleted.
-+destroyChocolatemilk(out success:bool)
++destroyChocolatemilk()
 
 //Returns chocolatemilk price.
 +getPrice(out price:float)

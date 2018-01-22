@@ -1,1 +1,38 @@
 ADT StockTable:
+//Creates an empty stock table.
++createStockTable()
+
+//Destroys the stock table.
++destroyStockTable()
+
+//Checks if stock table is empty.
+//Returns True if empty, False if not empty.
++isEmpty(out status:bool)
+
+//Returns amount of elements in stock table.
++getLength(out length:int)
+
+//Returns amount of shots with given type in stock table.
++getShotlength(in type:string, out length:int)
+
+//Inserts given item in stock table.
+//Returns True if successful.
++tableInsert(in item:itemType, out success:bool)
+
+//Deletes item with given expire date from stock table.
+//Returns True if successful.
++tableDelete(in expiredate:int, out success:bool)
+
+//Deletes item with oldest expire date from stock table.
++tableDeleteOldest()
+
+//Deletes shot with given type with oldest expire date from stock table.
++tableDeleteOldestShot(in type:string)
+
+//Retrieves item with given expire date from stock table.
+//Returns true if successful.
++tableRetrieve(in expiredate:int, out item:itemType, out success:bool)
+
+//Traverses all elements in stock table in sorted manner.
+//Returns list of all these elements.
++traverseTable(out traverselist:list)

@@ -1,22 +1,27 @@
 ADT Order:
-//Creates order object.
-+createOrder(in userId:int, in timeStamp:string, in chocolateId:int, in collected:bool)
+//Creates order object with given userId, timestamp, chocolateid, collected and currentworker.
++createOrder(in userId:int, in timestamp:string, in chocolateid:int, in collected:bool, in currworker:Worker)
 
 //Deletes order object.
 +destroyOrder()
 
-//Returns value of userId.
+//Returns user id of the order.
 +getUserId(out userId:int)
 
-//Returns value of timeStamp.
-+getTimeStamp(out timeStamp:string)
+//Returns timestamp of the order.
++getTimeStamp(out timestamp:string)
 
-//Returns value of chocolateId.
-+getChocolateId(out chocolateId:int)
+//Returns chocolate id of the order.
++getChocolateId(out chocolateid:int)
 
-//Returns value of collected.
+//Returns True if order has been collected, False if it has not been collected.
 +getCollected(out collected:bool)
 
 //Overrides current collected value with new provided one.
 +setCollected(in collected:bool)
 
+//Returns worker currently handling the order.
++getWorker(out worker:Worker)
+
+//Sets worker currently handling the order to given worker.
++setWorker(in worker:Worker)
