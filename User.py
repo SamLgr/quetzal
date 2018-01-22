@@ -1,5 +1,5 @@
 class User:
-    #Constructor
+    # Constructor
     # id: ID to identify the user in ADTs
     # firstname: The first name of the user
     # lastname: The last name of the user

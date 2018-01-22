@@ -1,6 +1,6 @@
 from RBTree import redBlackTree, TreeItem
 
-class RBTTable:
+class RBTTable:     # Wrapper with table operations for RBTree
     def __init__(self):
         self.rbt = redBlackTree()
 

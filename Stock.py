@@ -5,42 +5,57 @@ from Marshmallow import Marshmallow
 from ChiliPepper import ChiliPepper
 
 class Stock:
+    # Constructor
+    # chocolatestock: Stock table with chocolate shots
+    # honeystock: Stock table with honey
+    # marshmallowstock: Stock table with marshmallows
+    # chilipepperstock: Stock table with chilipeppers
     def __init__(self, chocolatestock=StockTable(), honeystock=StockTable(), marshmallowstock=StockTable(), chilipepperstock=StockTable()):
         self.chocolatestock = chocolatestock
         self.honeystock = honeystock
         self.marshmallowstock = marshmallowstock
         self.chilipepperstock = chilipepperstock
 
+    # Destructor
     def __del__(self):
         self.chocolatestock = None
         self.honeystock = None
         self.marshmallowstock = None
         self.chilipepperstock = None
 
+    # Returns chocolate shot stock table
     def getChocolatestock(self):
         return self.chocolatestock
 
+    # Returns honey stock table
     def getHoneystock(self):
         return self.honeystock
 
+    # Returns marshmallow stock table
     def getMarshmallowstock(self):
         return self.marshmallowstock
 
+    # Returns chilipepper stock table
     def getChilipepperstock(self):
         return self.chilipepperstock
 
+    # Sets chocolate shot stock table to given chocolate shot stock table
     def setChocolatestock(self, chocolatestock):
         self.chocolatestock = chocolatestock
 
+    # Sets honey stock table to given honey stock table
     def setHoneystock(self, honeystock):
         self.honeystock = honeystock
 
+    # Sets marshmallow stock table to given marshmallow stock table
     def setMarshmallowstock(self, marshmallowstock):
         self.marshmallowstock = marshmallowstock
 
+    # Sets chilipepper stock table to given chilipepper stock table
     def setChilipepperstock(self, chilipepperstock):
         self.chilipepperstock = chilipepperstock
 
+    # Deletes oldest ingredient from stock with given stock type
     def stockDelete(self, stockType):
         if stockType == "white chocolate":
                 self.chocolatestock.tableDeleteOldestShot("white")
@@ -57,6 +72,7 @@ class Stock:
         elif stockType == "chilipepper":
                 self.chilipepperstock.tableDeleteOldest()
 
+    # Add given amount of ingredients to stock with given stock type
     def stockOrder(self, stockType, amount):
         if stockType == "white chocolate":
             while amount != 0:
@@ -94,8 +110,7 @@ class Stock:
                 self.chilipepperstock.tableInsert(chilipepper)
                 amount-=1 
 
-    #Function to check if the amount in a specific stock is to low
-    #If it is to low, order more
+    # Checks if amount in a specific stock is too low and orders accordingly
     def stockCheck(self):
         #ChocolateStock
         traverselist = self.chocolatestock.traverseTable()
