@@ -167,11 +167,11 @@ class CircularLinkedList:
             return None, False
         current = self.head
         if index == self.getLength()-1:
-            return current.item, True
+            return current.getItem(), True
         else:
             for i in range(0, index+2):
                 current = current.getNext()
-            return current.item, True
+            return current.getItem(), True
     
     def append(self, newItem):
         """
@@ -219,7 +219,7 @@ class CircularLinkedList:
         >>> l.first()
         'A'
         """
-        return self.getItems()[0]
+        return self.head.getNext().getNext().getItem()
 
     def last(self):
         """
@@ -236,4 +236,4 @@ class CircularLinkedList:
         >>> l.last()
         'C'
         """
-        return self.getItems()[len(self.getItems()) - 1]
+        return self.head.getItem()

@@ -1,52 +1,37 @@
 ADT Circular Linked List:
-//Creates empty list.
+//Creates empty circular linked list.
 +createList()
 
-//Deletes list.
+//Deletes circular linked list.
 +destroyList()
 
-//Checks if list is empty.
+//Checks if circular linked list is empty.
 +isEmpty(out status:bool)
 
-//Returns amount of elements in list.
+//Returns amount of elements in circular linked list.
 +getLength(out length:int)
 
-//Adds 'newItem' at 'index'.
+//Inserts 'newItem' at 'index'.
 //'success' returns the success value.
 +insert(in index:int, in newItem:listItemType, out success:bool)
 
-//Deletes item on 'index'.
+//Deletes item at 'index'.
 //'success' returns the success value.
 +delete(in index:int, out success:bool)
 
-//Deletes item by 'value'.
-//'success' returns the success value.
-+deleteByValue(in value:listItemType, out success:bool)
-
-//Returns node at index 'index'
+//Retrieves item at 'index'.
 //'success' returns the success value.
 +retrieve(in index:int, out dataItem:listItemType, out success:bool)
 
-//Returns the node mapped to value 'value'
-+retrieveByValue(in value:listItemType, out retrievedNode:Node)
+//Adds value to end of the circular linked list.
+//'success' returns the success value.
++append(in value:listItemType, out success:bool)
 
-//Sorts list on value.
-+sortList()
-
-//Adds value to end of LinkedList
-+append(in value:listItemType) 
-
-//Returns all the items in the LinkedList in a list
+//Returns list of all items in circular linked list.
 +getItems(out nodeList:list)
 
-//Sorts all the items in the LinkedList
-+sort() : {query}
-
-//Returns head (first element) of the LinkedList
+//Returns head (first element) of the circular linked list.
 +first(out value:listItemType)
 
-//Returns tail (last element) of the LinkedList
+//Returns tail (last element) of the circular linked list.
 +last(out value:listItemType)
-
-//Returns the length of the linked chain
-+getLength(out length:int)

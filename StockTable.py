@@ -2,18 +2,24 @@ from CircularLinkedList import CircularLinkedList
 from Honey import Honey
 
 class StockTable:
-    def __init__(self): #Constructor
+    # Constructor
+    # list: List containing ingredients
+    def __init__(self):
         self.list = CircularLinkedList()
 
-    def __del__(self):  #Destructor
+    # Destructor
+    def __del__(self):
         self.list = None
 
-    def isEmpty(self):  #Retrieves if table is empty
+    # Returns if stock table is empty
+    def isEmpty(self):
         return self.list.isEmpty()
 
-    def getLength(self):    #Retrieves length of table
+    # Returns length of stock table
+    def getLength(self):
         return self.list.getLength()
 
+    # Returns amount of shots in stock table with given types
     def getShotLength(self, type):
         count = 0
         for i in range(0, self.getLength()):
@@ -21,12 +27,14 @@ class StockTable:
                 count += 1
         return count
 
-    def tableInsert(self, newitem): #Inserts given item in table
+    # Inserts given item in stock table
+    def tableInsert(self, newitem):
         self.list.insert(0, newitem)
         self.sortTable()
         return True
 
-    def tableDelete(self, expiredate):  #Deletes ingredient with given expiredate from table
+    # Deletes ingredient with given expire date from stock table
+    def tableDelete(self, expiredate):
         first = 0
         last = self.getLength() - 1
         found = False
@@ -43,9 +51,11 @@ class StockTable:
                     first = mid + 1
         return found
 
+    # Deletes oldest ingredient from stock table
     def tableDeleteOldest(self):
         self.list.delete(0)
 
+    # Deletes oldest shot with given type from stock table
     def tableDeleteOldestShot(self, type):
         found = False
         count = 0
@@ -56,7 +66,8 @@ class StockTable:
             else:
                 count += 1
 
-    def tableRetrieve(self, expiredate): #Retrieves ingredient with given expiredate from table
+    # Retrieves ingredient with given expire date from stock table
+    def tableRetrieve(self, expiredate):
         first = 0
         last = self.getLength() - 1
         found = False
@@ -72,10 +83,12 @@ class StockTable:
                     first = mid + 1
         return None, False
 
-    def traverseTable(self):    #Traverses table on ascending expiredate
+    # Traverses stock table on ascending expire date
+    def traverseTable(self):
         return self.list.getItems()
 
-    def sortTable(self):    #Sort table on ascending expiredate
+    # Sorts stock table on ascending expire date
+    def sortTable(self):
         """
         >>> t = StockTable()
         >>> h = Honey(5)
@@ -103,7 +116,8 @@ class StockTable:
                     self.list.insert(i + 1, current)
                     swap = True
 
-    def print(self):    #Function for testing purposes: prints traverseTable
+    # Function for testing purposes: prints traverseTable
+    def print(self):
         t = self.traverseTable()
         for i in t:
             print(i.getExpiredate())

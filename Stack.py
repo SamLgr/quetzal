@@ -3,7 +3,7 @@ from Node import Node
 class Stack:
     def __init__(self):
         """
-        Initialiseert een lege stack
+        Initialises an empty stack:
 
         >>> Stack().top is None
         True
@@ -15,8 +15,8 @@ class Stack:
 
     def isEmpty(self):
         """
-        Bepaalt of de stack leeg is.
-        :return: bool die aangeeft of de stack leeg is
+        Determines whether the stack is empty or not.
+        :return: bool indicating if stack is empty
 
         >>> stack = Stack()
         >>> stack.isEmpty()
@@ -30,9 +30,9 @@ class Stack:
 
     def push(self, newItem):
         """
-        Voegt element 'newItem' toe op top van de stack.
-        :param newItem: element dat moet worden toegevoegd
-        :return: bool die aangeeft of het toevoegen gelukt is
+        Pushes element 'newItem' on top of the stack.
+        :param newItem: element to be pushed
+        :return: bool indicating if push was successful
 
         >>> stack = Stack()
         >>> stack.push(5)
@@ -50,8 +50,8 @@ class Stack:
 
     def pop(self):
         """
-        Verwijdert element op de top van de stack.
-        :return: top van stack die verwijderd werd, bool die aangeeft of het verwijderen gelukt is
+        Pops element from top of the stack.
+        :return: Popped element, bool indicating if pop was successful
 
         >>> stack = Stack()
         >>> stack.push(5)
@@ -69,8 +69,8 @@ class Stack:
 
     def getTop(self):
         """
-        Geeft top van stack terug
-        :return: top van stack, bool die aangeeft of het ophalen gelukt is
+        Returns top of the stack.
+        :return: top of the stack, bool indicating if getTop was successful
 
         >>> stack = Stack()
         >>> stack.getTop()
@@ -85,6 +85,22 @@ class Stack:
         return self.top.getItem(), True
 
     def getItems(self):
+        """
+        Returns list of all elements in the stack from bottom to top.
+        :return: list of all elements in the stack
+
+        >>> stack = Stack()
+        >>> stack.push(5)
+        True
+        >>> stack.getTop()
+        (5, True)
+        >>> stack.push(4)
+        True
+        >>> stack.getTop()
+        (4, True)
+        >>> stack.getItems()
+        [5, 4]
+        """
         buffer = []
         current = self.top
         while current is not None:

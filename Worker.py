@@ -24,11 +24,13 @@ class Worker:
     lastname = ""
     workload = 0
 
-    #Constructor
-    #param id: The id of this worker
-    #param firstname: The firstname of this worker
-    #param lastname: The lastname of this worker
-    #param workload: The workload of this worker
+    # Constructor
+    # id: The ID of the worker
+    # firstname: The first name of the worker
+    # lastname: The last name of the worker
+    # workload: The workload of the worker
+    # occupied: Bool indicating if the worker is occupied
+    # order: Order being handled by the worker
     def __init__(self, id, firstname, lastname, workload):
         self.id = int(id)
         self.firstname = firstname
@@ -37,7 +39,7 @@ class Worker:
         self.occupied = False
         self.order = None
     
-    #Constructor
+    # Constructor
     def __del__(self):
         self.id = None
         self.firstname = None
@@ -46,53 +48,46 @@ class Worker:
         self.occupied = None
         self.order = None
 
-    #Returns the id of this worker
+    # Returns the ID of the worker
     def getId(self):
         return self.id
 
-    #Returns the name of this worker
+    # Returns the name of the worker
     def getName(self):
         return self.firstname, self.lastname
     
-    #Returns the workload of this worker
+    # Returns the workload of the worker
     def getWorkload(self):
         return self.workload
 
-    #Returns if this worker is occupied
+    # Returns if the worker is occupied
     def getOccupied(self):
         return self.occupied
    
-    #Returns the order of this worker
+    # Returns order being handled by the worker
     def getOrder(self):
         return self.order
-
     
-    #Sets id of worker
-    #:param id: Id to set
+    # Sets ID of the worker to given ID
     def setId(self, id):
         self.id = id
 
-    #Sets firstname of worker
-    #:param firstname: Firstname to set
+    # Sets first name of the worker to given first name
     def setFirstname(self, firstname):
         self.firstname = firstname
 
-    #Sets lastname of worker
-    #:param lastname: Lastname to set
+    # Sets last name of the worker to given last name
     def setLastname(self, lastname):
         self.lastname = lastname
 
-    #Sets workload of worker
-    #:param workload: Workload to set
+    # Sets workload of the worker to given workload
     def setWorkload(self, workload):
         self.workload = workload
 
-    #Sets if worker is occupied
-    #:param occupied: Occupied or not
+    # Sets if worker is occupied to given bool
     def setOccupied(self, occupied):
         self.occupied = occupied
 
-    #Sets order worker is working on
-    #:param order: order worker is working on
+    # Sets order being handled by the worker to given order
     def setOrder(self, order):
         self.order = order

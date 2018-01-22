@@ -13,26 +13,27 @@ class BinarySearchTree:
 
     def isEmpty(self):
         """
-        Tests if BinarySearchTree is empty
+        Returns if binary search tree is empty.
         :return: True if empty, False if not empty
         """
         return self.root is None
 
     def getTreeLength(self):
         """
-        Returns length of BinarySearchTree.
-        :return: length
+        Returns length of binary search tree.
+        :return: length of binary search tree
         """
         return len(self.inorderTraverse())
 
     def searchTreeInsert(self, TreeItem):
         """
-        Inserts TreeItem in BinarySearchTree
-        :param TreeItem: TreeItem to be inserted
-        :return: False if key is already present
+        Inserts tree item in binary search tree.
+        :param TreeItem: tree item to be inserted
+        :return: bool indicating if insert was successful
         """
         if self.isEmpty():
             self.root = TreeItem
+            return True
         elif TreeItem.getKey() < self.root.getKey():
             if self.left is None:
                 self.left = BinarySearchTree()
@@ -46,9 +47,9 @@ class BinarySearchTree:
 
     def searchTreeDelete(self, key):
         """
-        Deletes TreeItem in BinarySearchTree
-        :param key: given key of TreeItem to be deleted
-        :return: False if key is not in BinarySearchTree
+        Deletes tree item associated with given key from binary search tree.
+        :param key: given key of tree item to be deleted
+        :return: bool indicating if delete was successful
         >>> b = BinarySearchTree()
         >>> b.searchTreeInsert(TreeItem("Test", 5))
         >>> b.searchTreeInsert(TreeItem("Test Links", 2))
@@ -126,29 +127,30 @@ class BinarySearchTree:
 
     def searchTreeRetrieve(self, key):
         """
-        Returns BinarySearchTree with the given key
-        :param key: given key of BinarySearchTree to be retrieved
-        :return: BinarySearchTree or False if key is not in BinarySearchTree
+        Returns tree item associated with the given key.
+        :param key: given key of binary search tree to be retrieved
+        :return: tree item associated with given key, bool indicating if retrieve was successful
         >>> b = BinarySearchTree()
         >>> b.searchTreeInsert(TreeItem("Test", 5))
         >>> b.searchTreeInsert(TreeItem("Test Links", 2))
         >>> b.searchTreeInsert(TreeItem("Test Rechts", 9))
         >>> b.searchTreeRetrieve(2)
+        'Test Links'
         """
         if key == self.root.getKey():
-            return self
+            return self.root, True
         elif key < self.root.getKey():
             if self.left is not None:
                 return self.left.searchTreeRetrieve(key)
         elif key > self.root.getKey():
             if self.right is not None:
                 return self.right.searchTreeRetrieve(key)
-        return False
+        return None, False
 
     def inorderTraverse(self):
         """
-        Prints the inorderTraverse of BinarySearchTree
-        :return: None
+        Returns all items in binary search tree in sorted search key order.
+        :return: List containing all items in binary search tree
         >>> b = BinarySearchTree()
         >>> b.searchTreeInsert(TreeItem("Test 5", 5))
         >>> b.searchTreeInsert(TreeItem("Test 2", 2))
@@ -169,7 +171,7 @@ class BinarySearchTree:
 
     def print(self):
         """
-        Prints out all items of BinarySearchTree in sorted manner
+        Function for testing purposes, prints out all items of binary search tree in sorted manner.
         :return:
         >>> b = BinarySearchTree()
         >>> b.searchTreeInsert(TreeItem("Test 5", 5))
