@@ -20,11 +20,5 @@
 //Returns a list of all the elements in the tree, in order
 +inorderTraverse(out traverseList:list)
 
-//Prints out the whole TTFTree
-+print()
-
 //Returns the length of the TTFTree
 +getTreeLength(out lenght:int)
-
-
-

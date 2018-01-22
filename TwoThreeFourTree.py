@@ -625,7 +625,7 @@ class TwoThreeFourTree:
 
     def print(self):
         """
-        Prints elements of all items in TwoThreeFourTree in order
+        Function for testing purposes, prints elements of all items in TwoThreeFourTree in order
         """
         for i in self.inorderTraverse():
             print(i[0].getItem())

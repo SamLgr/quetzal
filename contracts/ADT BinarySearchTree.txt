@@ -8,6 +8,9 @@ ADT Binary Search Tree:
 //Checks if tree is empty.
 +isEmpty(out status:bool)
 
+//Returns the amount of items currently in the tree.
++getTreeLength(out length:int)
+
 //Adds 'newItem' in the binary searchtree.
 //'success' returns the success value.
 +searchTreeInsert(in newItem:int, out success:bool)
@@ -23,10 +26,3 @@ ADT Binary Search Tree:
 
 //Returns values in sorted search key order (small > big).
 +inorderTraverse(in visit:FunctionType)
-
-//Returns the amount of items currently in the tree.
-+getTreeLength(out length:int)
-
-//Prints out the whole Binary Search Tree
-+print()
-+
