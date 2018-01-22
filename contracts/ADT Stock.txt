@@ -1,0 +1,38 @@
+ADT Stock:
+//Creates stock object containing stock table for each ingredient.
++createStock(in chocolateStock:Table, in honeyStock:Table, in marshmallowStock:Table, in chiliPepperStock:Table)
+
+//Deletes stock object.
++destroyStock()
+
+//Returns chocolate stock table.
++getChocolateStock(out chocolateStock:Table)
+
+//Returns honey stock table.
++getHoneyStock(out honeyStock:Table)
+
+//Returns marshmallow stock table.
++getMarshmallowStock(out marshmallowStock:Table)
+
+//Returns chilipepper stock table.
++getChiliPepperStock(out chilipepperStock:Table)
+
+//Overrides current chocolateStock with new provided chocolate stock table.
++setChocolateStock(in chocolateStock:Table)
+
+//Overrides current honeyStock with new provided honey stock table.
++setHoneyStock(in honeyStock:Table)
+
+//Overrides current marshmallowStock with new provided marshmallow stock table.
++setMarshmallowStock(in marshmallowStock:Table)
+
+//Overrides current chilipepperStock with new provided chilipepper stock table.
++setChiliPepperStock(in chilipepperStock:Table)
+
+//Add given amount of ingredients to stock with given stock type.
++stockOrder(out stockType:string, in amount:int)
+
+//Checks for each stock if there are enough remaining ingredients in the stock.
+//Orders certain amount accordingly.
+//Returns True when successful.
++stockCheck(out bool:success)

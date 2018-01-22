@@ -1,0 +1,12 @@
+ADT TreeItem:
+//Creates TreeItem containing given item and key.
++createTreeItem(in item:itemType, in searchKey:keyType)
+
+//Destroys TreeItem.
++destroyTreeItem()
+
+//Returns item of TreeItem.
++getItem(out item:itemType)
+
+//Returns key of TreeItem.
++getKey(out searchKey:keyType)

@@ -1,0 +1,13 @@
+ADT Honey:
+//Creates a new honey object, containing the properties price and expire date
+//(format YYYYMMDD) of  the honey.
++createHoney(in price:floating point=0.25, in expiredate:int)
+
+//Deletes a honey object.
++destroyHoney():
+
+//Returns price of the honey.
++getPrice(out price:int)
+
+//Returns expire date of the honey.
++getExpiredate(out expiredate:int)

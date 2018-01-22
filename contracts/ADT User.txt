@@ -1,0 +1,15 @@
+ADT User:
+//Creates user object with properties id, firstname, lastname, mailadress.
++createUser(in id:int, in firstname:string, in lastname:string, in mailadress:string)
+
+//Deletes user object.
++destroyUser()
+
+//Returns ID of user.
++getId(out id:int)
+
+//Returns tuple of values of firstname and lastname.
++getName(out (firstname, lastname):tuple)
+
+//Returns value of mailadress.
++getmailAdress(out mailadress:string)

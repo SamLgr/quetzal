@@ -1,0 +1,40 @@
+ADT Worker:
+//Creates worker object with properties id, firstname, lastname, workload, occupied, order.
+//'occupied' represents if worker is busy, 'order' represents order being handled (None if worker is not busy)
++createWorker(in id:int, in firstname:string, in lastname:string, in workload:int, in occupied:bool, in order:Order)
+
+//Deletes worker object.
++destroyWorker()
+
+//Returns value of id.
++getId(out id:int)
+
+//Returns tuple of values of firstname and lastname.
++getName(out (firstname, lastname):tuple)
+
+//Returns value of workload.
++getWorkLoad(out workload:int)
+
+//Returns True if workload of this worker is on the stack and False if it is not
++getOccupied(out status:bool)
+
+//Returns order currently being handled by worker.
++getOrder(out order:Order)
+
+//Sets value of ID to given ID.
++setId(in id:int)
+
+//Sets first name of worker to given first name.
++setFirstname(in firstname:string)
+
+//Sets last name of worker to given last name.
++setLastname(in lastname:string)
+
+//Sets workload of worker to given workload.
++setWorkload(in workload:int)
+
+//Overrides workers occupied status with provided status.
++setOccupied(in status:bool)
+
+//Sets order currently being handled by worker to provided one.
++setOrder(in order:Order)

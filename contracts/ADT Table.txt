@@ -1,0 +1,28 @@
+ADT Table:
+//Creates empty table.
++createTable()
+
+//Deletes table.
++destroyTable()
+
+//Checks if table is empty.
+//Returns True if empty, false if not empty.
++tableIsEmpty(out status:bool)
+
+//Returns the amount of elements in table.
++tableLength(out length:int)
+
+//Adds 'newItem' with associated key value to table.
+//'success' returns the success value.
++tableInsert(in newItem:TableItemType, out success:bool)
+
+//Deletes element with value 'searchKey'.
+//'success' returns the succcess value.
++tableDelete(in searchKey:KeyType, out success:bool)
+
+//Places item with value 'searchKey' in 'tableItem' and returns 'tableItem'
+//'succcess' returns the succcess value.
++tableRetrieve(in searchKey:KeyType, out tableItem:TableItemType, out success:bool)
+
+//Returns all elements in the table in sorted search key order.
++traverseTable(in visit:FunctionType)

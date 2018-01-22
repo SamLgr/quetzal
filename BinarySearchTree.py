@@ -1,13 +1,14 @@
 from TreeItem import TreeItem
+from CircularLinkedList import CircularLinkedList
 
 class BinarySearchTree:
     def __init__(self):
-        self.root = None
+        self.root = CircularLinkedList()
         self.left = None
         self.right = None
 
     def __del__(self):
-        self.root = None
+        self.root = CircularLinkedList()
         self.left = None
         self.right = None
 
@@ -16,7 +17,7 @@ class BinarySearchTree:
         Returns if binary search tree is empty.
         :return: True if empty, False if not empty
         """
-        return self.root is None
+        return self.root.isEmpty()
 
     def getTreeLength(self):
         """
@@ -32,18 +33,15 @@ class BinarySearchTree:
         :return: bool indicating if insert was successful
         """
         if self.isEmpty():
-            self.root = TreeItem
-            return True
-        elif TreeItem.getKey() < self.root.getKey():
+            return self.root.append(TreeItem)
+        elif TreeItem.getKey() < self.root.first().getKey():
             if self.left is None:
                 self.left = BinarySearchTree()
-            self.left.searchTreeInsert(TreeItem)
-        elif TreeItem.getKey() > self.root.getKey():
+            return self.left.searchTreeInsert(TreeItem)
+        elif TreeItem.getKey() > self.root.first().getKey():
             if self.right is None:
                 self.right = BinarySearchTree()
-            self.right.searchTreeInsert(TreeItem)
-        else:
-            return False
+            return self.right.searchTreeInsert(TreeItem)
 
     def searchTreeDelete(self, key):
         """
@@ -52,28 +50,33 @@ class BinarySearchTree:
         :return: bool indicating if delete was successful
         >>> b = BinarySearchTree()
         >>> b.searchTreeInsert(TreeItem("Test", 5))
+        True
         >>> b.searchTreeInsert(TreeItem("Test Links", 2))
+        True
         >>> b.searchTreeInsert(TreeItem("Test Rechts", 9))
+        True
         >>> b.searchTreeInsert(TreeItem("Test Rechts Rechts", 11))
+        True
         >>> b.searchTreeInsert(TreeItem("Test Rechts Links", 7))
+        True
         >>> b.searchTreeDelete(9)
         True
         >>> b.searchTreeDelete(4)
         False
         >>> b.searchTreeRetrieve(9)
-        False
+        (None, False)
         """
         parent = None
         tree = self
         left = False
         right = False
-        while key != tree.root.getKey():
-            if key < tree.root.getKey():
+        while key != tree.root.first().getKey():
+            if key < tree.root.first().getKey():
                 parent = tree
                 tree = tree.left
                 left = True
                 right = False
-            elif key > tree.root.getKey():
+            elif key > tree.root.first().getKey():
                 parent = tree
                 tree = tree.right
                 right = True
@@ -83,7 +86,7 @@ class BinarySearchTree:
         treeToDelete = tree
         if treeToDelete.left is None and treeToDelete.right is None:
             if parent is None:
-                self.root = None
+                self.root = CircularLinkedList()
             elif left:
                 parent.left = None
             elif right:
@@ -132,17 +135,24 @@ class BinarySearchTree:
         :return: tree item associated with given key, bool indicating if retrieve was successful
         >>> b = BinarySearchTree()
         >>> b.searchTreeInsert(TreeItem("Test", 5))
+        True
         >>> b.searchTreeInsert(TreeItem("Test Links", 2))
+        True
         >>> b.searchTreeInsert(TreeItem("Test Rechts", 9))
-        >>> b.searchTreeRetrieve(2)
-        'Test Links'
+        True
+        >>> b.searchTreeRetrieve(5)
         """
-        if key == self.root.getKey():
-            return self.root, True
-        elif key < self.root.getKey():
+        if self.root.isEmpty():
+            return None, False
+        elif key == self.root.first().getKey():
+            if self.root.getLength() == 1:
+                return self.root.first(), True
+            else:
+                return self.root, True
+        elif key < self.root.first().getKey():
             if self.left is not None:
                 return self.left.searchTreeRetrieve(key)
-        elif key > self.root.getKey():
+        elif key > self.root.first().getKey():
             if self.right is not None:
                 return self.right.searchTreeRetrieve(key)
         return None, False
@@ -153,18 +163,27 @@ class BinarySearchTree:
         :return: List containing all items in binary search tree
         >>> b = BinarySearchTree()
         >>> b.searchTreeInsert(TreeItem("Test 5", 5))
+        True
         >>> b.searchTreeInsert(TreeItem("Test 2", 2))
+        True
         >>> b.searchTreeInsert(TreeItem("Test 9", 9))
+        True
         >>> b.searchTreeInsert(TreeItem("Test 7", 7))
+        True
         >>> b.searchTreeInsert(TreeItem("Test 11", 11))
+        True
         >>> b.searchTreeInsert(TreeItem("Test 1", 1))
+        True
         >>> b.searchTreeInsert(TreeItem("Test 3", 3))
+        True
         >>> b.inorderTraverse()
+        ['Test 1', 'Test 2', 'Test 3', 'Test 5', 'Test 7', 'Test 9', 'Test 11']
         """
         traverseList = []
         if self.left is not None:
             traverseList = self.left.inorderTraverse()
-        traverseList.append(self.root)
+        for i in range(self.root.getLength()):
+            traverseList.append(self.root.retrieve(i)[0].getItem())
         if self.right is not None:
             traverseList = traverseList + self.right.inorderTraverse()
         return traverseList
@@ -175,12 +194,19 @@ class BinarySearchTree:
         :return:
         >>> b = BinarySearchTree()
         >>> b.searchTreeInsert(TreeItem("Test 5", 5))
+        True
         >>> b.searchTreeInsert(TreeItem("Test 2", 2))
+        True
         >>> b.searchTreeInsert(TreeItem("Test 9", 9))
+        True
         >>> b.searchTreeInsert(TreeItem("Test 7", 7))
+        True
         >>> b.searchTreeInsert(TreeItem("Test 11", 11))
+        True
         >>> b.searchTreeInsert(TreeItem("Test 1", 1))
+        True
         >>> b.searchTreeInsert(TreeItem("Test 3", 3))
+        True
         >>> b.print()
         Test 1
         Test 2
@@ -191,4 +217,4 @@ class BinarySearchTree:
         Test 11
         """
         for i in self.inorderTraverse():
-            print(i.getItem())
+            print(i)

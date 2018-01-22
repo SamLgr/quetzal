@@ -1,0 +1,16 @@
+ADT ChocolateShot:
+//Creates a new chocolateshot object, containing the properties price, shottype (white, brown, milk or black) and expire date (format = YYYYMMDD)
+//(format YYYYMMDD) of  the chocolateshot.
++createChocolateShot(in type:string, in price:floating point=0.25, in expiredate: int)
+
+//Deletes a chocolateshot object.
++destroyChocolateShot()
+
+//Returns price.
++getPrice(out price:int)
+
+//Returns expire date of the format YYYYMMDD.
++getExpiredate(out expiredate:int)
+
+//Returns the type of the chocolateshot (white, brown, milk, black)
++getType(out shottype:string)

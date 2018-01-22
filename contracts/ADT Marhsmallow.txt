@@ -1,0 +1,13 @@
+ADT Marshmallow:
+//Creates a new Marshmallow, containing the properties price and expire date
+//(format YYYYMMDD) of  the masrhmallow.
++createMarshmallow(in price:floating point=0,75, in expiredate:int)
+
+//Deletes a marshmallow object.
++destroyMarshmallow()
+
+//Returns price of the marshmallow.
++getPrice(out price:int)
+
+//Returns expire date of the marshmallow.
++getExpiredate(out expiredate:int)

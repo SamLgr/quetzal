@@ -1,0 +1,34 @@
+//Creates chocolatemilk object, containing properties id and price.
++createChocolatemilk(in id: integer, in price: integer=2)
+
+//Deletes chocolatemilk object.
++destroyChocolatemilk()
+
+//Returns chocolatemilk price.
++getPrice(out price:float)
+
+//Returns chocolatemilk id.
++getId(out id:int)
+
+//Adds shot ingredient to chocolatemilk object.
+//Price increases by 1.
+//Returns True when successful.
++addShot(in shot:ChocolateShot, out success:bool)
+
+//Adds honey ingredient to chocolatemilk object.
+//Price increases by 0.5.
+//Returns True when successful.
++addHoney(in honey:Honey, out success:bool)
+
+//Adds marshmallow ingredient to chocolatemilk object.
+//Price increases by 0.75.
+//Returns True when successful.
++addMarshmallow(in marshmallow:Marshmallow, out success:bool)
+
+//Adds chilipepper ingredient to chocolatemilk object.
+//Price increases by 0.25.
+//Returns True when succesful.
++addChilipepper(in chilipepper:ChiliPepper, out success:bool)
+
+//Returns the workload required to finish the task.
++getWorkload(out workload:int)

@@ -1,4 +1,4 @@
-ADT Binary Search Tree:
+ADT BinarySearchTree:
 //Creates binary search tree.
 +createSearchTree()
 

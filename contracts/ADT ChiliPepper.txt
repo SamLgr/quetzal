@@ -1,0 +1,13 @@
+ADT Chilipepper:
+//Creates a new chilipepper object, containing the properties price and expire date
+//(format YYYYMMDD) of  the chilipepper.
++createChilipepper(in price:floating point=0.25, in expiredate: int)
+
+//Deletes a chilipepper object.
++destroyChilipepper()
+
+//Returns chilipepper price.
++getPrice(out price:int)
+
+//Returns chilipepper expiration date (format = YYYYMMDD).
++getExpiredate(out expiredate:int)

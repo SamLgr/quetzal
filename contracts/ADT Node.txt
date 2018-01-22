@@ -1,0 +1,15 @@
+ADT Node:
+//Creates node object.
++createNode(in item:itemType, in next:itemType)
+
+//Returns value of item.
++getItem(out item:itemType)
+
+//Returns value of next pointer.
++getNext(out next:itemType)
+
+//Overrides current item value with new provided one.
++setItem(in item:itemType)
+
+//Overrides current next pointer with new provided one.
++setNext(in next:itemType)
