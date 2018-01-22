@@ -53,6 +53,7 @@ chocolates = Hashmap(1, 200)
 
 
 def jumpTime():
+    # handles passage timestamp
     global current_orders
     passthrough = []
     for order in current_orders:
@@ -195,28 +196,29 @@ def findUser(email):
     return None
 
 
-#Used in:
-# - avaiableWorker()
-def selection_sort(l):
-    for i in range(0, len(l) -1):
-        indexOfSmallest = i
-        for j in range(i + 1, len(l)):
-            if l[j].getWorkload() > l[indexOfSmallest].getWorkload():
-                indexOfSmallest = j
-        if indexOfSmallest != i:
-            l[i], l[indexOfSmallest] = l[indexOfSmallest], l[i]
-    
-    return l
+# #Used in:
+# # - avaiableWorker()
+# def selection_sort(l):
+#     for i in range(0, len(l) -1):
+#         indexOfSmallest = i
+#         for j in range(i + 1, len(l)):
+#             if l[j].getWorkload() > l[indexOfSmallest].getWorkload():
+#                 indexOfSmallest = j
+#         if indexOfSmallest != i:
+#             l[i], l[indexOfSmallest] = l[indexOfSmallest], l[i]
+#
+#     return l
+#
+# def availableWorker():
+#     sortedWorkers = selection_sort(workers)
+#     for w in sortedWorkers:
+#         if w.occupied == False:
+#             return w
+#     return False
 
-def availableWorker():
-    sortedWorkers = selection_sort(workers)
-    for w in sortedWorkers:
-        if w.occupied == False:
-            return w
-    return False
 
-
-def executeOrder(order):  # 66
+def executeOrder(order):
+    # links a available worker to order, removes ingredients from stock
     current_orders.append(order)
     choco = chocolates.retrieve(order.chocolateid)
     for i in range(choco.ingredients.getLength()):
@@ -240,6 +242,7 @@ def executeOrder(order):  # 66
 
 
 def makeChoco(arguments):
+    # creates ChocolateMilk which gets stored in hashmap on id, returns id
     global chocolateid
     chocolateid += 1
     choco = ChocolateMilk(chocolateid)
@@ -281,6 +284,8 @@ def delWorker(workerid):
 
 
 def init_command(command):
+    # handles the init stage of the input file
+    # adding users/workers/stock
     if command[0] == "shot":
         if len(command) == 6 and chocolatestock.getShotLength(command[1]) < 20:
             for _ in range(int(command[2])):
@@ -319,6 +324,8 @@ def init_command(command):
 
 
 def execute_command(command):
+    # handles the other commands
+    # orders/log
     global tijdstip
     if command[1] == "bestel":
         userid = findUser(command[2])

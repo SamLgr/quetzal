@@ -4,6 +4,7 @@
 #
 
 class TreeItem(object):
+    # added to support different values, not only ints
     def __init__(self, value, key):
         self.value = value
         self.key = key

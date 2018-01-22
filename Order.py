@@ -1,8 +1,8 @@
 class Order:
     def __init__(self, userid, timestamp, chocolateid, collected):
-        self.userid = userid
-        self.timestamp = timestamp
-        self.chocolateid = chocolateid
+        self.userid = int(userid)
+        self.timestamp = int(timestamp)
+        self.chocolateid = int(chocolateid)
         self.collected = collected
         self.currworker= None
 
