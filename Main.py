@@ -113,7 +113,7 @@ def createLogFile(timestamp):   # Creates a log file based on loginfo
 
     htmlfile = open('log' + timestamp + '.html', 'w+')
     htmlfile.write(htmlstr)
-    for worker in workers:
+    for worker in workers:  # Write one column per worker
         htmlfile.write("<td>")
         htmlfile.write(worker.getName()[0] + " " + worker.getName()[1])
         htmlfile.write("</td>")
@@ -132,8 +132,8 @@ def createLogFile(timestamp):   # Creates a log file based on loginfo
 			        <tbody>
     """
     htmlfile.write(htmlstr)
-    for timestamp in range(0, len(loginfo)):
-        currentorders = loginfo[timestamp][0]
+    for timestamp in range(0, len(loginfo)):    # Write info for every timestamp
+        currentorders = loginfo[timestamp][0]   # Get data from loginfo
         currentingredients = loginfo[timestamp][1]
         currenthandledorders = loginfo[timestamp][2]
         currentchocolates = loginfo[timestamp][3]
@@ -141,48 +141,41 @@ def createLogFile(timestamp):   # Creates a log file based on loginfo
         currentstack = loginfo[timestamp][5]
         htmlfile.write("<tr>")
         htmlfile.write("<td>")
-        htmlfile.write(str(timestamp))
+        htmlfile.write(str(timestamp))  # Write current timestamp
         htmlfile.write("</td>")
         htmlfile.write("<td>| ")
-        htmlfile.write(" ".join(str(worker.getWorkload()) for worker in currentstack.getItems()))
+        htmlfile.write(" ".join(str(worker.getWorkload()) for worker in currentstack.getItems()))   # Write stack with workloads at timestamp
         htmlfile.write("</td>")
         for worker in workers:
             htmlfile.write("<td>")
             for order in currenthandledorders:
                 if order.currworker.getId() == worker.getId():
-                    htmlfile.write(str(currentchocolates.retrieve(order.getChocolateid()).returnWorkload()))
+                    htmlfile.write(str(currentchocolates.retrieve(order.getChocolateid()).returnWorkload()))    # Write remaining workload for order being handled by worker
             htmlfile.write("</td>")
         htmlfile.write("<td>")
-        htmlfile.write(", ".join(str(order) for order in currentneworders))
+        htmlfile.write(", ".join(str(order) for order in currentneworders))     # Write workloads of new orders incoming at timestamp
         htmlfile.truncate()
         htmlfile.write("</td>")
         htmlfile.write("<td>")
-        htmlfile.write(", ".join(str(currentchocolates.retrieve(order.getChocolateid()).returnWorkload()) for order in currentorders.traverse()))
+        htmlfile.write(", ".join(str(currentchocolates.retrieve(order.getChocolateid()).returnWorkload()) for order in currentorders.traverse()))   # Write workloads of orders in queue at timestamp
         htmlfile.write("</td>")
-        chocstock = currentingredients.getChocolatestock()
+        chocstock = currentingredients.getChocolatestock()  # Get stocks from StockTable
         hstock = currentingredients.getHoneystock()
         mstock = currentingredients.getMarshmallowstock()
         chilistock = currentingredients.getChilipepperstock()
+        types = ["white", "milk", "brown", "black"]
+        for choctype in types:
+            htmlfile.write("<td>")
+            htmlfile.write(str(chocstock.getShotLength(choctype)))  # Write amount of white, milk, brown and black chocolate shots in stock
+            htmlfile.write("</td>")
         htmlfile.write("<td>")
-        htmlfile.write(str(chocstock.getShotLength("white")))
+        htmlfile.write(str(hstock.getLength()))     # Write amount of honey in stock
         htmlfile.write("</td>")
         htmlfile.write("<td>")
-        htmlfile.write(str(chocstock.getShotLength("milk")))
+        htmlfile.write(str(mstock.getLength()))     # Write amount of marshmallows in stock
         htmlfile.write("</td>")
         htmlfile.write("<td>")
-        htmlfile.write(str(chocstock.getShotLength("brown")))
-        htmlfile.write("</td>")
-        htmlfile.write("<td>")
-        htmlfile.write(str(chocstock.getShotLength("black")))
-        htmlfile.write("</td>")
-        htmlfile.write("<td>")
-        htmlfile.write(str(hstock.getLength()))
-        htmlfile.write("</td>")
-        htmlfile.write("<td>")
-        htmlfile.write(str(mstock.getLength()))
-        htmlfile.write("</td>")
-        htmlfile.write("<td>")
-        htmlfile.write(str(chilistock.getLength()))
+        htmlfile.write(str(chilistock.getLength()))     # Write amount of chilipeppers in stock
         htmlfile.write("</td>")
         htmlfile.write("</tr>")
 
@@ -192,7 +185,7 @@ def createLogFile(timestamp):   # Creates a log file based on loginfo
             </body>
         </html>
     """
-    htmlfile.write(htmlstr)
+    htmlfile.write(htmlstr)     # End HTML body
 
 
 def findUser(email):
