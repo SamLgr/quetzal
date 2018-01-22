@@ -18,11 +18,11 @@ class ChocolateMilk:
         self.price = None
         self.ingredients = None
 
-    # Returns total price of chocolate milk
+    # Returns total price of the chocolate milk
     def getPrice(self):
         return self.price
 
-    # Returns ID of chocolate milk
+    # Returns ID of the chocolate milk
     def getId(self):
         return self.id
 
@@ -32,6 +32,11 @@ class ChocolateMilk:
         self.price += ingredient.getPrice()
         self.workload += 1
 
-    # Returns total workload of chocolate milk
-    def returnWorkload(self):
+    # Returns list with ingredients 'added' to the chocolate milk
+    def getIngredients(self):
+        return self.ingredients
+
+    # Returns total workload of the chocolate milk
+    def getWorkload(self):
         return self.workload
+

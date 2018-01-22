@@ -151,14 +151,14 @@ def createLogFile(timestamp):   # Creates a log file based on loginfo
             htmlfile.write("<td>")
             for order in currenthandledorders:
                 if order.currworker.getId() == worker.getId():
-                    htmlfile.write(str(currentchocolates.retrieve(order.getChocolateid()).returnWorkload()))    # Write remaining workload for order being handled by worker
+                    htmlfile.write(str(currentchocolates.retrieve(order.getChocolateid()).getWorkload()))    # Write remaining workload for order being handled by worker
             htmlfile.write("</td>")
         htmlfile.write("<td>")
         htmlfile.write(", ".join(str(order) for order in currentneworders))     # Write workloads of new orders incoming at timestamp
         htmlfile.truncate()
         htmlfile.write("</td>")
         htmlfile.write("<td>")
-        htmlfile.write(", ".join(str(currentchocolates.retrieve(order.getChocolateid()).returnWorkload()) for order in currentorders.traverse()))   # Write workloads of orders in queue at timestamp
+        htmlfile.write(", ".join(str(currentchocolates.retrieve(order.getChocolateid()).getWorkload()) for order in currentorders.traverse()))   # Write workloads of orders in queue at timestamp
         htmlfile.write("</td>")
         chocstock = currentingredients.getChocolatestock()  # Get stocks from StockTable
         hstock = currentingredients.getHoneystock()
@@ -220,11 +220,11 @@ def findUser(email):
 def executeOrder(order):
     # links a available worker to order, removes ingredients from stock
     current_orders.append(order)
-    choco = chocolates.retrieve(order.chocolateid)
-    for i in range(choco.ingredients.getLength()):
-        ingredient = choco.ingredients.retrieve(i)[0]
+    choco = chocolates.retrieve(order.getChocolateid())
+    for i in range(choco.getIngredients().getLength()):
+        ingredient = choco.getIngredients().retrieve(i)[0]
         if type(ingredient) is ChocolateShot:
-            chocolatetype = ingredient.type + " chocolate"
+            chocolatetype = ingredient.getType() + " chocolate"
             ingredients_stock.stockDelete(chocolatetype)
         elif type(ingredient) is Honey:
             ingredients_stock.stockDelete("honey")
@@ -236,8 +236,8 @@ def executeOrder(order):
             print(type(ingredient))
     currentWorker = workerstack.pop()[0]
     currentWorker.setOccupied(True)
-    currentWorker.order = order
-    order.currworker = currentWorker
+    currentWorker.setOrder(order)
+    order.setWorker(currentWorker)
 
 
 
@@ -268,7 +268,7 @@ def makeChoco(arguments):
         elif ingredient == "honing":
             choco.addIngredient(Honey(10**9))
             # ingredients_stock.stockDelete("honey")
-    neworder.append(choco.returnWorkload())
+    neworder.append(choco.getWorkload())
     chocolates.insert(MapObject(chocolateid, choco))
     return chocolateid
 
@@ -277,7 +277,7 @@ def makeChoco(arguments):
 # param id: ID of the worker to delete
 def delWorker(workerid):
     for worker in workers:
-        if worker.id == workerid:
+        if worker.getId() == workerid:
             del worker
             return True
     return False
