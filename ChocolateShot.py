@@ -1,26 +1,27 @@
 class ChocolateShot:
-    #Constructor
-    #param type: Type of choclateshot
-    #param expiredate: The expirationdate of the shot
-    def __init__(self, type, expiredate):
-        self.type = type
+    # Constructor
+    # shottype: Type of the chocolate shot
+    # price: Price of the chocolate shot
+    # expiredate: The expire date of the chocolate shot
+    def __init__(self, shottype, expiredate):
+        self.shottype = shottype
         self.price = 1
         self.expiredate = int(expiredate)
     
-    #Destructor
+    # Destructor
     def __del__(self):
-        self.type = None
+        self.shottype = None
         self.price = None
         self.expiredate = None
 
-    #Returns the type of this shot
+    # Returns the type of the chocolate shot
     def getType(self):
-        return self.type
+        return self.shottype
     
-    #Returns the price of this shot
+    # Returns the price of the chocolate shot
     def getPrice(self):
         return self.price
 
-    #Returns the expirationdate of this shot
+    # Returns the expire date of the chocolate shot
     def getExpiredate(self):
         return self.expiredate

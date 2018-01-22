@@ -1,7 +1,7 @@
 from TwoThreeFourTree import TwoThreeFourTree
 from TreeItem import TreeItem
 
-class TTFTTable:
+class TTFTTable:    # Wrapper with table operations for TwoThreeFourTree
     def __init__(self):
         self.ttft = TwoThreeFourTree()
 
@@ -15,8 +15,7 @@ class TTFTTable:
         return self.ttft.getTreeLength()
 
     def tableInsert(self, order):
-        treeitem = TreeItem(order, order.getTimestamp())
-        return self.ttft.twoThreeFourTreeInsert(treeitem)
+        return self.ttft.twoThreeFourTreeInsert(TreeItem(order, order.getTimestamp()))
 
     def tableDelete(self, timestamp):
         return self.ttft.twoThreeFourTreeDelete(timestamp)

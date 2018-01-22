@@ -1,7 +1,7 @@
 from BinarySearchTree import BinarySearchTree
 from TreeItem import TreeItem
 
-class BSTTable:
+class BSTTable:     # Wrapper with table operations for BinarySearchTree
     def __init__(self):
         self.bst = BinarySearchTree()
 
@@ -15,8 +15,7 @@ class BSTTable:
         return self.bst.getTreeLength()
 
     def tableInsert(self, order):
-        treeitem = TreeItem(order, order.getTimestamp())
-        return self.bst.searchTreeInsert(treeitem)
+        return self.bst.searchTreeInsert(TreeItem(order, order.getTimestamp()))
 
     def tableDelete(self, timestamp):
         return self.bst.searchTreeDelete(timestamp)

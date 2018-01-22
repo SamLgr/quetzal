@@ -45,38 +45,38 @@ def readFile():
                 elif "print" in command:        # gives DOT-language of 234-Tree
                     createDotFileTTFT(t)
                     command = file.readline()
-        elif "ll" in command:
+        elif "ll" in command:       # creates circular linked list
             l = CircularLinkedList()
             command = file.readline()
             while command is not None:
                 if len(command.strip()) == 0:
                     break
-                elif "insert" in command:
+                elif "insert" in command:       # inserts in circular linked list
                     index = int(command.split()[1])
                     number = int(command.split()[2])
                     l.insert(index, number)
                     command = file.readline()
-                elif "delete" in command:
+                elif "delete" in command:       # deletes in circular linked list
                     index = int(command.split()[1])
                     l.delete(index)
                     command = file.readline()
-                elif "print" in command:
+                elif "print" in command:        # gives DOT-language of circular linked list
                     createDotFileLL(l)
                     command = file.readline()
-        elif "stack" in command:
+        elif "stack" in command:    # creates stack
             s = Stack()
             command = file.readline()
             while command is not None:
                 if len(command.strip()) == 0:
                     break
-                elif "push" in command:
+                elif "push" in command:         # pushes on stack
                     number = int(command.split()[1])
                     s.push(number)
                     command = file.readline()
-                elif "pop" in command:
+                elif "pop" in command:          # pops from stack
                     s.pop()
                     command = file.readline()
-                elif "print" in command:
+                elif "print" in command:        # gives DOT-language of stack
                     createDotFileS(s)
                     command = file.readline()
 
@@ -163,7 +163,7 @@ def addNodesTTFT(t, tg):        # add nodes and edges for every node in 234-Tree
         tg.edge(str(t.root.retrieve(0)[0].getKey()), str(t.right.root.retrieve(0)[0].getKey()))
         addNodesTTFT(t.right, tg)
 
-def createDotFileLL(l):
+def createDotFileLL(l):  # create list and add nodes
     lg = gv.Digraph(format='svg', node_attr={'shape': 'record'}, graph_attr={'rankdir': 'LR'})
     current = l.head.getNext().getNext()
     for i in range(l.getLength()-1):
@@ -175,7 +175,7 @@ def createDotFileLL(l):
     lg.edge_attr.update(arrowhead='vee', arrowtail='dot', dir='both', tailclip='false')
     print(lg.source)
 
-def createDotFileS(s):
+def createDotFileS(s):  # create stack and add objects
     sg = gv.Digraph(format='svg', node_attr={'shape': 'record'}, graph_attr={'rankdir': 'LR'})
     sg.node(name="stack", label="", height="0.001", fixedsize="true")
     for item in s.getItems():

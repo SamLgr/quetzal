@@ -3,7 +3,7 @@ from Node import Node
 class CircularLinkedList:
     def __init__(self):
         """
-        Initialiseert een lege circulair gelinkte lijst
+        Initialises an empty circular linked list.
 
         >>> head = CircularLinkedList().head
         >>> head.item == None
@@ -15,13 +15,16 @@ class CircularLinkedList:
         self.head.setNext(self.head)
 
     def __del__(self):
+        """
+        Reinitialises circular linked list to an empty one.
+        """
         self.head = Node(None, None)
         self.head.setNext(self.head)
 
     def isEmpty(self):
         """
-        Bepaalt of de circulair gelinkte lijst leeg is
-        :return: bool die aangeeft of de lijst leeg is
+        Determines whether circular linked list is empty or not
+        :return: bool indicating if circular linked list is empty
 
         >>> list = CircularLinkedList()
         >>> list.isEmpty()
@@ -35,8 +38,8 @@ class CircularLinkedList:
 
     def getLength(self):
         """
-        Bepaalt de lengte van de circulair gelinkte lijst
-        :return: lengte van de circulair gelinkte lijst
+        Determines length of circular linked list.
+        :return: length of circular linked list
 
         >>> list = CircularLinkedList()
         >>> list.getLength()
@@ -59,10 +62,10 @@ class CircularLinkedList:
 
     def insert(self, index, newItem):
         """
-        Voegt element 'newItem' toe op positie 'index' in de circulair gelinkte lijst.
-        :param index: positie waar 'newItem' moet worden toegevoegd
-        :param newItem: element dat moet worden toegevoegd
-        :return: bool die aangeeft of het toevoegen gelukt is
+        Inserts element 'newItem' at position 'index' in circular linked list.
+        :param index: position where 'newItem' has to be inserted
+        :param newItem: element to be inserted
+        :return: bool indicating if insert was successful
 
         >>> list = CircularLinkedList()
         >>> list.insert(1, 5)
@@ -98,8 +101,8 @@ class CircularLinkedList:
     def delete(self, index):
         """
         Verwijdert element op positie 'index' uit de circulair gelinkte lijst.
-        :param index: positie van element dat moet worden verwijderd
-        :return: bool die aangeeft of het verwijderen gelukt is
+        :param index: position of element to be deleted
+        :return: bool indicating if delete was successful
 
         >>> list = CircularLinkedList()
         >>> list.insert(1, 5)
@@ -140,9 +143,9 @@ class CircularLinkedList:
 
     def retrieve(self, index):
         """
-        Geeft element op positie 'index' in de circulair gelinkte lijst terug.
-        :param index: positie van het element
-        :return: element op positie 'index', bool die aangeeft of het ophalen gelukt is
+        Returns element at position 'index' in circular linked list.
+        :param index: position of element to be retrieved
+        :return: element at position 'index', bool indicating if retrieve was successful
 
         >>> list = CircularLinkedList()
         >>> list.insert(0, 5)
@@ -172,7 +175,10 @@ class CircularLinkedList:
     
     def append(self, newItem):
         """
-        Testing
+        Appends element to circular linked list.
+        :param newItem: element to append
+        :return: bool indicating if append was successful
+
         >>> list = CircularLinkedList()
         >>> list.append("A")
         True
@@ -182,7 +188,9 @@ class CircularLinkedList:
  
     def getItems(self):
         """
-        Testing
+        Returns all elements in circular linked list in sequential order.
+        :return: list containing elements in circular linked list
+
         >>> list = CircularLinkedList()
         >>> list.append("A")
         True
@@ -196,9 +204,11 @@ class CircularLinkedList:
             nodeList.append(self.retrieve(i)[0])
         return nodeList
 
-    #Returns first element
     def first(self):
         """
+        Returns first element in circular linked list.
+        :return: first element in circular linked list
+
         >>> l = CircularLinkedList()
         >>> l.append("A")
         True
@@ -211,9 +221,11 @@ class CircularLinkedList:
         """
         return self.getItems()[0]
 
-    #Returns last element
     def last(self):
         """
+        Returns last element in circular linked list.
+        :return: last element in circular linked list
+
         >>> l = CircularLinkedList()
         >>> l.append("A")
         True
@@ -224,4 +236,4 @@ class CircularLinkedList:
         >>> l.last()
         'C'
         """
-        return self.getItems()[len(self.getItems()) -1]
+        return self.getItems()[len(self.getItems()) - 1]

@@ -1,6 +1,7 @@
 from Hashmap import Hashmap
+from Hashmap import MapObject
 
-class HMTable:
+class HMTable:  # Wrapper with table operations for Hashmap
     def __init__(self):
         self.hm = Hashmap()
 
@@ -8,16 +9,16 @@ class HMTable:
         self.hm = None
 
     def isEmpty(self):
-        return None # not implemented
+        return self.hm.isEmpty()
 
     def getLength(self):
-        return None # not implemented
+        return self.hm.getLength()
 
     def tableInsert(self, order):
-        return self.hm.insert(order, order.getTimestamp())
+        return self.hm.insert(MapObject(order.getTimestamp(), order))
 
     def tableDelete(self, timestamp):
         return self.hm.erase(timestamp)
 
     def traverseTable(self):
-        return None # not implemented
+        return self.hm.traverse()
