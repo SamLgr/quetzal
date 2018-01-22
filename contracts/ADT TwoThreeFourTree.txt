@@ -15,10 +15,10 @@
 +twoThreeFourDelete(in key:int, out status:bool)
 
 //Returns an element of the TTFTree by key
-+twoThreeFourTreeRetrieve(in key: int, out value:TreeItem)
++twoThreeFourTreeRetrieve(in key: int, out item:TreeItem)
 
 //Returns a list of all the elements in the tree, in order
 +inorderTraverse(out traverseList:list)
 
 //Returns the length of the TTFTree
-+getTreeLength(out lenght:int)
++getTreeLength(out length:int)

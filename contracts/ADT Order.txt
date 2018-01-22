@@ -1,0 +1,22 @@
+ADT Order:
+//Creates order object.
++createOrder(in userId:int, in timeStamp:string, in chocolateId:int, in collected:bool)
+
+//Deletes order object.
++destroyOrder()
+
+//Returns value of userId.
++getUserId(out userId:int)
+
+//Returns value of timeStamp.
++getTimeStamp(out timeStamp:string)
+
+//Returns value of chocolateId.
++getChocolateId(out chocolateId:int)
+
+//Returns value of collected.
++getCollected(out collected:bool)
+
+//Overrides current collected value with new provided one.
++setCollected(in collected:bool)
+
