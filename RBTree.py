@@ -44,19 +44,43 @@ class rbNode(object):
         return not self.leftTree and not self.rightTree
 
     def dotDebug(self):  # debug code to represent tree in dot language
+        debugstring = []
         if not self.parent and self.isLeaf():  # tree only has one item (root)
-            return print(self.item.retrieve()[0])
+            debugstring.append(self.item.retrieve()[0])
+            return debugstring
         if self.parent and self.item:
             strprint = "\"" + ", ".join(self.parent.item.retrieve()) + "\" -> \"" + ", ".join(self.item.retrieve()) + "\""
             if self.red:
                 strprint = strprint + " [style=dashed];"
             else:
                 strprint = strprint + ";"
-            print(strprint)
+            debugstring.append(strprint)
         if self.leftTree:
-            self.leftTree.dotDebug()
+            debugstring.extend(self.leftTree.dotDebug())
         if self.rightTree:
-            self.rightTree.dotDebug()
+            debugstring.extend(self.rightTree.dotDebug())
+        return debugstring
+
+    def writeDotFile(self):
+        debugstring = ["digraph G {"]
+        debugstring.extend(self.dotDebug())
+        debugstring.append("}")
+        file = open('rbt.dot', 'w+')
+        file.write("\n".join(debugstring))
+
+    def retrieveItemNode(self, key):  # returns node with key value
+        if key == self.getKey():
+            return self
+        elif key < self.getKey():
+            if self.leftTree is None:
+                return None
+            x = self.leftTree.retrieveItemNode(key)
+            return x
+        elif key > self.getKey():
+            if self.rightTree is None:
+                return None
+            x = self.rightTree.retrieveItemNode(key)
+            return x
     
     def retrieveItem(self, key):  # returns values with key
         if key == self.getKey():
@@ -218,14 +242,14 @@ class redBlackTree(object):
     def dotDebug(self):  # function that calls on debug code
         if self.isEmtpy():
             return False
-        self.root.dotDebug()
+        self.root.writeDotFile()
 
     #Deletes an item from the tree
     #:param key: Key of Node to delete
     #:return bool: Returns True if succesful
     def deleteItem(self, key):
         # retrieving node
-        z = self.root.retrieveItem(key)
+        z = self.root.retrieveItemNode(key)
         # check if node is valid
         if z is None:
             return False

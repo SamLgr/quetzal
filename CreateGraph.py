@@ -1,4 +1,5 @@
 import graphviz as gv
+import os
 
 from BinarySearchTree import BinarySearchTree
 from TreeItem import TreeItem
@@ -80,10 +81,13 @@ def readFile():
                     command = file.readline()
 
 def createDotFileBST(b):
-    bg = gv.Graph(format='svg')     # create graph and add nodes
+    bg = gv.Graph(format='png')     # create graph and add nodes
     bg.node(str(b.root.first().getKey()), label=", ".join(str(treeitem.getItem()) for treeitem in b.root.traverse()))
     addNodesBST(b, bg)
     print(bg.source)
+    file = open('bst.dot', 'w+')
+    file.write(bg.source)
+    bg.render('output/bst.gv', view=True)
 
 def addNodesBST(b, bg):     # add nodes and edges for every node in BST
     if b.left is None and b.right is None:
@@ -106,7 +110,7 @@ def addNodesBST(b, bg):     # add nodes and edges for every node in BST
         addNodesBST(b.right, bg)
 
 def createDotFileTTFT(t):       # create graph and add nodes
-    tg = gv.Graph(format='svg')
+    tg = gv.Graph(format='png')
     word = ""
     for i in range(t.root.getLength()):
         word += str(t.root.retrieve(i)[0].getKey())
@@ -115,6 +119,9 @@ def createDotFileTTFT(t):       # create graph and add nodes
     tg.node(str(t.root.retrieve(0)[0].getKey()), label=word)
     addNodesTTFT(t, tg)
     print(tg.source)
+    file = open('ttft.dot', 'w+')
+    file.write(tg.source)
+    tg.render('output/ttft.gv', view=True)
 
 def addNodesTTFT(t, tg):        # add nodes and edges for every node in 234-Tree
     if t.left is None:
@@ -167,7 +174,7 @@ def addNodesTTFT(t, tg):        # add nodes and edges for every node in 234-Tree
         addNodesTTFT(t.right, tg)
 
 def createDotFileLL(l):  # create list and add nodes
-    lg = gv.Digraph(format='svg', node_attr={'shape': 'record'}, graph_attr={'rankdir': 'LR'})
+    lg = gv.Digraph(format='png', node_attr={'shape': 'record'}, graph_attr={'rankdir': 'LR'})
     current = l.head.getNext().getNext()
     for i in range(l.getLength()-1):
         lg.node(str(current.getItem()), label="{ <data> " + str(current.getItem()) + " | <ref>  }")
@@ -177,14 +184,20 @@ def createDotFileLL(l):  # create list and add nodes
     lg.edge(str(current.getItem()) + ":ref:c", str(l.head.getNext().getNext().getItem()))
     lg.edge_attr.update(arrowhead='vee', arrowtail='dot', dir='both', tailclip='false')
     print(lg.source)
+    file = open('ll.dot', 'w+')
+    file.write(lg.source)
+    lg.render('png', 'output/ll.gv', view=True)
 
 def createDotFileS(s):  # create stack and add objects
-    sg = gv.Digraph(format='svg', node_attr={'shape': 'record'}, graph_attr={'rankdir': 'LR'})
+    sg = gv.Digraph(format='png', node_attr={'shape': 'record'}, graph_attr={'rankdir': 'LR'})
     sg.node(name="stack", label="", height="0.001", fixedsize="true")
     for item in s.traverse():
         sg.node(str(item), label=str(item))
         sg.node(name=str(item))
     print(sg.source)
+    file = open('s.dot', 'w+')
+    file.write(sg.source)
+    sg.render('png', 'output/s.gv', view=True)
 
 if __name__ == '__main__':
     readFile()
