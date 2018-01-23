@@ -29,6 +29,9 @@ ADT Stock:
 //Overrides current chilipepperStock with new provided chilipepper stock table.
 +setChiliPepperStock(in chilipepperStock:Table)
 
+//Returns a list of all items of every ingredient's stock table (all items in stock).
++stockTraverse(out traverselist:list)
+
 //Add given amount of ingredients to stock with given stock type.
 +stockOrder(out stockType:string, in amount:int)
 

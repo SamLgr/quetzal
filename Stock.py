@@ -72,6 +72,15 @@ class Stock:
         elif stockType == "chilipepper":
                 self.chilipepperstock.tableDeleteOldest()
 
+    # Returns a list with all items in the stock table for every ingredient
+    def stockTraverse(self):
+        traverselist = []
+        traverselist.extend(self.chocolatestock.traverseTable())
+        traverselist.extend(self.honeystock.traverseTable())
+        traverselist.extend(self.marshmallowstock.traverseTable())
+        traverselist.extend(self.chilipepperstock.traverseTable())
+        return traverselist
+
     # Add given amount of ingredients to stock with given stock type
     def stockOrder(self, stockType, amount):
         if stockType == "white chocolate":

@@ -39,8 +39,6 @@ users = DoubleList()
 orders = ourQueue()
 # list for orders that are currently being worked on
 current_orders = []
-# new orders_workload
-neworder = []
 # processed orders
 processed_orders = BSTTable()
 # init idcounter
@@ -76,18 +74,15 @@ def jumpTime():
 
 def createLogInfo():    # Logs info into loginfo list for every timestamp (uses deepcopy)
     loginfo.append([])
-    currentorders = deepcopy(orders)
+    currentorderque = deepcopy(orders)
     currentingredients = deepcopy(ingredients_stock)
     currenthandledorders = deepcopy(current_orders)
     currentchocolates = deepcopy(chocolates)
-    currentneworders = deepcopy(neworder)
     currentstack = deepcopy(workerstack)
-    neworder.clear()
-    loginfo[len(loginfo) - 1].append(currentorders)  # Logs current queue
+    loginfo[len(loginfo) - 1].append(currentorderque)  # Logs current queue
     loginfo[len(loginfo) - 1].append(currentingredients)  # Logs current stock
     loginfo[len(loginfo) - 1].append(currenthandledorders)  # Logs current orders that are being worked on
     loginfo[len(loginfo) - 1].append(currentchocolates)  # Logs current chocolates
-    loginfo[len(loginfo) - 1].append(currentneworders)  # Logs current new orders
     loginfo[len(loginfo) - 1].append(currentstack)  # Logs current worker stacks
 
 
@@ -135,12 +130,18 @@ def createLogFile(timestamp):   # Creates a log file based on loginfo
     """
     htmlfile.write(htmlstr)
     for timestamp in range(0, len(loginfo)):    # Write info for every timestamp
-        currentorders = loginfo[timestamp][0]   # Get data from loginfo
+        currentorderque = loginfo[timestamp][0]   # Get data from loginfo
         currentingredients = loginfo[timestamp][1]
         currenthandledorders = loginfo[timestamp][2]
         currentchocolates = loginfo[timestamp][3]
-        currentneworders = loginfo[timestamp][4]
-        currentstack = loginfo[timestamp][5]
+        currentstack = loginfo[timestamp][4]
+        currentneworders = []
+        for order in currentorderque.traverse():
+            if order.getTimestamp() == timestamp:
+                currentneworders.append(order)
+        for order in currenthandledorders:
+            if order.getTimestamp() == timestamp:
+                currentneworders.append(order)
         htmlfile.write("<tr>")
         htmlfile.write("<td>")
         htmlfile.write(str(timestamp))  # Write current timestamp
@@ -155,11 +156,11 @@ def createLogFile(timestamp):   # Creates a log file based on loginfo
                     htmlfile.write(str(currentchocolates.retrieve(order.getChocolateid()).getWorkload()))    # Write remaining workload for order being handled by worker
             htmlfile.write("</td>")
         htmlfile.write("<td>")
-        htmlfile.write(", ".join(str(order) for order in currentneworders))     # Write workloads of new orders incoming at timestamp
+        htmlfile.write(", ".join(str(currentchocolates.retrieve(order.getChocolateid()).getWorkload()) for order in currentneworders))     # Write workloads of new orders incoming at timestamp
         htmlfile.truncate()
         htmlfile.write("</td>")
         htmlfile.write("<td>")
-        htmlfile.write(", ".join(str(currentchocolates.retrieve(order.getChocolateid()).getWorkload()) for order in currentorders.traverse()))   # Write workloads of orders in queue at timestamp
+        htmlfile.write(", ".join(str(currentchocolates.retrieve(order.getChocolateid()).getWorkload()) for order in currentorderque.traverse()))   # Write workloads of orders in queue at timestamp
         htmlfile.write("</td>")
         chocstock = currentingredients.getChocolatestock()  # Get stocks from StockTable
         hstock = currentingredients.getHoneystock()
@@ -270,7 +271,6 @@ def makeChoco(arguments):
         elif ingredient == "honing":
             choco.addIngredient(Honey(10**9))
             # ingredients_stock.stockDelete("honey")
-    neworder.append(choco.getWorkload())
     chocolates.insert(MapObject(chocolateid, choco))
     return chocolateid
 
