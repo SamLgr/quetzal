@@ -1,5 +1,4 @@
-# quetzal
-Systeem Quetzal E-Shop
+Systeem Quetzal E-Shop:
 - Workers en users worden beide bijgehouden in een lijst (CircularLinkedList en DoubleList zijn makkelijk afwisselbaar)
 - Afgehandelde bestellingen worden bijgehouden in BSTTable maar kan zeer snel naar andere geavanceerde tabelimplementatie veranderd worden
 - Chocolade melk objecten worden bijgehouden in een hashmap
