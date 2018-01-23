@@ -144,6 +144,8 @@ def testTwoThreeFourTree():
         'B'
         >>> t.inorderTraverse()
         ['A', 'B', 'C']
+        >>> t.twoThreeFourTreeDelete(2)
+        True
         >>> t.inorderTraverse()
         ['A', 'C']
     """

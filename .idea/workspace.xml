@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b600a203-674c-4d23-a833-505a5c9b6640" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test.py" afterPath="$PROJECT_DIR$/Test.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,6 +24,7 @@
     <SUITE FILE_PATH="coverage/quetzal$Doctests_in_Queue__1_.coverage" NAME="Doctests in Queue (1) Coverage Results" MODIFIED="1516545874592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/quetzal$Doctest_StockTable_sortTable.coverage" NAME="Doctest StockTable.sortTable Coverage Results" MODIFIED="1513607877219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/quetzal$Doctests_in_DoubleList__2_.coverage" NAME="Doctests in DoubleList (2) Coverage Results" MODIFIED="1516727175159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/quetzal$Doctest_testTwoThreeFourTree.coverage" NAME="Doctest testTwoThreeFourTree Coverage Results" MODIFIED="1516739214773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/quetzal$Doctests_in_Queue.coverage" NAME="Doctests in Queue Coverage Results" MODIFIED="1516729298380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/quetzal$Doctests_in_DoubleList__1_.coverage" NAME="Doctests in DoubleList (1) Coverage Results" MODIFIED="1516729437366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -42,8 +43,23 @@
       <file leaf-file-name="RBTree.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RBTree.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5984">
-              <caret line="352" column="36" lean-forward="false" selection-start-line="352" selection-start-column="36" selection-end-line="352" selection-end-column="36" />
+            <state relative-caret-position="786">
+              <caret line="339" column="28" lean-forward="true" selection-start-line="339" selection-start-column="28" selection-end-line="339" selection-end-column="28" />
+              <folding>
+                <marker date="1516739149657" expanded="true" signature="4072:11618" ph="..." />
+                <marker date="1516739149657" expanded="true" signature="11408:11542" ph="..." />
+                <marker date="1516739149657" expanded="true" signature="11575:11618" ph="..." />
+                <marker date="1516739149657" expanded="true" signature="11622:11930" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BinarySearchTree.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BinarySearchTree.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="175" column="12" lean-forward="false" selection-start-line="175" selection-start-column="12" selection-end-line="175" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -55,9 +71,9 @@
             <state relative-caret-position="939">
               <caret line="129" column="26" lean-forward="false" selection-start-line="129" selection-start-column="26" selection-end-line="129" selection-end-column="26" />
               <folding>
-                <marker date="1516737464440" expanded="true" signature="455:2845" ph="..." />
-                <marker date="1516737464440" expanded="true" signature="2779:2845" ph="..." />
-                <marker date="1516737464440" expanded="true" signature="3466:3485" ph="..." />
+                <marker date="1516738161523" expanded="true" signature="455:2845" ph="..." />
+                <marker date="1516738161523" expanded="true" signature="2779:2845" ph="..." />
+                <marker date="1516738161523" expanded="true" signature="3478:3497" ph="..." />
               </folding>
             </state>
           </provider>
@@ -67,8 +83,10 @@
         <entry file="file://$PROJECT_DIR$/Hashmap.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-3821">
-              <caret line="133" column="18" lean-forward="false" selection-start-line="133" selection-start-column="18" selection-end-line="133" selection-end-column="18" />
-              <folding />
+              <caret line="131" column="18" lean-forward="false" selection-start-line="131" selection-start-column="18" selection-end-line="131" selection-end-column="18" />
+              <folding>
+                <marker date="1516738161520" expanded="true" signature="0:399" ph="&quot;&quot;&quot;Testing Hashmap + documentation...&quot;&quot;&quot;" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,15 +97,15 @@
             <state relative-caret-position="888">
               <caret line="246" column="27" lean-forward="true" selection-start-line="246" selection-start-column="27" selection-end-line="246" selection-end-column="27" />
               <folding>
-                <marker date="1516737464437" expanded="true" signature="111:7990" ph="..." />
-                <marker date="1516737464437" expanded="true" signature="7387:7767" ph="..." />
-                <marker date="1516737464437" expanded="true" signature="7796:7990" ph="..." />
+                <marker date="1516738161517" expanded="true" signature="111:7990" ph="..." />
+                <marker date="1516738161517" expanded="true" signature="7387:7767" ph="..." />
+                <marker date="1516738161517" expanded="true" signature="7796:7990" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -107,12 +125,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Test.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="752">
-              <caret line="191" column="5" lean-forward="true" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="820">
+              <caret line="150" column="7" lean-forward="true" selection-start-line="150" selection-start-column="7" selection-end-line="150" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -156,7 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Test.py" />
         <option value="$PROJECT_DIR$/Table.py" />
         <option value="$PROJECT_DIR$/CircularLinkedList.py" />
         <option value="$PROJECT_DIR$/TwoThreeFourTree.py" />
@@ -184,6 +203,7 @@
         <option value="$PROJECT_DIR$/ourQueue.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Test.py" />
       </list>
     </option>
   </component>
@@ -193,7 +213,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="49" />
     <option name="y" value="25" />
     <option name="width" value="1871" />
@@ -248,7 +268,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python tests.Doctest testTwoThreeFourTree">
+    <configuration name="Doctest testTwoThreeFourTree" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="C:\Users\Sam\Anaconda3\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="quetzal" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="testTwoThreeFourTree" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_FUNCTION" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+    </configuration>
     <configuration name="Doctests in DoubleList (1)" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -339,24 +378,6 @@
       <module name="quetzal" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="RBTree" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="quetzal" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RBTree.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -482,19 +503,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.Main" />
-      <item index="1" class="java.lang.String" itemvalue="Python.RBTree" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Doctests in DoubleList (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Doctests in Queue" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in ourQueue" />
-      <item index="5" class="java.lang.String" itemvalue="Python tests.Doctests in DoubleList" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Doctests in DoubleList (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Doctests in Queue" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Doctests in ourQueue" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in DoubleList" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Doctest testTwoThreeFourTree" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Doctests in DoubleList" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Doctests in DoubleList (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Doctests in ourQueue" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Doctests in Queue" />
-        <item index="4" class="java.lang.String" itemvalue="Python.RBTree" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Doctest testTwoThreeFourTree" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Doctests in DoubleList" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Doctests in DoubleList (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Doctests in ourQueue" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Doctests in Queue" />
       </list>
     </recent_temporary>
   </component>
@@ -845,11 +866,11 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Doctests_in_DoubleList - 2018.01.23 at 18h 03m 49s.xml">
-      <configuration name="Doctests in DoubleList" configurationId="tests" />
+    <history-entry file="Doctest_testTwoThreeFourTree - 2018.01.23 at 21h 24m 41s.xml">
+      <configuration name="Doctest testTwoThreeFourTree" configurationId="tests" />
     </history-entry>
-    <history-entry file="Doctests_in_DoubleList - 2018.01.23 at 18h 46m 09s.xml">
-      <configuration name="Doctests in DoubleList" configurationId="tests" />
+    <history-entry file="Doctest_testTwoThreeFourTree - 2018.01.23 at 21h 26m 54s.xml">
+      <configuration name="Doctest testTwoThreeFourTree" configurationId="tests" />
     </history-entry>
     <history-entry file="Doctests_in_DoubleList_(1) - 2018.01.23 at 18h 06m 56s.xml">
       <configuration name="Doctests in DoubleList (1)" configurationId="tests" />
@@ -877,14 +898,14 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="7" />
+    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24181627" sideWeight="0.5232496" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18162619" sideWeight="0.4810262" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22026093" sideWeight="0.68198824" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22026093" sideWeight="0.68198824" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15585938" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1189,14 +1210,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BinarySearchTree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="175" column="12" lean-forward="false" selection-start-line="175" selection-start-column="12" selection-end-line="175" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Stack.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1233,14 +1246,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/rbt.dot" />
     <entry file="file://$PROJECT_DIR$/queue.dot" />
-    <entry file="file://$PROJECT_DIR$/RBTree.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5984">
-          <caret line="352" column="36" lean-forward="false" selection-start-line="352" selection-start-column="36" selection-end-line="352" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DoubleNode.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1254,9 +1259,9 @@
         <state relative-caret-position="888">
           <caret line="246" column="27" lean-forward="true" selection-start-line="246" selection-start-column="27" selection-end-line="246" selection-end-column="27" />
           <folding>
-            <marker date="1516737464437" expanded="true" signature="111:7990" ph="..." />
-            <marker date="1516737464437" expanded="true" signature="7387:7767" ph="..." />
-            <marker date="1516737464437" expanded="true" signature="7796:7990" ph="..." />
+            <marker date="1516738161517" expanded="true" signature="111:7990" ph="..." />
+            <marker date="1516738161517" expanded="true" signature="7387:7767" ph="..." />
+            <marker date="1516738161517" expanded="true" signature="7796:7990" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1266,9 +1271,9 @@
         <state relative-caret-position="939">
           <caret line="129" column="26" lean-forward="false" selection-start-line="129" selection-start-column="26" selection-end-line="129" selection-end-column="26" />
           <folding>
-            <marker date="1516737464440" expanded="true" signature="455:2845" ph="..." />
-            <marker date="1516737464440" expanded="true" signature="2779:2845" ph="..." />
-            <marker date="1516737464440" expanded="true" signature="3466:3485" ph="..." />
+            <marker date="1516738161523" expanded="true" signature="455:2845" ph="..." />
+            <marker date="1516738161523" expanded="true" signature="2779:2845" ph="..." />
+            <marker date="1516738161523" expanded="true" signature="3478:3497" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1276,8 +1281,10 @@
     <entry file="file://$PROJECT_DIR$/Hashmap.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3821">
-          <caret line="133" column="18" lean-forward="false" selection-start-line="133" selection-start-column="18" selection-end-line="133" selection-end-column="18" />
-          <folding />
+          <caret line="131" column="18" lean-forward="false" selection-start-line="131" selection-start-column="18" selection-end-line="131" selection-end-column="18" />
+          <folding>
+            <marker date="1516738161520" expanded="true" signature="0:399" ph="&quot;&quot;&quot;Testing Hashmap + documentation...&quot;&quot;&quot;" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1285,14 +1292,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="191" column="5" lean-forward="true" selection-start-line="191" selection-start-column="5" selection-end-line="191" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1326,6 +1325,37 @@
         <state relative-caret-position="221">
           <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BinarySearchTree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="175" column="12" lean-forward="false" selection-start-line="175" selection-start-column="12" selection-end-line="175" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RBTree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="786">
+          <caret line="339" column="28" lean-forward="true" selection-start-line="339" selection-start-column="28" selection-end-line="339" selection-end-column="28" />
+          <folding>
+            <marker date="1516739149657" expanded="true" signature="4072:11618" ph="..." />
+            <marker date="1516739149657" expanded="true" signature="11408:11542" ph="..." />
+            <marker date="1516739149657" expanded="true" signature="11575:11618" ph="..." />
+            <marker date="1516739149657" expanded="true" signature="11622:11930" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="820">
+          <caret line="150" column="7" lean-forward="true" selection-start-line="150" selection-start-column="7" selection-end-line="150" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
