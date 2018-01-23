@@ -136,10 +136,10 @@ def createLogFile(timestamp):   # Creates a log file based on loginfo
         currentchocolates = loginfo[timestamp][3]
         currentstack = loginfo[timestamp][4]
         currentneworders = []
-        for order in currentorderque.traverse():
+        for order in currenthandledorders:
             if order.getTimestamp() == timestamp:
                 currentneworders.append(order)
-        for order in currenthandledorders:
+        for order in currentorderque.traverse():
             if order.getTimestamp() == timestamp:
                 currentneworders.append(order)
         htmlfile.write("<tr>")
