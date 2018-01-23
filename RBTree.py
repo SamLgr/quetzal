@@ -46,17 +46,17 @@ class rbNode(object):
         if self.rightTree:
             self.rightTree.dotDebug()
     
-    def retrieveItem(self, key):  # returns node with key value
+    def retrieveItem(self, key):  # returns values with key
         if key == self.getKey():
-            return self
+            return self.item.retrieve(), True
         elif key < self.getKey():
             if self.leftTree is None:
-                return None
+                return None, False
             x = self.leftTree.retrieveItem(key)
             return x
         elif key > self.getKey():
             if self.rightTree is None:
-                return None
+                return None, False
             x = self.rightTree.retrieveItem(key)
             return x
 
@@ -285,6 +285,9 @@ class redBlackTree(object):
     def getLength(self):
         list = self.root.inorderTraverse
         return len(list)
+
+    def retrieveItem(self, key):
+        return self.root.retrieveItem(key)
 
 
 
