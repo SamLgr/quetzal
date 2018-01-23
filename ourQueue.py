@@ -138,9 +138,9 @@ class Queue(object):
 
 
 
-test = Queue()
-test.enqueue(5)
-test.enqueue(6)
-test.enqueue(7)
-test.enqueue(99)
-test.writeDotFile()
+# test = Queue()
+# test.enqueue(5)
+# test.enqueue(6)
+# test.enqueue(7)
+# test.enqueue(99)
+# test.writeDotFile()

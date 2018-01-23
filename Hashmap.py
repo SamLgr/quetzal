@@ -17,9 +17,6 @@ True
 >>> toAdd = MapObject(2, "B")
 >>> hmap.insert(toAdd)
 True
->>> toAdd = MapObject(2, "X")
->>> hmap.insert(toAdd)
-True
 >>> toAdd = MapObject(4, "C")
 >>> hmap.insert(toAdd)
 True
@@ -63,11 +60,11 @@ B
 
 #Getting length:
 >>> hmap.getLength()
-5
+4
 
 #Traversing hashmap:
 >>> hmap.traverse()
-['A', 'B', 'X', 'C', 'D']
+['A', 'B', 'C', 'D']
 
 #Display hashmap:
 #>>> hmap.print()
@@ -78,8 +75,9 @@ True
 
 """
 
-#from CircularLinkedList import CircularLinkedList as List
-from DoubleList import DoubleList as List
+
+from CircularLinkedList import CircularLinkedList as List
+#from DoubleList import DoubleList as List
 from DoubleNode import Node
 import math
 
@@ -124,11 +122,11 @@ class Hashmap:
         if self.myType == 3:
             while self.v[i] == None:
                 i+=1
-            return self.v[i].first().item
+            return self.v[i].first().item.myObject
 
         while self.v[i] == None:
             i+=1
-        return self.v[i]
+        return self.v[i].myObject
 
     #Returns last element in hashmap
     def end(self):
@@ -136,12 +134,12 @@ class Hashmap:
         if self.myType == 3:
             while self.v[i] == None:
                 i-=1
-            return self.v[i].last().item
+            return self.v[i].last().item.myObject
 
         while self.v[i] == None:
             if i == 0: return None
             i-=1
-        return self.v[i]
+        return self.v[i].myObject
 
     #Inserts object 'toAdd' in hashmap
     #:param toAdd: MapObject -> Object to add
@@ -161,11 +159,11 @@ class Hashmap:
         if self.myType == 3:
             if self.v[self.hash(key)] == None:
                 l = List()
-                node = Node(objectToAdd)
+                node = Node(toAdd)
                 l.append(node)
             else:
                 l = self.v[self.hash(key)]
-                node = Node(objectToAdd)
+                node = Node(toAdd)
                 l.append(node)
 
             self.v[self.hash(key)] = l
@@ -180,19 +178,19 @@ class Hashmap:
             if self.myType == 1:
                 while (self.v[i] != None):
                     i+=1
-                self.v[i] = objectToAdd
+                self.v[i] = toAdd
 
             #Quadratic probing
             if self.myType == 2:
                 while (self.v[i] != None):
                     i+=1
                     i = i ** 2 % self.max_size
-                self.v[i] = objectToAdd
+                self.v[i] = toAdd
             
             return True
 
         #No probing or chaining needed, normal insert
-        self.v[self.hash(key)] = objectToAdd
+        self.v[self.hash(key)] = toAdd
         return True
         
 
@@ -205,8 +203,8 @@ class Hashmap:
 
         if self.myType == 3:
             sum = 0
-            for i in self.v[self.hash(key)].getItems():
-                if i.item == d:
+            for i in self.v[self.hash(key)].traverse():
+                if i.item.myObject == d:
                     self.v[self.hash(key)].delete(sum)
 
                 sum += 1
@@ -246,10 +244,10 @@ class Hashmap:
         if self.myType == 3:
             l = []
 
-            for i in self.v[h].getItems():
+            for i in self.v[h].traverse():
                 l.append(i.getItem())
             return l
-        return self.v[h]
+        return self.v[h].myObject
 
     #Checks if prime
     def isPrime(self, n):
@@ -283,6 +281,7 @@ class Hashmap:
         #return int((key  + self.max_size) / (key +1)) % self.max_size 
         #return key
         return int(key + math.sqrt(key) + self.firstPrime(key +1)) % self.max_size
+    
     #Return object by key
     #:param key: Int -> Return object mapped to this key
     #:return Object: Object mapped to key
@@ -300,7 +299,7 @@ class Hashmap:
                     sum += 1
                     print(str(sum) + ".\t" + str(None))
                 else:
-                    l = i.getItems()
+                    l = i.traverse()
                     sum += 1
                     print(str(sum) + ".\t")
                     for j in l:
@@ -318,7 +317,7 @@ class Hashmap:
         for i in self.v:
             if self.myType == 3:
                 if i != None:
-                    for j in i.getItems():
+                    for j in i.traverse():
                         if j != None:
                             sum += 1
             
@@ -335,7 +334,23 @@ class Hashmap:
         return False
 
     #Traverses the whole hashmap
-    #:return list: List of all elements in the hashmap
+    #:return list: List of all MapObject in the hashmap
+    def __traverse(self):
+        traverseList = []
+        
+        for i in self.v:
+
+            if i != None:
+                if self.myType == 3:
+                    for j in i.traverse():
+                        traverseList.append(j.item)
+                else:
+                    traverseList.append(i)
+
+        return traverseList
+    
+    #Traverses the whole hashmap
+    #:return list: List of all data in the hashmap
     def traverse(self):
         traverseList = []
         
@@ -343,13 +358,15 @@ class Hashmap:
 
             if i != None:
                 if self.myType == 3:
-                    for j in i.getItems():
-                        traverseList.append(j.item)
+                    for j in i.traverse():
+                        traverseList.append(j.item.myObject)
                 else:
-                    traverseList.append(i)
+                    traverseList.append(i.myObject)
 
         return traverseList
 
+    
+    
     #Deletes the whole Hashmap
     #:return bool: True if succesful
     def destroyHashmap(self):
@@ -364,7 +381,7 @@ class Hashmap:
     #in documentation
     def fetch(self, obj=None, n=0):
         if self.myType == 3:
-            return obj[n]
+            return obj[n].myObject
 
         else:
             return obj
@@ -388,37 +405,89 @@ class Hashmap:
 
         
         #Adding to list
-        list = self.traverse()
-        print(list)
+        list = self.__traverse()
 
-        firstDone = False
-        prevKeyBuffer = 0
-        prevValueBuffer = list[0]
-        for i in range(0, len(self.v)):
-            search = self.v[i]
-            for j in range(0, len(list)):
-                if search == list[j]:
-                    key = j
-                    hash = '.' + str(self.hash(key))
-                    value = list[j]
+        if self.myType != 3: 
+            firstDone = False
+            prevKeyBuffer = list[0].key
+            prevValueBuffer = list[0].myObject
+            for i in range(0, len(self.v)):
+                search = self.v[i]
+                for j in range(0, len(list)):
+                    if search == list[j]:
+                        key = list[j].key
+                        hash = '.' + str(self.hash(key))
+                        value = list[j].myObject
+                        
+                        if not firstDone:
+                            prevKey = "Key"
+                            prevHash = "Hash"
+                            prevValue = "Value"
+                            firstDone = True
+                        else:
+                            prevKey = prevKeyBuffer
+                            prevKeyBuffer = key
+                            
+                            prevHash = '.' + str(self.hash(prevKey))
+                            
+                            prevValue = prevValueBuffer
+                            prevValueBuffer = value
+
+                        myStr += str(prevKey) + " -> " + str(key) + ';\n'
+                        myStr += str(prevHash) + " -> " + str(hash) + ';\n'
+                        myStr += str(prevValue) + " -> " + str(value) + ';\n'
+        else:
+            firstDone = False
+            prevKeyBuffer = list[0].key
+            prevValueBuffer = list[0].myObject
+
+            for i in self.v:
+                if i != None:
+                    for j in i.traverse():
+                        key = j.item.key
+                        hash = '.' + str(self.hash(key))
+                        value = j.item.myObject
+                        
+                        if not firstDone:
+                            prevKey = "Key"
+                            prevHash = "Hash"
+                            prevValue = "Value"
+                            firstDone = True
+                        else:
+                            prevKey = prevKeyBuffer
+                            prevKeyBuffer = key
+                            
+                            prevHash = '.' + str(self.hash(prevKey))
+                            
+                            prevValue = prevValueBuffer
+                            prevValueBuffer = value
+
+                        myStr += str(prevKey) + " -> " + str(key) + ';\n'
+                        myStr += str(prevHash) + " -> " + str(hash) + ';\n'
+                        myStr += str(prevValue) + " -> " + str(value) + ';\n'
                     
-                    if not firstDone:
-                        prevKey = "Key"
-                        prevHash = "Hash"
-                        prevValue = "Value"
-                        firstDone = True
-                    else:
-                        prevKey = prevKeyBuffer
-                        prevKeyBuffer = key
-                        
-                        prevHash = '.' + str(self.hash(prevKey))
-                        
-                        prevValue = prevValueBuffer
-                        prevValueBuffer = value
 
-                    myStr += str(prevKey) + " -> " + str(key) + ';\n'
-                    myStr += str(prevHash) + " -> " + str(hash) + ';\n'
-                    myStr += str(prevValue) + " -> " + str(value) + ';\n'
-                        
+
         myStr += "}"
         print(myStr)
+
+        f = open("myHashmapDotFile.dot", 'w')
+        f.write(myStr + '\n')
+        f.close()
+
+"""
+hmap = Hashmap(3, 50)
+item = MapObject(1, "A")
+hmap.insert(item)
+item = MapObject(3, "B")
+hmap.insert(item)
+item = MapObject(5, "X")
+hmap.insert(item)
+item = MapObject(8, "C")
+hmap.insert(item)
+item = MapObject(8, "D")
+hmap.insert(item)
+item = MapObject(7, "E")
+hmap.insert(item)
+hmap.dotDebug()
+"""
