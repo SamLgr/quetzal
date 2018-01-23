@@ -233,12 +233,24 @@ class DoubleList(object):
 
     #Used to create a graphical representation of the list
     def dotDebug(self):
+        debugstring = []
         graph = self.traverse()
         for i in range(len(graph)):
             graph[i] = str(graph[i])
-        print(' -- '.join(graph))
+        debugstring.append("\"" + '\" -- \"'.join(graph) + "\"")
+        return debugstring
 
-# test = DoubleList()
-# test.append(5)
-# test.append(6)
-# test.dotDebug()
+    def writeDotFile(self):
+        debugstring = ["digraph G {"]
+        debugstring.extend(self.dotDebug())
+        debugstring.append("}")
+        file = open('dll.dot', 'w+')
+        file.write("\n".join(debugstring))
+
+test = DoubleList()
+test.append('5a')
+test.append('6a')
+print(test.retrieveByValue('5a'))
+test.append(50)
+test.append("qkqke")
+test.writeDotFile()

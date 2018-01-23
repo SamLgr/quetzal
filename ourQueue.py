@@ -118,14 +118,23 @@ class Queue(object):
         return sum
 
     def dotDebug(self):
+        debugstring = []
         graph = self.traverse()
         for i in range(len(graph)):
             graph[i] = str(graph[i])
-        print(' -- '.join(graph))
+            debugstring.append("\"" + '\" -- \"'.join(graph) + "\"")
+        return debugstring
+
+    def writeDotFile(self):
+        debugstring = ["digraph G {"]
+        debugstring.extend(self.dotDebug())
+        debugstring.append("}")
+        file = open('queue.dot', 'w+')
+        file.write("\n".join(debugstring))
 
 
 
-#test = Queue()
-#test.enqueue(5)
-#test.enqueue(6)
-#test.dotDebug()
+# test = Queue()
+# test.enqueue(5)
+# test.enqueue(6)
+# test.writeDotFile()
