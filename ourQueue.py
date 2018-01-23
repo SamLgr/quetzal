@@ -40,16 +40,21 @@ class Queue(object):
         self.frontPtr = None
         self.backPtr = None
 
+    #Creates a queue with initial value 'value'
     def createQueue(self, value):
         self.enqueue(value)
 
+    #Destroys the queue
     def destroyQueue(self):
         self.frontPtr = None
         self.backPtr = None
 
+    #Returns True if the queue is empty
     def isEmpty(self):
         return self.frontPtr is None and self.backPtr is None
 
+    #Adds element to back of queue
+    #:param data: data to add
     def enqueue(self, data):
         new_node = Node(data)
         if self.isEmpty():  # no data present
@@ -59,6 +64,9 @@ class Queue(object):
             self.backPtr.setNext(new_node)
             self.backPtr = new_node
 
+    #Removes element from front of queue
+    #:return item: Item in front of queue
+    #:return bool: Returns True if succesful
     def dequeue(self):
         if self.isEmpty():
             return None, False
@@ -72,11 +80,13 @@ class Queue(object):
                 self.frontPtr = right
             return item, True
 
+    #Returns front of the queue
     def getFront(self):
         if self.isEmpty():
             return None, False
         return self.frontPtr.getItem(), True
 
+    #Returns all elements of queue in list
     def traverse(self):
         """
         >>> q = Queue()
@@ -95,6 +105,7 @@ class Queue(object):
                 buffer.append(current.item)
         return buffer
 
+    #Returns length of the queue
     def getLength(self):
         current = self.frontPtr
         if current is None: return 0
@@ -114,7 +125,7 @@ class Queue(object):
 
 
 
-# test = Queue()
-# test.enqueue(5)
-# test.enqueue(6)
-# test.dotDebug()
+#test = Queue()
+#test.enqueue(5)
+#test.enqueue(6)
+#test.dotDebug()

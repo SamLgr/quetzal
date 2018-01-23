@@ -107,3 +107,19 @@ class Stack:
             traverselist.append(current.getItem())
             current = current.getNext()
         return traverselist[::-1]
+
+    def getLength(self):
+        """
+        Returns length of the stack
+
+        >>> s = Stack()
+        >>> s.push(1)
+        True
+        >>> s.push(1)
+        True
+        >>> s.push(1)
+        True
+        >>> s.getLength()
+        3
+        """
+        return len(self.traverse())
