@@ -235,9 +235,13 @@ class DoubleList(object):
     def dotDebug(self):
         debugstring = []
         graph = self.traverse()
-        for i in range(len(graph)):
-            graph[i] = str(graph[i])
-        debugstring.append("\"" + '\" -- \"'.join(graph) + "\"")
+        if len(graph) == 0:
+            return debugstring
+        if len(graph) == 1:
+            debugstring.append(str(graph[0]))
+            return debugstring
+        for i in range(1, len(graph)):
+            debugstring.append("\"" + str(graph[i - 1]) + '\" -- \"' + str(graph[i]) + "\"")
         return debugstring
 
     def writeDotFile(self):
