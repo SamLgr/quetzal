@@ -6,28 +6,40 @@ from DoubleList import DoubleList
 
 class TreeItem(object):
     # added to support different values, not only ints
+    #:param value: initial value to set
+    #:param key: key to identify item
     def __init__(self, value, key):
         self.value = DoubleList()
         self.insert(value)
         self.key = key
 
+    #Insert value in Tree
     def insert(self, value):
         self.value.append(value)
 
+    #Returns element in Tree
     def retrieve(self):
         return self.value.traverse()
 
 class rbNode(object):
+    #Constructor
+    #:param item: Item for this Node
+    #:param colour: Colour for this Node (red/black)
+    #:param parent: Pointer to parent of this Node
+    #:param leftTree: Pointer to Node left of this Tree
+    #:param rightTree: Pointer to Node right of this Tree
     def __init__(self, item=None, colour=False, parent=None, leftTree=None, rightTree=None):
         self.item = item
         self.red = colour
         self.parent = parent
         self.leftTree = leftTree
         self.rightTree = rightTree
-
+    
+    #Returns the key of this Node
     def getKey(self):
         return self.item.key
 
+    
     def isLeaf(self):  # checks if node is leaf
         return not self.leftTree and not self.rightTree
 
@@ -69,6 +81,7 @@ class rbNode(object):
         else:
             return self.leftTree
 
+    #Returns a list of all the elements in Tree in order
     def inorderTraverse(self):
         traverseList = []
         if self.leftTree is not None:
@@ -80,6 +93,8 @@ class rbNode(object):
 
 
 class redBlackTree(object):
+    #Constructor
+    #:param root: Set initial node of the Tree
     def __init__(self, root=None):
         self.root = root
     
@@ -91,9 +106,13 @@ class redBlackTree(object):
         # delete values
         self.root = None
     
+    #Returns True if tree is empty
     def isEmtpy(self):
         return self.root is None
 
+    #Inserts 'item' in the Tree
+    #:param item: Item to add
+    #:return bool: Returns True if succesful
     def insertItem(self, item):
         if self.isEmtpy():  # if tree is empty, insert root
             self.createRBTree(item)
@@ -118,6 +137,7 @@ class redBlackTree(object):
         self.insert_fix(node)
         return True
 
+    #Makes sure the RBTree remains a RBTree after insert
     def insert_fix(self, x):
         while x.parent.red:
             if x.parent == x.parent.parent.leftTree:  # parent is left tree (parent is red, so can't be root, therefore has a parent)
@@ -154,6 +174,7 @@ class redBlackTree(object):
                 break
         self.root.red = False
 
+    #Launches the rotate-left algorithm on the Tree
     def leftRotate(self, x):
         y = x.rightTree
 
@@ -173,6 +194,7 @@ class redBlackTree(object):
         y.leftTree = x
         x.parent = y
 
+    #Launches the rotate-right algorithm on the Tree
     def rightRotate(self, y):
         x = y.leftTree
 
@@ -192,11 +214,15 @@ class redBlackTree(object):
         x.rightTree = y
         y.parent = x
     
+    #Gives graphical representation of the Tree
     def dotDebug(self):  # function that calls on debug code
         if self.isEmtpy():
             return False
         self.root.dotDebug()
 
+    #Deletes an item from the tree
+    #:param key: Key of Node to delete
+    #:return bool: Returns True if succesful
     def deleteItem(self, key):
         # retrieving node
         z = self.root.retrieveItem(key)
@@ -233,6 +259,7 @@ class redBlackTree(object):
 
         return True
 
+    #Makes sure the RBTree remains a RBTree after deleting a Node
     def delete_fix(self, x):
         while x != self.root and not x.red:
             if x == x.parent.leftTree:
@@ -279,13 +306,18 @@ class redBlackTree(object):
                     x = self.root
         x.red = False
 
+    #Returns all the elements of the tree in a list, in order
     def inorderTraverse(self):
         return self.root.inorderTraverse()
 
+    #Returns the amount of nodes in the tree
     def getLength(self):
         list = self.root.inorderTraverse
         return len(list)
 
+    #Returns the Item with 'key'
+    #:param key: Key to retrieve item with
+    #:return TreeItem: Item mapped to 'key' and to be returned
     def retrieveItem(self, key):
         return self.root.retrieveItem(key)
 

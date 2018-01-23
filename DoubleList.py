@@ -5,15 +5,20 @@
 from DoubleNode import doubleNode as Node
 
 class DoubleList(object):
+    #Constructor
     def __init__(self):
         self.head = None
         self.tail = None
     
+    #Creates a new DoubleList
+    #:param data: Initial data to add
     def createList(self, data):
         new_node = Node(data)
         self.head = new_node
         self.tail = self.head
     
+    #Destroys the list
+    #:return bool: Return True if succesful
     def destroyList(self):
         if self.isEmpty():
             return False
@@ -21,6 +26,7 @@ class DoubleList(object):
         self.tail = None
         return self.isEmpty()
 
+    #Returns the length of the list
     def getLength(self):
         count = 0
         current_node = self.head
@@ -29,6 +35,10 @@ class DoubleList(object):
             current_node = current_node.next
         return count
 
+    #Internal function,
+    #Retrieves the node at 'index'
+    #:param index: int -> Index to get node at
+    #:return Node: node at 'index'
     def __retrieve(self, index):
         if index < 0 or index >= self.getLength():
             return None
@@ -37,12 +47,19 @@ class DoubleList(object):
             node = node.next
         return node
 
+    #Returns the value at 'index'
+    #:param index: Int -> index to get value at
+    #:return ListItem: Item at 'index'
     def retrieve(self, index):
         node = self.__retrieve(index)
         if node is None:
             return None, False
         return node.getItem(), True
 
+    #Searches the list by 'value' at returns
+    #node with that value
+    #:param value: Value to search for
+    #:return Node: node with 'value'
     def __retrieveByValue(self, value):
         current_node = self.head
         while current_node is not None:
@@ -51,12 +68,19 @@ class DoubleList(object):
             current_node = current_node.next
         return None
 
+    #Searches list for 'value' and returns that value if found
+    #:param value: Value to search list for
+    #:return ListItem: Value to be returned if found
     def retrieveByValue(self, value):
         node = self.__retrieveByValue(value)
         if node is None:
             return None, False
         return node.getItem(), True
 
+    #Inserts a value into the list
+    #:param index: Int -> Index to insert at
+    #:param item: Value to insert
+    #:return bool: Returns True if succesful
     def insert(self, index, item):
         length = self.getLength()
         if index < 0 or index > length:
@@ -80,12 +104,16 @@ class DoubleList(object):
         current_node.prev = new_node
         return True
 
+    #Inserts 'data' in front of list
+    #:param data: Data to set in front
     def __insertFront(self, data):
         new_node = Node(data)
         new_node.setNext(self.head)
         self.head.setPrev(new_node)
         self.head = new_node
 
+    #Adds 'data' to the end of the list
+    #:param data: Data to add to the end
     def append(self, data):
         new_node = Node(data)
         if self.head is None: # no data present
@@ -96,9 +124,13 @@ class DoubleList(object):
             self.tail.setNext(new_node)
             self.tail = new_node
 
+    #Returns True if list is empty
     def isEmpty(self):
         return not self.head
 
+    #Deletes item at 'index' in Tree
+    #:param index: index to delete item at
+    #:return bool: Returns True if succesful
     def delete(self, index):
         deleted_node = self.__retrieve(index)
         if deleted_node is None:
@@ -121,6 +153,9 @@ class DoubleList(object):
             next_node.prev = prev_node
         return True
 
+    #Searches the list for 'value' and deletes that node when found
+    #:param value: Value to delete
+    #:param bool: Returns True if succesful
     def deleteByValue(self, value):
         deleted_node = self.__retrieveByValue(value)
         if deleted_node is None:
@@ -143,6 +178,7 @@ class DoubleList(object):
             next_node.prev = prev_node
         return True
 
+    #Returns all the items in a list
     def getItems(self):
         nodeList = []
         nodeList.append(self.head.item)
@@ -152,6 +188,7 @@ class DoubleList(object):
             nodeList.append(current_node.item)
         return nodeList
 
+    #Sorts all the items in the list
     def sort(self):
         if self.isEmpty():
             return False
@@ -163,6 +200,7 @@ class DoubleList(object):
         self.head = sortedList.head
         self.tail = sortedList.tail
 
+    #Returns first element in the list
     def first(self):
         """
         >>> list = DoubleList()
@@ -173,6 +211,7 @@ class DoubleList(object):
         """
         return self.head.item
 
+    #Returns last element in the list
     def last(self):
         """
         >>> list = DoubleList()
@@ -183,6 +222,7 @@ class DoubleList(object):
         """
         return self.tail.item
 
+    #Returns all element in the list as a list
     def traverse(self):
         buffer = []
         current = self.head
@@ -191,6 +231,7 @@ class DoubleList(object):
             current = current.getNext()
         return buffer
 
+    #Used to create a graphical representation of the list
     def dotDebug(self):
         graph = self.traverse()
         for i in range(len(graph)):
