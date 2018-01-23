@@ -336,8 +336,8 @@ class redBlackTree(object):
 
     #Returns the amount of nodes in the tree
     def getLength(self):
-        list = self.root.inorderTraverse
-        return len(list)
+        traverse = self.root.inorderTraverse()
+        return len(traverse)
 
     #Returns the Item with 'key'
     #:param key: Key to retrieve item with
