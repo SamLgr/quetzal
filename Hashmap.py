@@ -251,12 +251,38 @@ class Hashmap:
             return l
         return self.v[h]
 
+    #Checks if prime
+    def isPrime(self, n):
+        """ 
+        >>> hmap = Hashmap()
+        >>> hmap.isPrime(3)
+        True
+        >>> hmap.isPrime(7)
+        True
+        >>> hmap.isPrime(12)
+        False
+        """
+        if n == 0 or n == 1: return False
+        for i in range(2, n):
+            if n % i == 0:
+                return False
+        return True
+
+    #Find first prime decrementing from n
+    def firstPrime(self, n):
+        for i in range(n, 1, -1):
+            if self.isPrime(i):
+                return i
+        return int(self.max_size / 2)
+
     #Hashes a key
     #:param key: Int -> Key to hash
     #:return int: hash(key) -> Hashed key
     def hash(self, key):
-        return int(key + (key/2) + math.sqrt(key) % (key/2))
-
+        #return int(key + (key/2) + math.sqrt(key) % (key/2))
+        #return int((key  + self.max_size) / (key +1)) % self.max_size 
+        #return key
+        return int(key + math.sqrt(key) + self.firstPrime(key +1)) % self.max_size
     #Return object by key
     #:param key: Int -> Return object mapped to this key
     #:return Object: Object mapped to key
@@ -354,28 +380,45 @@ class Hashmap:
              node[shape=box,margin="0,0",width=1, height=0.5];
              edge [style=invis];
 
-             Hashmap[width=2];
+             Hashmap[width=3]
+             Hashmap -> Key;
              Hashmap -> Hash;
              Hashmap -> Value;
         """
 
+        
+        #Adding to list
+        list = self.traverse()
+        print(list)
+
         firstDone = False
+        prevKeyBuffer = 0
+        prevValueBuffer = list[0]
         for i in range(0, len(self.v)):
-            if hmap.retrieve(i) == None: continue
+            search = self.v[i]
+            for j in range(0, len(list)):
+                if search == list[j]:
+                    key = j
+                    hash = '.' + str(self.hash(key))
+                    value = list[j]
+                    
+                    if not firstDone:
+                        prevKey = "Key"
+                        prevHash = "Hash"
+                        prevValue = "Value"
+                        firstDone = True
+                    else:
+                        prevKey = prevKeyBuffer
+                        prevKeyBuffer = key
+                        
+                        prevHash = '.' + str(self.hash(prevKey))
+                        
+                        prevValue = prevValueBuffer
+                        prevValueBuffer = value
 
-            key = i
-            value = hmap.retrieve(key)            
-
-            if not firstDone:
-                prevKey = "Hash"
-                prevValue = "Value"
-                firstDone = True
-            else:
-                prevKey = i - 1
-                prevValue = hmap.retrieve(prevKey)
-
-            myStr += str(prevKey) + " -> " + str(key) + ';\n'
-            myStr += str(prevValue) + " -> " + str(value) + ';\n'
-
+                    myStr += str(prevKey) + " -> " + str(key) + ';\n'
+                    myStr += str(prevHash) + " -> " + str(hash) + ';\n'
+                    myStr += str(prevValue) + " -> " + str(value) + ';\n'
+                        
         myStr += "}"
         print(myStr)
