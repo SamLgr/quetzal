@@ -112,8 +112,8 @@
       <file leaf-file-name="DoubleList.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DoubleList.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+            <state relative-caret-position="432">
+              <caret line="78" column="19" lean-forward="true" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -926,7 +926,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516699808230</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Update Insert">
+      <created>1516701934136</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1516701934136</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1021,7 +1028,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update" />
     <MESSAGE value="Jump update" />
     <MESSAGE value="Fix ingredient bug" />
     <MESSAGE value="renamed queue" />
@@ -1046,7 +1052,8 @@
     <MESSAGE value="Comments" />
     <MESSAGE value="Use doublelinked list instead of basic one" />
     <MESSAGE value="Update retrieve" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update retrieve" />
+    <MESSAGE value="Update Insert" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Insert" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1425,8 +1432,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DoubleList.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+        <state relative-caret-position="432">
+          <caret line="78" column="19" lean-forward="true" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
           <folding />
         </state>
       </provider>

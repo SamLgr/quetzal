@@ -71,7 +71,8 @@ class DoubleList(object):
             count += 1
             current_node = current_node.getNext()
         parent = current_node.prev
-        parent.next = new_node
+        if parent is not None:
+            parent.next = new_node
         new_node.prev = parent
         new_node.next = current_node
         current_node.prev = new_node
