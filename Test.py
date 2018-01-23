@@ -8,8 +8,8 @@ from DoubleList import DoubleList
 from DoubleNode import doubleNode
 from Hashmap import Hashmap
 from Hashmap import MapObject
-from RBTree import redBlackTree
-from RBTree import rbNode
+from RBTree import redBlackTree, TreeItem
+
 
 def testStack():
     """
