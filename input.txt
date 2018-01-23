@@ -1,9 +1,9 @@
-type=bst
-insert 10
-insert 5
-insert 5
-insert 5
-insert 9
-insert 12
-insert 11
+type=ll
+insert 0 4
+insert 1 5
+insert 2 9
+insert 3 54
+insert 4 128
+delete 2
+insert 1 20
 print
