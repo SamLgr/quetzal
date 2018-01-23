@@ -3,7 +3,7 @@ Testing Hashmap + documentation
 
 #Calling constructor with type 3 (Separate chaining):
 #and max size 50
->>> hmap = Hashmap(3, 50)
+>>> hmap = Hashmap(2, 50)
 
 #Get length of hashmap:
 >>> hmap.getLength()
