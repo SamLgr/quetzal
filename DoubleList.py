@@ -40,8 +40,8 @@ class DoubleList(object):
     def retrieve(self, index):
         node = self.__retrieve(index)
         if node is None:
-            return None
-        return node.getItem()
+            return None, False
+        return node.getItem(), True
 
     def __retrieveByValue(self, value):
         current_node = self.head
@@ -54,8 +54,8 @@ class DoubleList(object):
     def retrieveByValue(self, value):
         node = self.__retrieveByValue(value)
         if node is None:
-            return None
-        return node.getItem()
+            return None, False
+        return node.getItem(), True
 
     def insert(self, index, item):
         length = self.getLength()
