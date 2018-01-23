@@ -1,0 +1,17 @@
+graph {
+	10 [label=10]
+	5 [label=5]
+	10 -- 5
+	"5li" [style=invisible]
+	5 -- "5li" [style=invis]
+	5 -- "5li" [style=invis]
+	9 [label=9]
+	5 -- 9
+	12 [label=12]
+	10 -- 12
+	11 [label=11]
+	12 -- 11
+	"12ri" [style=invisible]
+	12 -- "12ri" [style=invis]
+	12 -- "12ri" [style=invis]
+}

@@ -87,7 +87,7 @@ def createDotFileBST(b):
     print(bg.source)
     file = open('bst.dot', 'w+')
     file.write(bg.source)
-    bg.render('output/bst.gv', view=True)
+    bg.render('bst', 'output/BinarySearchTree', view=True)
 
 def addNodesBST(b, bg):     # add nodes and edges for every node in BST
     if b.left is None and b.right is None:
@@ -121,7 +121,7 @@ def createDotFileTTFT(t):       # create graph and add nodes
     print(tg.source)
     file = open('ttft.dot', 'w+')
     file.write(tg.source)
-    tg.render('output/ttft.gv', view=True)
+    tg.render('ttft', 'output/TwoThreeFourTree', view=True)
 
 def addNodesTTFT(t, tg):        # add nodes and edges for every node in 234-Tree
     if t.left is None:
@@ -186,7 +186,7 @@ def createDotFileLL(l):  # create list and add nodes
     print(lg.source)
     file = open('ll.dot', 'w+')
     file.write(lg.source)
-    lg.render('png', 'output/ll.gv', view=True)
+    lg.render('ll', 'output/LinkedList', view=True)
 
 def createDotFileS(s):  # create stack and add objects
     sg = gv.Digraph(format='png', node_attr={'shape': 'record'}, graph_attr={'rankdir': 'LR'})
@@ -197,7 +197,7 @@ def createDotFileS(s):  # create stack and add objects
     print(sg.source)
     file = open('s.dot', 'w+')
     file.write(sg.source)
-    sg.render('png', 'output/s.gv', view=True)
+    sg.render('s', 'output/Stack', view=True)
 
 if __name__ == '__main__':
     readFile()

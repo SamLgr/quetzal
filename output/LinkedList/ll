@@ -1,0 +1,15 @@
+digraph {
+	graph [rankdir=LR]
+	node [shape=record]
+	edge [arrowhead=vee arrowtail=dot dir=both tailclip=false]
+	4 [label="{ <data> 4 | <ref>  }"]
+	4:ref:c -> 20
+	20 [label="{ <data> 20 | <ref>  }"]
+	20:ref:c -> 5
+	5 [label="{ <data> 5 | <ref>  }"]
+	5:ref:c -> 54
+	54 [label="{ <data> 54 | <ref>  }"]
+	54:ref:c -> 128
+	128 [label="{ <data> 128 | <ref>  }"]
+	128:ref:c -> 4
+}
