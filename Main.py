@@ -20,6 +20,9 @@ from ourQueue import Queue as ourQueue
 from Hashmap import Hashmap, MapObject
 from Stack import Stack
 from BSTTable import BSTTable
+from TTFTTable import TTFTTable
+from RBTreeTable import RBTTable
+from HMTable import HMTable
 from DoubleList import DoubleList
 from CircularLinkedList import CircularLinkedList
 
@@ -190,6 +193,9 @@ def createLogFile(timestamp):   # Creates a log file based on loginfo
         </html>
     """
     htmlfile.write(htmlstr)     # End HTML body
+    print("Processed orders:")
+    for order in processed_orders.traverseTable():
+        print("Order with ID: " + str(order.getChocolateid()))
 
 
 def findUser(email):

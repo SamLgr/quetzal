@@ -335,7 +335,7 @@ class TwoThreeFourTree:
             self.__fuse()
 
     def __fuse(self):   #Fuses different nodes
-        if self.parent.root.getLength() == 1:   #2-node (root)
+        if self.parent.root.getLength() == 1:   #2-node (if parent is root)
             self.root.insert(1, self.parent.root.retrieve(0)[0])
             self.root.insert(2, self.parent.right.root.retrieve(0)[0])
             self.leftmid = self.right       #Set appropriate subtrees
@@ -587,7 +587,8 @@ class TwoThreeFourTree:
         True
         >>> t.twoThreeFourTreeInsert(TreeItem("Test 3", 3))
         True
-        >>> t.print()
+        >>> t.inorderTraverse()
+        ['Test 1', 'Test 2', 'Test 3', 'Test 5', 'Test 7', 'Test 9', 'Test 11']
         >>> t.getTreeLength()
         7
         """
@@ -595,30 +596,30 @@ class TwoThreeFourTree:
         if self.root.getLength() == 1:  #1-node
             if self.left is not None:
                 traverseList = self.left.inorderTraverse()
-            traverseList.append(self.root.retrieve(0))
+            traverseList.append(self.root.retrieve(0)[0].getItem())
             if self.right is not None:
                 traverseList = traverseList + self.right.inorderTraverse()
             return traverseList
         elif self.root.getLength() == 2:    #2-node
             if self.left is not None:
                 traverseList = self.left.inorderTraverse()
-            traverseList.append(self.root.retrieve(0))
+            traverseList.append(self.root.retrieve(0)[0].getItem())
             if self.leftmid is not None:
                 traverseList = traverseList + self.leftmid.inorderTraverse()
-            traverseList.append(self.root.retrieve(1))
+            traverseList.append(self.root.retrieve(1)[0].getItem())
             if self.right is not None:
                 traverseList = traverseList + self.right.inorderTraverse()
             return traverseList
         elif self.root.getLength() == 3:    #3-node
             if self.left is not None:
                 traverseList = self.left.inorderTraverse()
-            traverseList.append(self.root.retrieve(0))
+            traverseList.append(self.root.retrieve(0)[0].getItem())
             if self.leftmid is not None:
                 traverseList = traverseList + self.leftmid.inorderTraverse()
-            traverseList.append(self.root.retrieve(1))
+            traverseList.append(self.root.retrieve(1)[0].getItem())
             if self.rightmid is not None:
                 traverseList = traverseList + self.rightmid.inorderTraverse()
-            traverseList.append(self.root.retrieve(2))
+            traverseList.append(self.root.retrieve(2)[0].getItem())
             if self.right is not None:
                 traverseList = traverseList + self.right.inorderTraverse()
             return traverseList
@@ -628,7 +629,7 @@ class TwoThreeFourTree:
         Function for testing purposes, prints elements of all items in TwoThreeFourTree in order
         """
         for i in self.inorderTraverse():
-            print(i[0].getItem())
+            print(i)
 
     def getTreeLength(self):
         """
