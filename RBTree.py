@@ -72,10 +72,10 @@ class rbNode(object):
     def inorderTraverse(self):
         traverseList = []
         if self.leftTree is not None:
-            traverseList = self.leftTree.inorderTraverse()
-        traverseList.append(self.item.retrieve())
+            traverseList.extend(self.leftTree.inorderTraverse())
+        traverseList.extend(self.item.retrieve())
         if self.rightTree is not None:
-            traverseList = traverseList + self.rightTree.inorderTraverse()
+            traverseList.extend(self.rightTree.inorderTraverse())
         return traverseList
 
 
