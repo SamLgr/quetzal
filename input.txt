@@ -1,10 +1,9 @@
-type=stack
-push 5
-push 6
-push 20
-pop
-push 198
-push 5
-pop
-push 7
+type=bst
+insert 10
+insert 5
+insert 5
+insert 5
+insert 9
+insert 12
+insert 11
 print

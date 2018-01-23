@@ -42,6 +42,8 @@ class BinarySearchTree:
             if self.right is None:
                 self.right = BinarySearchTree()
             return self.right.searchTreeInsert(TreeItem)
+        else:
+            return self.root.append(TreeItem)
 
     def searchTreeDelete(self, key):
         """

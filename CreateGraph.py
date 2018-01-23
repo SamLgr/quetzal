@@ -27,7 +27,6 @@ def readFile():
                 elif "print" in command:        # gives DOT-language of BSTree
                     createDotFileBST(b)
                     command = file.readline()
-                    readFile()
         elif "234" in command:      # creates 234-Tree
             t = TwoThreeFourTree()
             command = file.readline()
@@ -82,24 +81,28 @@ def readFile():
 
 def createDotFileBST(b):
     bg = gv.Graph(format='svg')     # create graph and add nodes
-    bg.node(str(b.root.getKey()))
+    bg.node(str(b.root.first().getKey()), label=", ".join(str(treeitem.getItem()) for treeitem in b.root.traverse()))
     addNodesBST(b, bg)
     print(bg.source)
 
 def addNodesBST(b, bg):     # add nodes and edges for every node in BST
+    if b.left is None and b.right is None:
+        return
     if b.left is None:
-        bg.node('', style='invisible')
-        bg.edge(str(b.root.getKey()), '', style='invis')
+        bg.node(str(b.root.first().getKey()) + "li", style='invisible')
+        bg.edge(str(b.root.first().getKey()), str(b.root.first().getKey()) + "li", style='invis')
+        bg.edge(str(b.root.first().getKey()), str(b.root.first().getKey()) + "li", style='invis')
     else:
-        bg.node(str(b.left.root.getKey()))
-        bg.edge(str(b.root.getKey()), str(b.left.root.getKey()))
+        bg.node(str(b.left.root.first().getKey()), label=", ".join(str(treeitem.getItem()) for treeitem in b.left.root.traverse()))
+        bg.edge(str(b.root.first().getKey()), str(b.left.root.first().getKey()))
         addNodesBST(b.left, bg)
     if b.right is None:
-        bg.node('', style='invisible')
-        bg.edge(str(b.root.getKey()), '', style='invis')
+        bg.node(str(b.root.first().getKey()) + "ri", style='invisible')
+        bg.edge(str(b.root.first().getKey()), str(b.root.first().getKey()) + "ri", style='invis')
+        bg.edge(str(b.root.first().getKey()), str(b.root.first().getKey()) + "ri", style='invis')
     else:
-        bg.node(str(b.right.root.getKey()))
-        bg.edge(str(b.root.getKey()), str(b.right.root.getKey()))
+        bg.node(str(b.right.root.first().getKey()), label=", ".join(str(treeitem.getItem()) for treeitem in b.right.root.traverse()))
+        bg.edge(str(b.root.first().getKey()), str(b.right.root.first().getKey()))
         addNodesBST(b.right, bg)
 
 def createDotFileTTFT(t):       # create graph and add nodes

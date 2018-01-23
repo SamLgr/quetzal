@@ -1,4 +1,5 @@
 from CircularLinkedList import CircularLinkedList
+from DoubleList import DoubleList
 from Honey import Honey
 
 class StockTable:
