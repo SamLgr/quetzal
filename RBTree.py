@@ -18,7 +18,7 @@ class TreeItem(object):
         self.value.append(value)
 
     #Returns element in Tree
-    def retrieve(self):
+    def getItems(self):
         return self.value.traverse()
 
 class rbNode(object):
@@ -46,10 +46,10 @@ class rbNode(object):
     def dotDebug(self):  # debug code to represent tree in dot language
         debugstring = []
         if not self.parent and self.isLeaf():  # tree only has one item (root)
-            debugstring.append(self.item.retrieve()[0])
+            debugstring.append(self.item.getItems()[0])
             return debugstring
         if self.parent and self.item:
-            strprint = "\"" + ", ".join(self.parent.item.retrieve()) + "\" -> \"" + ", ".join(self.item.retrieve()) + "\""
+            strprint = "\"" + ", ".join(self.parent.item.getItems()) + "\" -> \"" + ", ".join(self.item.getItems()) + "\""
             if self.red:
                 strprint = strprint + " [style=dashed];"
             else:
@@ -84,7 +84,7 @@ class rbNode(object):
     
     def retrieveItem(self, key):  # returns values with key
         if key == self.getKey():
-            return self.item.retrieve(), True
+            return self.item.getItems(), True
         elif key < self.getKey():
             if self.leftTree is None:
                 return None, False
@@ -110,7 +110,7 @@ class rbNode(object):
         traverseList = []
         if self.leftTree is not None:
             traverseList.extend(self.leftTree.inorderTraverse())
-        traverseList.extend(self.item.retrieve())
+        traverseList.extend(self.item.getItems())
         if self.rightTree is not None:
             traverseList.extend(self.rightTree.inorderTraverse())
         return traverseList
@@ -131,14 +131,14 @@ class redBlackTree(object):
         self.root = None
     
     #Returns True if tree is empty
-    def isEmtpy(self):
+    def isEmpty(self):
         return self.root is None
 
     #Inserts 'item' in the Tree
     #:param item: Item to add
     #:return bool: Returns True if succesful
     def insertItem(self, item):
-        if self.isEmtpy():  # if tree is empty, insert root
+        if self.isEmpty():  # if tree is empty, insert root
             self.createRBTree(item)
             return True
         # create leaf node with value as root
@@ -152,7 +152,7 @@ class redBlackTree(object):
             elif check_node.getKey() < node.getKey():
                 check_node = check_node.rightTree
             else:
-                check_node.item.insert(node.item.retrieve()[0])
+                check_node.item.insert(node.item.getItems()[0])
                 return True
         if node.getKey() < node.parent.getKey():
             node.parent.leftTree = node
@@ -240,7 +240,7 @@ class redBlackTree(object):
     
     #Gives graphical representation of the Tree
     def dotDebug(self):  # function that calls on debug code
-        if self.isEmtpy():
+        if self.isEmpty():
             return False
         self.root.writeDotFile()
 
