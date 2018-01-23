@@ -10,6 +10,9 @@ class Node(object):
     def getItem(self):
         return self.item
 
+    def setItem(self, item):
+        self.item = item
+
     def setNext(self, next):
         self.next = next
 
@@ -33,6 +36,9 @@ class doubleNode(object):
 
     def getItem(self):
         return self.item
+
+    def setItem(self, item):
+        self.item = item
 
     def getNext(self):
         return self.next

@@ -29,7 +29,7 @@ class DoubleList(object):
             current_node = current_node.next
         return count
 
-    def retrieve(self, index):
+    def __retrieve(self, index):
         if index < 0 or index >= self.getLength():
             return None
         node = self.head
@@ -37,12 +37,25 @@ class DoubleList(object):
             node = node.next
         return node
 
-    def retrieveByValue(self, value):
+    def retrieve(self, index):
+        node = self.__retrieve(index)
+        if node is None:
+            return None
+        return node.getItem()
+
+    def __retrieveByValue(self, value):
         current_node = self.head
         while current_node is not None:
             if current_node.has_value(value):
                 return current_node
             current_node = current_node.next
+        return None
+
+    def retrieveByValue(self, value):
+        node = self.__retrieveByValue(value)
+        if node is None:
+            return None
+        return node.getItem()
 
     def insert(self, index, item):
         length = self.getLength()
@@ -78,7 +91,7 @@ class DoubleList(object):
         return not self.head
 
     def delete(self, index):
-        deleted_node = self.retrieve(index)
+        deleted_node = self.__retrieve(index)
         if deleted_node is None:
             return False
         if deleted_node.prev is None and deleted_node.next is None: # only one node present
@@ -100,7 +113,7 @@ class DoubleList(object):
         return True
 
     def deleteByValue(self, value):
-        deleted_node = self.retrieveByValue(value)
+        deleted_node = self.__retrieveByValue(value)
         if deleted_node is None:
             return False
         if deleted_node.prev is None and deleted_node.next is None: # only one node present
