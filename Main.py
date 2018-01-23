@@ -21,6 +21,7 @@ from Hashmap import Hashmap, MapObject
 from Stack import Stack
 from BSTTable import BSTTable
 from DoubleList import DoubleList
+from CircularLinkedList import CircularLinkedList
 
 # init empty stocks for ingredients
 chocolatestock = StockTable()
@@ -147,7 +148,7 @@ def createLogFile(timestamp):   # Creates a log file based on loginfo
         htmlfile.write(str(timestamp))  # Write current timestamp
         htmlfile.write("</td>")
         htmlfile.write("<td>| ")
-        htmlfile.write(" ".join(str(worker.getWorkload()) for worker in currentstack.getItems()))   # Write stack with workloads at timestamp
+        htmlfile.write(" ".join(str(worker.getWorkload()) for worker in currentstack.traverse()))   # Write stack with workloads at timestamp
         htmlfile.write("</td>")
         for worker in workers.traverse():
             htmlfile.write("<td>")

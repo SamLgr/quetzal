@@ -84,7 +84,7 @@ class Stack:
             return None, False
         return self.top.getItem(), True
 
-    def getItems(self):
+    def traverse(self):
         """
         Returns list of all elements in the stack from bottom to top.
         :return: list of all elements in the stack
@@ -98,12 +98,12 @@ class Stack:
         True
         >>> stack.getTop()
         (4, True)
-        >>> stack.getItems()
+        >>> stack.traverse()
         [5, 4]
         """
-        buffer = []
+        traverselist = []
         current = self.top
         while current is not None:
-            buffer.append(current.getItem())
+            traverselist.append(current.getItem())
             current = current.getNext()
-        return buffer[::-1]
+        return traverselist[::-1]

@@ -85,7 +85,7 @@ class StockTable:
 
     # Traverses stock table on ascending expire date
     def traverseTable(self):
-        return self.list.getItems()
+        return self.list.traverse()
 
     # Sorts stock table on ascending expire date
     def sortTable(self):

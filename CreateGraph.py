@@ -178,7 +178,7 @@ def createDotFileLL(l):  # create list and add nodes
 def createDotFileS(s):  # create stack and add objects
     sg = gv.Digraph(format='svg', node_attr={'shape': 'record'}, graph_attr={'rankdir': 'LR'})
     sg.node(name="stack", label="", height="0.001", fixedsize="true")
-    for item in s.getItems():
+    for item in s.traverse():
         sg.node(str(item), label=str(item))
         sg.node(name=str(item))
     print(sg.source)

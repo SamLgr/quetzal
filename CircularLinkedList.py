@@ -186,7 +186,7 @@ class CircularLinkedList:
         """
         return self.insert(self.getLength(), newItem)
  
-    def getItems(self):
+    def traverse(self):
         """
         Returns all elements in circular linked list in sequential order.
         :return: list containing elements in circular linked list
@@ -196,13 +196,13 @@ class CircularLinkedList:
         True
         >>> list.append("B")
         True
-        >>> list.getItems()
+        >>> list.traverse()
         ['A', 'B']
         """
-        nodeList = []
+        traverselist = []
         for i in range(0, self.getLength()):
-            nodeList.append(self.retrieve(i)[0])
-        return nodeList
+            traverselist.append(self.retrieve(i)[0])
+        return traverselist
 
     def first(self):
         """
