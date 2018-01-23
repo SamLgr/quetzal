@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b600a203-674c-4d23-a833-505a5c9b6640" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/RBTree.py" afterPath="$PROJECT_DIR$/RBTree.py" />
+      <change beforePath="$PROJECT_DIR$/DoubleList.py" afterPath="$PROJECT_DIR$/DoubleList.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -87,7 +87,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RBTree.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RBTree.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RBTree.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="223">
@@ -107,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DoubleList.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DoubleList.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DoubleList.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1566">
-              <caret line="39" column="12" lean-forward="false" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="16" />
+            <state relative-caret-position="198">
+              <caret line="77" column="30" lean-forward="true" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -178,8 +178,8 @@
         <option value="$PROJECT_DIR$/Order.py" />
         <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/DoubleNode.py" />
-        <option value="$PROJECT_DIR$/DoubleList.py" />
         <option value="$PROJECT_DIR$/RBTree.py" />
+        <option value="$PROJECT_DIR$/DoubleList.py" />
       </list>
     </option>
   </component>
@@ -945,7 +945,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516702516002</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Update retrieve">
+      <created>1516703042907</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1516703042907</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1432,18 +1439,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DoubleList.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1566">
-          <caret line="39" column="12" lean-forward="false" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RBTree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
           <caret line="289" column="42" lean-forward="true" selection-start-line="289" selection-start-column="42" selection-end-line="289" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DoubleList.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="77" column="30" lean-forward="true" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
           <folding />
         </state>
       </provider>

@@ -64,6 +64,9 @@ class DoubleList(object):
         elif index == length:
             self.append(item)
             return True
+        elif index == 0:
+            self.__insertFront(item)
+            return True
         new_node = Node(item)
         count = 0
         current_node = self.head
@@ -71,12 +74,17 @@ class DoubleList(object):
             count += 1
             current_node = current_node.getNext()
         parent = current_node.prev
-        if parent is not None:
-            parent.next = new_node
+        parent.next = new_node
         new_node.prev = parent
         new_node.next = current_node
         current_node.prev = new_node
         return True
+
+    def __insertFront(self, data):
+        new_node = Node(data)
+        new_node.setNext(self.head)
+        self.head.setPrev(new_node)
+        self.head = new_node
 
     def append(self, data):
         new_node = Node(data)
