@@ -8,6 +8,8 @@ from DoubleList import DoubleList
 from DoubleNode import doubleNode
 from Hashmap import Hashmap
 from Hashmap import MapObject
+from RBTree import redBlackTree
+from RBTree import rbNode
 
 def testStack():
     """
@@ -196,7 +198,7 @@ def testHashmap():
     >>> item = MapObject(2, "B")
     >>> hmap.insert(item)
     True
-    >>> item = MapObject(2, "C")
+    >>> item = MapObject(4, "C")
     >>> hmap.insert(item)
     True
     >>> item = MapObject(3, "D")
@@ -210,4 +212,28 @@ def testHashmap():
     'B'
     >>> hmap.retrieve(3)
     'D'
+    """
+
+def testRBTree():
+    """
+    >>> t = redBlackTree()
+    >>> t.isEmpty()
+    True
+    >>> item = TreeItem(5, 1)
+    >>> t.createRBTree(item)
+    >>> item = TreeItem(8, 2)
+    >>> t.insertItem(item) 
+    True
+    >>> item = TreeItem(5, 4)
+    >>> t.insertItem(item) 
+    True
+    >>> item = TreeItem(3, 5)
+    >>> t.insertItem(item) 
+    True
+    >>> t.getLength()
+    4
+    >>> t.isEmpty()
+    False
+    >>> t.inorderTraverse()
+    [5, 8, 5, 3]
     """
