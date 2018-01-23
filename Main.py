@@ -44,7 +44,7 @@ orders = ourQueue()
 # list for orders that are currently being worked on
 current_orders = []
 # processed orders
-processed_orders = BSTTable()
+processed_orders = HMTable(1, 500)
 # init idcounter
 chocolateid = 0
 # init tijdstip

@@ -3,8 +3,8 @@ from Hashmap import MapObject
 
 class HMTable:  # Wrapper with table operations for Hashmap
     #Constructor
-    def __init__(self):
-        self.hm = Hashmap()
+    def __init__(self, myType, max_size):
+        self.hm = Hashmap(myType, max_size)
 
     #Deletes the hashmap
     def __del__(self):

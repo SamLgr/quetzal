@@ -23,7 +23,7 @@ class TwoThreeFourTree:
         Tests if TwoThreeFourTree is empty
         :return: True if empty, False if not empty
         """
-        return self.root is None
+        return self.root.isEmpty()
 
     def twoThreeFourTreeInsert(self, TreeItem):
         """
@@ -336,12 +336,19 @@ class TwoThreeFourTree:
 
     def __fuse(self):   #Fuses different nodes
         if self.parent.root.getLength() == 1:   #2-node (if parent is root)
-            self.root.insert(1, self.parent.root.retrieve(0)[0])
-            self.root.insert(2, self.parent.right.root.retrieve(0)[0])
-            self.leftmid = self.right       #Set appropriate subtrees
-            self.rightmid = self.parent.right.left
-            self.right = self.parent.right.right
-            self.parent = None
+            if self == self.parent.left:
+                self.root.insert(1, self.parent.root.retrieve(0)[0])
+                self.root.insert(2, self.parent.right.root.retrieve(0)[0])
+                self.leftmid = self.right       #Set appropriate subtrees
+                self.rightmid = self.parent.right.left
+                self.right = self.parent.right.right
+                self.parent = None
+            else:
+                self.root.insert(0, self.parent.root.retrieve(0)[0])
+                self.root.insert(0, self.parent.left.root.retrieve(0)[0])
+                self.rightmid = self.left
+                self.leftmid = self.parent.left.right
+                self.left = self.parent.left.left
         else:
             if self == self.parent.left:    #Left subtree
                 self.root.insert(1, self.parent.root.retrieve(0)[0])
