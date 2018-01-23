@@ -2,14 +2,20 @@
 # Made by Lander De Roeck on 26/11/17
 # Inspiration: https://www.cs.auckland.ac.nz/software/AlgAnim/red_black.html
 #
+from DoubleList import DoubleList
 
 class TreeItem(object):
     # added to support different values, not only ints
     def __init__(self, value, key):
-        self.value = [value]
+        self.value = DoubleList()
+        self.insert(value)
         self.key = key
+
     def insert(self, value):
         self.value.append(value)
+
+    def retrieve(self):
+        return self.value.traverse()
 
 class rbNode(object):
     def __init__(self, item=None, colour=False, parent=None, leftTree=None, rightTree=None):
@@ -27,9 +33,9 @@ class rbNode(object):
 
     def dotDebug(self):  # debug code to represent tree in dot language
         if not self.parent and self.isLeaf():  # tree only has one item (root)
-            return print(self.item.value)
+            return print(self.item.retrieve()[0])
         if self.parent and self.item:
-            strprint = "\"" + ", ".join(self.parent.item.value) + "\" -> \"" + ", ".join(self.item.value) + "\""
+            strprint = "\"" + ", ".join(self.parent.item.retrieve()) + "\" -> \"" + ", ".join(self.item.retrieve()) + "\""
             if self.red:
                 strprint = strprint + " [style=dashed];"
             else:
@@ -67,7 +73,7 @@ class rbNode(object):
         traverseList = []
         if self.leftTree is not None:
             traverseList = self.leftTree.inorderTraverse()
-        traverseList.append(self.item.value)
+        traverseList.append(self.item.retrieve())
         if self.rightTree is not None:
             traverseList = traverseList + self.rightTree.inorderTraverse()
         return traverseList
@@ -103,7 +109,7 @@ class redBlackTree(object):
             elif check_node.getKey() < node.getKey():
                 check_node = check_node.rightTree
             else:
-                check_node.item.insert(node.item.value[0])
+                check_node.item.insert(node.item.retrieve()[0])
                 return True
         if node.getKey() < node.parent.getKey():
             node.parent.leftTree = node
@@ -220,7 +226,7 @@ class redBlackTree(object):
             y.parent.rightTree = x
 
         if y != z:  # make sure the value in the node is overridden
-            z.value = y.value
+            z.item = y.item
 
         if not y.red and x is not None:  # call on fix is y was red, and x (y's sibling) is not none
             self.delete_fix(x)
@@ -290,4 +296,5 @@ class redBlackTree(object):
 # test.insertItem(TreeItem("d", 10))
 # test.insertItem(TreeItem("woop", 15))
 # test.deleteItem(50)
+# test.deleteItem(15)
 # test.dotDebug()
