@@ -59,9 +59,9 @@ class DoubleList(object):
 
     def insert(self, index, item):
         length = self.getLength()
-        if index < 0 or index >= length:
+        if index < 0 or index > length:
             return False
-        elif index + 1 == length:
+        elif index == length:
             self.append(item)
             return True
         new_node = Node(item)
