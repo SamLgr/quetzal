@@ -30,7 +30,7 @@ chilipepperstock = StockTable()
 # add stocks to stock
 ingredients_stock = Stock(chocolatestock, honeystock, marshmallowstock, chilipepperstock)
 # init workers
-workers = []
+workers = DoubleList()
 #
 workerstack = Stack()
 # init users
@@ -110,7 +110,7 @@ def createLogFile(timestamp):   # Creates a log file based on loginfo
 
     htmlfile = open('log' + timestamp + '.html', 'w+')
     htmlfile.write(htmlstr)
-    for worker in workers:  # Write one column per worker
+    for worker in workers.traverse():  # Write one column per worker
         htmlfile.write("<td>")
         htmlfile.write(worker.getName()[0] + " " + worker.getName()[1])
         htmlfile.write("</td>")
@@ -149,7 +149,7 @@ def createLogFile(timestamp):   # Creates a log file based on loginfo
         htmlfile.write("<td>| ")
         htmlfile.write(" ".join(str(worker.getWorkload()) for worker in currentstack.getItems()))   # Write stack with workloads at timestamp
         htmlfile.write("</td>")
-        for worker in workers:
+        for worker in workers.traverse():
             htmlfile.write("<td>")
             for order in currenthandledorders:
                 if order.currworker.getId() == worker.getId():
@@ -278,7 +278,7 @@ def makeChoco(arguments):
 # Function to delete worker
 # param id: ID of the worker to delete
 def delWorker(workerid):
-    for worker in workers:
+    for worker in workers.traverse():
         if worker.getId() == workerid:
             del worker
             return True
@@ -319,7 +319,7 @@ def init_command(command):
             users.append(user)
     elif command[0] == "werknemer":
         if len(command) == 4:
-            workerid = len(workers)
+            workerid = workers.getLength()
             worker = Worker(workerid, command[1], command[2], command[3])
             workers.append(worker)
             workerstack.push(worker)
