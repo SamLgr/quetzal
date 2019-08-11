@@ -1,0 +1,21 @@
+from Order import Order
+from BinarySearchTree import BinarySearchTree
+from TreeItem import TreeItem
+class OrderTable:
+    def __init__(self):
+        self.table= BinarySearchTree()
+    def __del__(self):
+        self.table=None
+    def OrderTableIsEmpty(self):
+        if self.table.isEmpty()==True:
+            return True
+        else:
+            return False
+    def OrderTableLength(self):
+        Nodes=[]
+        Nodes=self.table.inorderTraverse()
+        return len(Nodes)
+    def OrderInsert(self, Order):
+        self.table.searchTreeInsert(TreeItem(Order.timestamp, Order))
+    def InorderOrder(self):
+        return self.table.inorderTraverse()
